@@ -21,6 +21,5 @@ ToDo
 - fastest laps race sticker
 - tyre usage
 - lineup renders
-- 
 - team marks on driver standings
-- Fix
+- Fix stints header in race layout
