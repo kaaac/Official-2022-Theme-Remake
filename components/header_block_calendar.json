@@ -30,7 +30,7 @@
                 },
                 {                            
                     "BlockType": "text",
-                    "Source": "{Season.LeagueInfo.LeagueName}",                            
+                    "Source": "{Season.LeagueInfo.LeagueShortName}",                            
                     "FontName": "{MgEB}",
                     "MarginTop" : 2,
                     "VerticalAlignment": "Center",

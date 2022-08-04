@@ -1,6 +1,8 @@
+- removed stints header in race layout
 - fixed header when sprint/main race
 - merged header component for season progress layouts
 - added layout for Season progress for quali
+- added team marks on driver standings
 
 v.0.3
 - fixed render race results when data not from live
@@ -20,6 +22,4 @@ v.0.2
 ToDo
 - fastest laps race sticker
 - tyre usage
-- lineup renders
-- team marks on driver standings
-- Fix stints header in race layout
+- lineup renders (waiting for app update)

@@ -1,11 +1,55 @@
 {
-    "BlockType": "text",
-    "MaxWidth": 300,
-    "MarginRight": 150,
-    "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
-    "HorizontalAlignment": "Left",
-    "VerticalAlignment": "Center",
-    "Foreground" :"{ForeGroundWhite}",
-    "FontName": "{MgMI}",
-    "FontSize": "{TableCellFontSize}"
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,
+    "Items": [
+        //left part
+        {
+            "BlockType": "text",
+            "MaxWidth": 300,
+            "MarginRight": 150,
+            "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Foreground" :"{ForeGroundWhite}",
+            "FontName": "{MgMI}",
+            "FontSize": "{TableCellFontSize}"
+        },
+
+        //teams block
+        {
+            "BlockType": "stack",
+            "VerticalAlignment": "Center",
+            "HorizontalAlignment": "Right",
+            "Spacing": 8,
+            "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+            "Items": [
+                //name
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Team.Name}",
+                    //"MarginRight": 4,
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{MgMI}",
+                    "FontSize": "{TableCellFontSize}",
+                    "TextOptions": {
+                        "VerticalAlignment": "Center"
+                    }
+                },
+
+                //logo
+                {
+                    "BlockType": "image",
+                    "Height": 40,
+                    "MarginRight": 0,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    }
+                }
+            ]
+        }
+    ]
 }

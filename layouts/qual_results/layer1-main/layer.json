@@ -107,7 +107,7 @@
                             }
                         },
                         {
-                            "Header": "STINT",
+                            "Header": "STINTS",
                             "Template": {
                                 "BlockType": "itemstack",
                                 "Spacing": 4,

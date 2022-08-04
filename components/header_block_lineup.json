@@ -33,17 +33,7 @@
                 {
                     "BlockType": "text",
                     "HorizontalAlignment":"Left",
-                    "Source":"F1®",
-                    "Foreground": "{ForegroundRed}",
-                    "FontName": "{MgEB}",
-                    "MarginTop" : 2,
-                    "VerticalAlignment": "Center",
-                    "FontSize": "{HeaderLeftFontSize}"
-                },
-                {
-                    "BlockType": "text",
-                    "HorizontalAlignment":"Left",
-                    "Source": "  {Season.LeagueInfo.LeagueName, Converter=StringToUpperString}  ·  {Season.Name, Converter=StringToUpperString}",
+                    "Source": "  {Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString}  ·  {Season.Name, Converter=StringToUpperString}",
                     "Foreground": "{ForegroundRed}",
                     "FontName": "{MgEB}",
                     "MarginTop" : 2,  

@@ -8,9 +8,13 @@
             //header block
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block_progress_pts"
+                "ComponentName" : "header_block_progress",
+                "ComponentOptions" : {
+                    "Vars" : {
+                        "displayinfo" : "Team Season Progress / Points"
+                    }
+                }
             },
-
             //separator
             {
                 "BlockType" : "component",

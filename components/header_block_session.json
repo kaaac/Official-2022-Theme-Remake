@@ -31,7 +31,7 @@
                 {
                     "BlockType": "text",
                     "HorizontalAlignment":"Left",
-                    "Source":"F1®",
+                    "Source":"{Season.LeagueInfo.LeagueShortName}",
                     "Foreground": "{ForegroundRed}",
                     "FontName": "{MgEB}",
                     "MarginTop" : 2,
