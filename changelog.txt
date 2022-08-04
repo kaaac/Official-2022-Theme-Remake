@@ -22,7 +22,6 @@ v.0.2
 
 
 
-ToDo
-- fastest laps race sticker
-- tyre usage
+ToDo:
+- tyre compound usage details (waiting for telemetry gathering update)
 - lineup renders (waiting for app update)
