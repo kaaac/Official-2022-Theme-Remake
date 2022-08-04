@@ -1,11 +1,9 @@
 {
     "Name" : "sticker",
-    "BlockType" : "stack",       
-    "Padding" : "24,12,24,12",
-    "Background": "<bg>", 
+    "BlockType" : "stack",
+    "Background": "<bg>",
     "VerticalAlignment" : "Center",   
-    "Spacing" : 28,
-
+    "Spacing" : 14,
     "Items" :
     [
         {
@@ -13,8 +11,9 @@
             "BlockType" : "text",
             "Source" : "<header>",
             "VerticalAlignment" : "Center",   
-            "Foreground" : "#AEBBBBBB",
-            "FontSize" : 24           
+            "FontName": "{MgMI}",
+            "Foreground" :"{ForeGroundWhite}",
+            "FontSize": "{StickerHeaderFontSize}"
         },
 
         {
@@ -22,8 +21,9 @@
             "BlockType" : "text",
             "Source" : "<main>",
             "VerticalAlignment" : "Center",   
-            "Foreground" : "#EEAFAFAF",
-            "FontSize" : 36           
+            "FontName": "{MgMI}",
+            "Foreground" :"{SticlerFLTimeForeGround}",
+            "FontSize": "{StickerDriverFontSize}"
         },
 
         {
@@ -31,8 +31,9 @@
             "BlockType" : "text",
             "Source" : "<data>",
             "VerticalAlignment" : "Center",   
-            "Foreground" : "#BCBBBBBB",
-            "FontSize" : 28           
+            "FontName": "{MgMI}",
+            "Foreground" :"{SticlerFLTimeForeGround}",
+            "FontSize": "{StickerFLTimeFontSize}"         
         }
     ]
 }

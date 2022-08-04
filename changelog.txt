@@ -1,8 +1,11 @@
+v.0.4
 - removed stints header in race layout
 - fixed header when sprint/main race
 - merged header component for season progress layouts
 - added layout for Season progress for quali
 - added team marks on driver standings
+- added stickers to Race layout
+- another minor changes
 
 v.0.3
 - fixed render race results when data not from live

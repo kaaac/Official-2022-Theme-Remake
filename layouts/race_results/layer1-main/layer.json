@@ -157,6 +157,41 @@
                     ]
                 }
             },
+            // stickers
+            {
+                "BlockType" : "stack",
+                "Margin" : "8, 36, 8, 8",
+                "Spacing" : 45,
+                "MarginLeft" : 85,
+                "Items" :[
+                    //sticker FL
+                    {
+                        "BlockType" :"component",
+                        "ComponentName" : "sticker",
+                        "RenderIf" : "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
+                        "ComponentOptions" : {
+                            "Vars" : {
+                                "header" : "Fastest Lap:",
+                                "main" : "{Session.FastestLapDriver.Name}",
+                                "data" : "{Session.FastestLapTime}"
+                            }
+                        }
+                    },
+                    //sticker DriverOfTheDay
+                    {
+                        "BlockType" :"component",
+                        "ComponentName" : "sticker",
+                        "RenderIf" : "{Session.DriverDayDriver, Converter=EmptyObjectToFalse}",
+                        "ComponentOptions" : {
+                            "Vars" : {
+                                "header" : "Driver of the Day:",
+                                "main" : "{Session.DriverDayDriver.Name}",
+                                "data" : ""
+                            }
+                        }
+                    },
+                ]
+            },
             //bg-footer
             {
                 "BlockType" : "component",

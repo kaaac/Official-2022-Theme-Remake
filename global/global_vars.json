@@ -47,6 +47,10 @@
     "SeasonProgressPointsTopForeground" : "#C2C2C2",
     "TableCellFontSize":"18",
     "TableHeaderFontSize":"14",
+    "StickerHeaderFontSize": "22",
+    "StickerDriverFontSize": "26",
+    "StickerFLTimeFontSize": "28",
+    "SticlerFLTimeForeGround": "#CC00CC",
     "HeaderLeftFontSize" :"34",
     "FirstLineHeaderFontSize" : "20",
     "SecondLineHeaderFontSize" : "25"
