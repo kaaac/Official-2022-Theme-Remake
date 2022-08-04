@@ -24,7 +24,12 @@ RacingLeagueTools/user/mods/
 - TeamStandings (SeasonTeamProgressPositions)
 - TeamStandings (teamStandings)
 
-
+Official renders of the session results do not always have information about the tires used during the session, so it is possible to disable their display.
+Just edit file `official-2022-theme-remake/global/global_vars.json` by changing the values of each option from true to false:
+```json
+     "RenderQualiStints": "true",
+     "RenderRaceStints": "true",
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
