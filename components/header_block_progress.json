@@ -30,7 +30,16 @@
                 },
                 {                            
                     "BlockType": "text",
-                    "Source": "{Season.LeagueInfo.LeagueName} · {Season.Name} · Progress / Positions",
+                    "Source": "{Season.LeagueInfo.LeagueName} · {Season.Name} · ",
+                    "FontName": "{MgEB}",
+                    "MarginTop" : 2,
+                    "VerticalAlignment": "Center",
+                    "FontSize": "{HeaderLeftFontSize}",
+                    "Foreground": "{ForegroundRed}"
+                },
+                {                            
+                    "BlockType": "text",
+                    "Source": "<displayinfo>",
                     "FontName": "{MgEB}",
                     "MarginTop" : 2,
                     "VerticalAlignment": "Center",

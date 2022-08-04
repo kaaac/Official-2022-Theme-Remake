@@ -1,3 +1,7 @@
+- fixed header when sprint/main race
+- merged header component for season progress layouts
+- added layout for Season progress for quali
+
 v.0.3
 - fixed render race results when data not from live
 - fixed colour of country codes in progress layouts
@@ -17,3 +21,6 @@ ToDo
 - fastest laps race sticker
 - tyre usage
 - lineup renders
+- 
+- team marks on driver standings
+- Fix

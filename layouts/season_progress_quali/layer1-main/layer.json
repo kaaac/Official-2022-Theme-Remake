@@ -5,13 +5,13 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            ///header block
+            //header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block_progress",
                 "ComponentOptions" : {
                     "Vars" : {
-                        "displayinfo" : "Progress / Points"
+                        "displayinfo" : "Qualification Positions"
                     }
                 }
             },
@@ -20,7 +20,8 @@
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
-            },//table
+            },
+            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
@@ -31,7 +32,8 @@
                         "BlockType": "text",
                         "MarginBottom": 8,
                         "FontSize": "{TableHeaderFontSize}",
-                        "TextOptionsExtern" : "tableColumnHeader"
+                        //"TextOptionsExtern": "tableColumnHeader",
+                        "Foreground" : "{ForegroundRed}"
                     },
                     "Columns": [
                         //position
@@ -58,52 +60,6 @@
                             }
                         },
 
-                         //points
-                         {
-                            "Header": "",
-                            "MarginLeft" : 20,
-                            "Template": {
-                                
-                                "BlockType": "dock",
-                                "PaddingLeft" : 24,
-                                "PaddingRight" : 24,
-                                "Items": [                                    
-                                    {
-                                        "BlockType": "text",
-                                        "Source": "{Item.Points}",
-                                        "HorizontalAlignment": "Right",
-                                        "VerticalAlignment": "Center",
-                                        "Foreground" : "{ForeGroundWhite}",
-                                        "FontSize" : "{TableCellFontSize}",
-                                        "FontName": "{MgB}",
-                                        "TextOptionsExtern": "primaryNumber"
-                                    }
-                                ],
-                                "Triggers" :
-                                [
-                                    {
-                                        "Condition" : "{Standings.IsPositionJumpForDriversExists}",
-                                        "Property" : "PaddingRight",
-                                        "Value" : 4
-                                    }
-                                ]
-                            }
-                        },
-
-                         //position_jump
-                         {
-                            "Header": "",
-                            "PaddingLeft" : 0,
-                            "MarginLeft" : -8,
-                            "Template":
-                            {
-                                "BlockType" : "component",
-                                "PaddingLeft" : 0,                               
-                                "PaddingRight" : 12,
-                                "ComponentName" : "position_jump_cell"    
-                            }
-                        },
-
                         //events
                         {
                             "MarginLeft" : 6,
@@ -127,7 +83,7 @@
                                         "FontSize" : "{TableCellFontSize}",
                                         "HorizontalAlignment": "Center",
                                         "Source": "{Item.Track.Nation.Code}",
-                                        "Foreground" : "{ForegroundRed}"                                       
+                                        "Foreground" : "{ForegroundRed}"                                        
                                     }
                                 ]
                             },
@@ -135,7 +91,7 @@
                             "Template": {
                                 "Padding": "12, 0",
                                 "BlockType": "text",
-                                "Source": "{Item.PointsString}",
+                                "Source": "{Item.QualMajorPositionString}",
                                 "HorizontalAlignment": "Left",
                                 "TextOptions": {
                                     "FontName": "{MgB}",
@@ -145,30 +101,43 @@
                                 },
                                 "Triggers": [
                                     {
-                                        "Condition": "{Item.IsRaceMajorParticipied, Converter=BoolReverse}",
+                                        "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
                                         "Setters": [
+                                            //{
+                                            //    "Property": "FontSize",
+                                            //    "Value": 22
+                                            //},
                                             {
-                                                "Property": "Source",
-                                                "Value": ""
+                                                "Property": "Foreground",
+                                                "Value": "{SeasonProgressPositionNotClassifiedForeground}"
                                             }
                                         ]
                                     },
                                     {
-                                        "Condition": "{Item.Points, Converter=NumberEquals, Parameter=0}",
+                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberLess, Parameter=11}",
                                         "Setters": [
                                             {
                                                 "Property": "Foreground",
-                                                "Value": "{SeasonProgressPointsZeroForeground}"
+                                                "Value": "{SeasonProgressPositionTop10Foreground}"
                                             }
                                         ]
                                     },
+                                    // {
+                                    //     "Condition": "{Item.Position, Converter=NumberLess, Parameter=4}",
+                                    //     "Setters":
+                                    //     [
+                                    //         {
+                                    //             "Property": "Foreground",
+                                    //             "Value": "#DDDD55"
+                                    //         }
+                                    //     ]
+                                    // },
                                     {
-                                        "Condition": "{Item.Points, Converter=NumberGreater, Parameter=149}",
-                                        "Setters":
-                                        [
+                                        "Condition": "{Item.QualMajorPosition, Converter=NumberEquals, Parameter=1}",
+                                        "Setters": [
                                             {
                                                 "Property": "Foreground",
-                                                "Value": "{SeasonProgressPointsTopForeground}"
+                                                "Value": "{SeasonProgressPositionTop1Foregound}"
                                             }
                                         ]
                                     }

@@ -5,10 +5,15 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            //header block
+            ///header block
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block_progress_pos"
+                "ComponentName" : "header_block_progress",
+                "ComponentOptions" : {
+                    "Vars" : {
+                        "displayinfo" : "Progress / Positions"
+                    }
+                }
             },
 
             //separator

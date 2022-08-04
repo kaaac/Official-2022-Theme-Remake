@@ -139,12 +139,19 @@
                                 "HorizontalAlignment": "Center",
                                 "VerticalAlignment": "Center",
                                 "Width":90,
-                                "TextOptions": {
+                                "TextOptions": { //PitsCount 
                                     "FontName": "{MgMI}",
                                     "Foreground" :"{ForeGroundWhite}",
                                     "FontSize": "{TableCellFontSize}",
                                     "HorizontalAlignment": "Center"
-                                }
+                                }//,
+                                //"Triggers":[
+                                //    {
+                                //        "Condition" : "{Item.PitsCount, Converter=NumberEquals, Parameter=0}",
+                                //        "Property" : "Source",
+                                //        "Value" : ""
+                                //    }
+                                //]
                             }
                         }
                     ]

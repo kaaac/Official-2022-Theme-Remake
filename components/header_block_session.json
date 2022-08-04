@@ -46,23 +46,31 @@
                     "FontName": "{MgEB}",
                     "MarginTop" : 2,  
                     "VerticalAlignment": "Center",
-                    "FontSize": "{HeaderLeftFontSize}"
+                    "FontSize": "{HeaderLeftFontSize}",
+                    "RenderIf": false,
+                    "Triggers" :[
+                        {
+                            "Condition" : "{Session.RaceType, Converter=StringEquals, Parameter=Regular}",
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]
                 },             
                 {
                     "BlockType": "text",
                     "HorizontalAlignment":"Left",
-                    "Source": "{Session.RaceType}",
+                    "Source": " {Session.RaceType, Converter=StringToUpperString} RACE",
                     "Foreground": "{ForegroundRed}",
                     "FontName": "{MgEB}",
                     "MarginTop" : 2,
                     "VerticalAlignment": "Center",
                     "FontSize": "{HeaderLeftFontSize}",
-                    "RenderIf": false,
+                    "RenderIf": true,
                     "Triggers" :[
                         {
-                            "Condition" : "{Session.RaceType, Converter=StringNotEquals, Parameter=Regular}",
+                            "Condition" : "{Session.RaceType, Converter=StringEquals, Parameter=Regular}",
                             "Property" : "RenderIf",
-                            "Value" : true
+                            "Value" : false
                         }
                     ]
                 },
