@@ -1,0 +1,174 @@
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Foreground" : "{ForeGroundWhite}",
+    "MarginLeft" : 0,
+    "PaddingTop" : 7,
+    "UseBackgroundCrop": true,
+    "Width" : "*",
+    "Items": [
+        
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "MarginLeft" : 29,
+            "MarginRight" : 20,
+            "Orientation": "Horizontal",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",
+            "Items": [
+
+                {
+                    "Name": "f1_logo",
+                    "BlockType": "image",
+                    "VerticalAlignment": "Center",
+                    "Height": 22,
+                    "MarginRight": 17,
+                    "Source": "images/f1_logo.png"
+                },
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment":"Left",
+                    "Source":"F1®",
+                    "Foreground": "{ForegroundRed}",
+                    "FontName": "{MgEB}",
+                    "MarginTop" : 2,
+                    "VerticalAlignment": "Center",
+                    "FontSize": "{HeaderLeftFontSize}"
+                },
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment":"Left",
+                    "Source": " {Session.SessionType, Converter=StringToUpperString}",
+                    "Foreground": "{ForegroundRed}",
+                    "FontName": "{MgEB}",
+                    "MarginTop" : 2,  
+                    "VerticalAlignment": "Center",
+                    "FontSize": "{HeaderLeftFontSize}"
+                },             
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment":"Left",
+                    "Source": "{Session.RaceType}",
+                    "Foreground": "{ForegroundRed}",
+                    "FontName": "{MgEB}",
+                    "MarginTop" : 2,
+                    "VerticalAlignment": "Center",
+                    "FontSize": "{HeaderLeftFontSize}",
+                    "RenderIf": false,
+                    "Triggers" :[
+                        {
+                            "Condition" : "{Session.RaceType, Converter=StringNotEquals, Parameter=Regular}",
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment":"Left",
+                    "Source":" CLASSIFICATION",
+                    "Foreground": "{ForegroundRed}",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{MgEB}",  
+                    "MarginTop" : 2,
+                    "FontSize": "{HeaderLeftFontSize}"
+                }
+            ]
+        },
+        //headerMiddle
+        {
+            "Name": "headerMiddlePart",
+            "BlockType" : "stack",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Bottom",
+            "MarginRight" : 50,
+            "MarginBottom" : 3,
+            //"MarginTop" : 30,
+            "Items": [
+                {
+                    "BlockType": "text",                                            
+                    "RenderIf": false,
+                    "Source": "[LAP]: {Session.TotalLaps}/{Session.TotalLaps}",
+                    "FontName": "{MgMI}",
+                    "Foreground": "{ForegroundRed}",
+                    "VerticalAlignment": "Bottom",
+                    "FontSize": 22,
+                    "Triggers" : 
+                    [
+                        {
+                            "Condition" : "{Session.IsLiveData}",
+                            "ConditionAnd" : "{Session.SessionType, Converter=StringEquals, Parameter=Race}",
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]
+                },
+            ]
+        },
+        //headerRight
+        {
+            "Name": "headerRightPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Spacing": 6,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment" : "Center",
+            "MarginRight": 50,
+            "Items": [
+
+                //session
+                {
+                    "Name": "headerSessionLine",
+                    "BlockType": "stack",
+                    //"VerticalAlignment": "Top",
+                    "Orientation": "Horizontal",
+                    "Spacing": 8,
+                    "Items": [
+                        {
+                            "Name": "CountryFlag",
+                            "BlockType": "image",
+                            "VerticalAlignment": "Top",
+                            "Height": 60,
+                            "Source": "{Session.Track.Nation.LogoPath}"
+                        },
+                        {
+                            "Name": "CountryRightStack",
+                            "BlockType": "stack",
+                            "Orientation": "Vertical",
+                            "HorizontalAlignment" : "Right",
+                            "VerticalAlignment": "Top",
+                            "MarginTop" : 6,
+                            "Items": [
+                                {
+                                    "Name": "LocationName",
+                                    "BlockType": "text",
+                                    "HorizontalAlignment" : "Right",
+                                    "Source": "{Session.Track.LocationName, Converter=StringToUpperString}",
+                                    "FontName": "{MgB}",                            
+                                    "FontSize": 22,
+                                    "Foreground" : "{ForeGroundWhite}"
+                                },
+                                {
+                                    "Name": "CountryName",
+                                    "BlockType": "text",
+                                    "HorizontalAlignment" : "Right",
+                                    "Source": "#[{Session.Track.CircuitName}GP]",
+                                    "FontName": "{MgMI}",
+                                    "Foreground": "{ForegroundRed}",
+                                    "FontSize": 20
+                                }
+                                
+                            ]
+                        },
+                        
+
+                        
+                    ]
+                }
+            ]
+        }
+    ]
+}

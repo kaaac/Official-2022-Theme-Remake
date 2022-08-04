@@ -1,0 +1,38 @@
+{
+    "Name" : "sticker",
+    "BlockType" : "stack",       
+    "Padding" : "24,12,24,12",
+    "Background": "<bg>", 
+    "VerticalAlignment" : "Center",   
+    "Spacing" : 28,
+
+    "Items" :
+    [
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<header>",
+            "VerticalAlignment" : "Center",   
+            "Foreground" : "#AEBBBBBB",
+            "FontSize" : 24           
+        },
+
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<main>",
+            "VerticalAlignment" : "Center",   
+            "Foreground" : "#EEAFAFAF",
+            "FontSize" : 36           
+        },
+
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<data>",
+            "VerticalAlignment" : "Center",   
+            "Foreground" : "#BCBBBBBB",
+            "FontSize" : 28           
+        }
+    ]
+}

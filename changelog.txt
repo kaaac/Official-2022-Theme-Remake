@@ -1,0 +1,19 @@
+v.0.3
+- fixed render race results when data not from live
+- fixed colour of country codes in progress layouts
+
+v.0.2
+- changed pit stops/laps margins
+- changed position number alignment
+- added layout for Calendar
+- added layout for Driver Standings
+- added layout for Team Standings
+- added layout for Season Progress (Pos and PTS)
+
+
+
+
+ToDo
+- fastest laps race sticker
+- tyre usage
+- lineup renders

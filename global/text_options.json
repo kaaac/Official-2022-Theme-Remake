@@ -1,0 +1,14 @@
+[
+    {
+        "Name" : "primaryNumber",
+        "FontName": "{FontNameDefault}",
+        "FontSize": 34,
+        "HorizontalAlignment" : "Center"        
+    },
+    {
+        "Name" : "tableColumnHeader",
+        "FontName": "{FontNameDefault}",
+        "FontSize": 16,
+        "Foreground": "{TableColumnHeaderForeground}"        
+    },
+]

@@ -1,0 +1,7 @@
+{
+    "Name" : "separator",
+    "BlockType": "image",
+    "Margin" : "{SeparatorMargin}",
+    "Width": "*",
+    "Source": "separator.png"
+}

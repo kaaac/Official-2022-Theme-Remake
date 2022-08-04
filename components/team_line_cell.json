@@ -1,0 +1,37 @@
+{
+    "BlockType": "dock",   
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //logo
+                {
+                    "BlockType": "image",
+                    "MarginLeft" : 5,
+                    "Height": 35,
+                    "MarginRight": 5,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    }
+                },
+
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Team.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{MgMI}",
+                    "FontSize": "{TableCellFontSize}",
+                    "Foreground" : "{ForeGroundWhite}"
+                }               
+            ]
+        }
+    ]
+}

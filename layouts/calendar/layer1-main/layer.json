@@ -1,0 +1,170 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_calendar"
+            },
+
+            //separator
+            {
+                "BlockType" : "component",
+                "ComponentName" : "separator"
+            },
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "{MarginTable}",
+                "MarginRight": 0,                
+                "TableOptions": {
+                    "ItemsSource": "{Events.Events}",
+                    "RowSpacing": 0,
+                    "ColSpacing": 0,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 8,
+                        "TextOptionsExtern" : "tableColumnHeader"
+                    },
+                    "Columns": [
+                        //number
+                        {
+                            "Template": {
+                                "BlockType": "text",
+                                "PaddingLeft": 48,
+                                "Source": "{Item.Position}",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{MgB}",
+                                "Foreground": "{ForegroundWhite}",
+                                "FontSize":"{TableCellFontSize}",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        },
+
+                        {
+                            "Template": {
+                                "BlockType": "stack",
+                                "PaddingLeft": 32,
+                                "PaddingRight": 4,
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "Items": [
+                                    //flag
+                                    {
+                                        "BlockType": "image",
+                                        "Height": 56,
+                                        //"Padding" : "0, 8",
+                                        "PaddingTop": 0,
+                                        "PaddingBottom": 0,
+                                        "MarginRight": 20,
+                                        "VerticalAlignment": "Center",
+                                        "ImageOptions": {
+                                            "Path": "{Item.Track.Nation.LogoPath}",
+                                            "VerticalAlignment": "Center"
+                                        }
+                                    },
+
+                                    //country
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Track.Nation.Code}",
+                                        "HorizontalAlignment": "Left",
+                                        "VerticalAlignment": "Center",
+                                        "FontName": "{MgB}",
+                                        "Foreground": "#B0B0B0",
+                                        "FontSize":"{TableCellFontSize}"
+                                    }
+                                ]
+                            }
+                        },
+
+                        //location
+                        {
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "text",
+                                "PaddingLeft": 24,
+                                "PaddingRight": 56,
+                                "Source": "{Item.Track.CircuitName}",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{MgB}",
+                                "Foreground": "{ForegroundWhite}",
+                                "FontSize":"{TableCellFontSize}"
+                            }
+                        },
+
+                        //date
+                        {
+                            "Template": {
+                                "BlockType": "text",
+                                "PaddingLeft": 48,
+                                "PaddingRight": 48,
+                                "Source": "{Item.Date, Converter=DateToDayOfMonth}.{Item.Date, Converter=DateToMonth}",
+                                "FontSize":"{TableCellFontSize}",
+                                "Foreground": "{ForegroundWhite}",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        },
+
+                        //description
+                        {
+                            "Template": {
+                                "BlockType": "text",
+                                "RenderIf": "{ShowEventDescriptionInCalendar}",
+                                "MaxWidth": 480,
+                                "PaddingLeft": 48,
+                                "PaddingRight": 48,
+                                "Source": "{Item.Description}",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{MgB}",
+                                "Foreground": "#95C2C2C2",
+                                "FontSize":"{TableCellFontSize}",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                        "Property": "Foreground",
+                                        "Value": "#757575"
+                                    }
+                                ]
+                            }
+                        },
+
+                        //winner
+                        {
+                            "Template": {
+                                "BlockType": "text",
+                                "RenderIf": "{ShowWinnerInCalendar}",
+                                "MaxWidth": 320,
+                                "PaddingLeft": 48,
+                                "PaddingRight": 48,
+                                "Source": "{Item.WinnerString}",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{MgB}",
+                                "Foreground": "#CCD2B200",
+                                "FontSize":"{TableCellFontSize}"
+                            }
+                        }
+                    ]
+                }
+            },
+            //bg-footer
+            {
+                "BlockType" : "component",
+                "ComponentName" : "bg_footer"
+            }
+        ]
+    }
+}

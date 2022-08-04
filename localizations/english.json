@@ -1,0 +1,26 @@
+{
+    "Race" : "Race",
+    "Qual" : "Qual",
+    "Practice" : "Practice",
+    "Round" : "Round",
+    "of" : "of",
+    "laps" : "laps",
+    "min" : "min",
+    "Interval" : "Interval",
+    "Pen. Time" : "Pen. Time",
+    "Fastest Lap" : "Fastest Lap",
+    "Stints" : "Stints",
+    "Pts" : "Pts",
+    "Time" : "Time",
+    "Laps" : "Laps",
+    "DNF" : "OUT",
+
+    "Paul RicardGP" : "FrenchGP",
+    "AustinGP" : "USGP",
+    "InterlagosGP" : "BrazilGP",
+    "SilverstoneGP" : "BritishGP",
+    "HungaroringGP" : "HungarianGP",
+    "MonzaGP" : "ItalianGP",
+    "Yas MarinaGP" : "YasMarinaGP",
+    "BarcelonaGP" : "SpanishGP"
+}

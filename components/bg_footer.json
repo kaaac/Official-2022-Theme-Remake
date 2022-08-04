@@ -1,0 +1,16 @@
+{
+    "Name": "bg-footer",
+    "BlockType": "stack", 
+    "BackgroundImage": "images/bg-footer.png",
+    "Height" : 23,
+    "Width" : "*",
+    "UseBackgroundCrop" : true,
+    "Items": [
+        {
+            "BlockType": "text",
+            "Source": " ",
+            "Height" : 23,
+            "Width" : "*"
+        }
+    ]
+}

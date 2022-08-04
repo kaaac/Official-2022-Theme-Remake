@@ -1,0 +1,43 @@
+//header block
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Foreground" : "{ForeGroundWhite}",
+    "MarginLeft" : 0,
+    "PaddingTop" : 7,
+    "UseBackgroundCrop": true,
+    "Width" : "*",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Horizontal",
+            //"Spacing": 12,
+            "MarginLeft" : 29,
+            "MarginRight" : 20,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",
+            "Items": [
+                {
+                    "Name": "f1_logo",
+                    "BlockType": "image",
+                    "VerticalAlignment": "Center",
+                    "Height": 22,
+                    "MarginRight": 17,
+                    "Source": "images/f1_logo.png"
+                },
+                {                            
+                    "BlockType": "text",
+                    "Source": "{Season.LeagueInfo.LeagueName} · {Season.Name} · Progress / Points",
+                    "FontName": "{MgEB}",
+                    "MarginTop" : 2,
+                    "VerticalAlignment": "Center",
+                    "FontSize": "{HeaderLeftFontSize}",
+                    "Foreground": "{ForegroundRed}"
+                }
+            ]
+        }
+    ]
+}

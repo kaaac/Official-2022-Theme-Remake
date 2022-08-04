@@ -1,0 +1,13 @@
+{
+    "BlockRoot": {
+        "Name": "root",
+        "BlockType": "dock",
+        "Orientation" : "Vertical",
+        "Items": [
+            {
+                "BlockType" : "component",
+                "ComponentName" : "bg"
+            }
+        ]
+    }
+}

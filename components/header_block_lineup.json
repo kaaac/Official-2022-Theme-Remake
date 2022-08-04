@@ -1,0 +1,66 @@
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Foreground" : "{ForeGroundWhite}",
+    //"BackgroundImage" : "images/header.png",
+    "MarginLeft" : 0,
+    //"Background" : "#ffffff",
+    "PaddingTop" : 7,
+    "UseBackgroundCrop": true,
+    "Width" : "*",
+    "Items": [
+        
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "MarginLeft" : 29,
+            "MarginRight" : 20,
+            "Orientation": "Horizontal",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",
+            "Items": [
+
+                {
+                    "Name": "f1_logo",
+                    "BlockType": "image",
+                    "VerticalAlignment": "Center",
+                    "Height": 22,
+                    "MarginRight": 17,
+                    "Source": "images/f1_logo.png"
+                },
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment":"Left",
+                    "Source":"F1®",
+                    "Foreground": "{ForegroundRed}",
+                    "FontName": "{MgEB}",
+                    "MarginTop" : 2,
+                    "VerticalAlignment": "Center",
+                    "FontSize": "{HeaderLeftFontSize}"
+                },
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment":"Left",
+                    "Source": "  {Season.LeagueInfo.LeagueName, Converter=StringToUpperString}  ·  {Season.Name, Converter=StringToUpperString}",
+                    "Foreground": "{ForegroundRed}",
+                    "FontName": "{MgEB}",
+                    "MarginTop" : 2,  
+                    "VerticalAlignment": "Center",
+                    "FontSize": "{HeaderLeftFontSize}"
+                },             
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment":"Left",
+                    "Source":"  LINE-UP",
+                    "Foreground": "{ForegroundRed}",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{MgEB}",  
+                    "MarginTop" : 2,
+                    "FontSize": "{HeaderLeftFontSize}"
+                }
+            ]
+        }
+    ]
+}

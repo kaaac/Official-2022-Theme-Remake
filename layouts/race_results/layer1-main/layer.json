@@ -1,0 +1,160 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_session"
+            },
+
+            //separator
+            {
+                "BlockType" : "component",
+                "ComponentName" : "separator"
+            },
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin" : "{MarginTable}",
+                "TableOptions": {
+                    "ItemsSource": "{Session.Drivers}",
+                    "RowSpacing": 0,
+                    "ColSpacing": 0,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 0,
+                        "TextOptionsExtern" : "tableColumnHeader",
+                        "HorizontalAlignment" : "Center",
+                        "Foreground" : "{ForegroundRed}",
+                        "Width" : "*",
+                        "FontSize" : "{TableHeaderFontSize}"
+                    },
+                    "Columns": [
+                        // //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType" : "component",                                
+                                "ComponentName" : "position_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "position" : "{Item.PositionString}"
+                                    }
+                                }
+                            }
+                        },
+
+                        //driver line
+                        {
+                            "Header": "DRIVER",
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "driver_line_cell"                                
+                            }
+                        },
+                        // Team
+                        {
+                            "Header": "TEAM",
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "team_cell"                                
+                            }
+                        },
+
+                        //GAP
+                        {
+                            "Header": "[GAP]",
+                            "Template": {
+                                "Padding": "6, 0",
+                                "BlockType": "text",
+                                "Source": "{Item.IntervalRace}",
+                                "MarginRight": 180,
+                                "HorizontalAlignment": "Left",
+                                "Foreground" :"{ForeGroundWhite}",
+                                "TextOptions": {
+                                    "FontName": "{MgMI}",
+                                    "FontSize":"{TableCellFontSize}",
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "RenderIf": true,
+                                "Triggers" :[
+                                    {
+                                        "Condition" : "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                        "Property" : "RenderIf",
+                                        "Value" : false
+                                    },
+                                    {
+                                        "Condition" : "{RenderRaceStints, Converter=StringNotEquals, Parameter=false}",
+                                        "Property" : "MarginRight",
+                                        "Value" : 0
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "STINT",
+                            "Template": {
+                                "BlockType": "itemstack",
+                                "Spacing": 4,
+                                "HorizontalAlignment": "Left",
+                                "MarginRight": 150,
+                                "RenderIf" : "{RenderRaceStints, Converter=StringNotEquals, Parameter=false}",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Item.Stints}",
+                                    "Template": {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Top",
+                                        "PaddingTop" : 7,
+                                        "HorizontalAlignment":"Center",
+                                        "Spacing": 0,
+                                        "Height": 17,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Height": 17,
+                                                "VerticalAlignment": "Center",
+                                                "Source": "tyres_{Item.Tyres}.png",
+                                                "HorizontalAlignment":"Center"
+                                            }                                           
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        //PIT STOPS
+                        {
+                            "Header": "[PIT STOPS]",
+                            "Template":
+                            {
+                                "BlockType": "text",
+                                "Source": "{Item.PitsCount}",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Width":90,
+                                "TextOptions": {
+                                    "FontName": "{MgMI}",
+                                    "Foreground" :"{ForeGroundWhite}",
+                                    "FontSize": "{TableCellFontSize}",
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            //bg-footer
+            {
+                "BlockType" : "component",
+                "ComponentName" : "bg_footer"
+            }
+        ]
+    }
+}

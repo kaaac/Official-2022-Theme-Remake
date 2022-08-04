@@ -1,0 +1,11 @@
+{
+    "BlockType": "text",
+    "MaxWidth": 300,
+    "MarginRight": 150,
+    "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+    "HorizontalAlignment": "Left",
+    "VerticalAlignment": "Center",
+    "Foreground" :"{ForeGroundWhite}",
+    "FontName": "{MgMI}",
+    "FontSize": "{TableCellFontSize}"
+}

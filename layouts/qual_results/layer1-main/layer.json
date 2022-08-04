@@ -1,0 +1,196 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",    
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_session"
+            },
+
+            //separator
+            {
+                "BlockType" : "component",
+                "ComponentName" : "separator"
+            },
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin" : "{MarginTable}",
+                "TableOptions": {
+                    "ItemsSource": "{Session.Drivers}",
+                    "RowSpacing": 0,
+                    "ColSpacing": 0,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 0,
+                        "TextOptionsExtern" : "tableColumnHeader",
+                        "HorizontalAlignment" : "Center",
+                        "Foreground" : "{ForegroundRed}",
+                        "Width" : "*",
+                        "FontSize" : "{TableHeaderFontSize}",
+                        //"Triggers" :[
+                        //    {
+                        //        "Condition" : "{ItemIndex, Converter=NumberLess, Parameter=2}",
+                        //        "Setters": [
+                        //            {
+                        //                "Property" : "HorizontalAlignment",
+                        //                "Value" : "Left"
+                        //            }
+                        //        ]
+                        //    }
+                        //] 
+                    },
+                    "Columns": [
+                        //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType" : "component",                                
+                                "ComponentName" : "position_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "position" : "{Item.PositionString}"
+                                    }
+                                }
+                            }
+                        },
+
+                        //driver line
+                        {
+                            "Header": "DRIVER",
+                            //"WidthStretch" : true,
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "driver_line_cell"                                
+                            }
+                        },
+                        // Team
+                        {
+                            "Header": "TEAM",
+                            //"WidthStretch" : true,
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "team_cell"
+                            }
+                        },                     
+
+                        //time
+                        {
+                            "Header": "LAP TIME",
+                            "Template": {
+                                "BlockType": "text",
+                                "Padding": "6, 0",
+                                "Source": "{Item.FastestLapTime}",
+                                "MarginRight": 180,
+                                "HorizontalAlignment": "Left",
+                                "TextOptions": {
+                                    "FontName": "{MgMI}",
+                                    "FontSize":"{TableCellFontSize}",
+                                    "Foreground" :"{ForeGroundWhite}",
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "Triggers" :[
+                                    {
+                                        "Condition" : "{RenderQualiStints, Converter=StringNotEquals, Parameter=false}",
+                                        "Property" : "MarginRight",
+                                        "Value" : 0
+                                    }
+                                ] 
+                            }
+                        },
+                        {
+                            "Header": "STINT",
+                            "Template": {
+                                "BlockType": "itemstack",
+                                "Spacing": 4,
+                                //"Padding": "12, 0",
+                                "HorizontalAlignment": "Left",
+                                //"VerticalAlignment": "Center",
+                                "MarginRight": 150,
+                                //"Height" : 17,
+                                "RenderIf" : "{RenderQualiStints, Converter=StringNotEquals, Parameter=false}",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Item.Stints}",
+                                    "Template": {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Top",
+                                        "PaddingTop" : 7,
+                                        //"MarginRight" : 4,
+                                        "HorizontalAlignment":"Center",
+                                        "Spacing": 0,
+                                        "Height": 17,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Height": 17,
+                                                "VerticalAlignment": "Center",
+                                                "Source": "tyres_{Item.Tyres}.png",
+                                                "HorizontalAlignment":"Center"
+                                            }                                           
+                                        ]
+                                    }
+                                }
+                            }
+                        },                                  
+                        //Gap
+                        {
+                            "Header": "GAP",
+                            "Template": {
+                                "BlockType": "text",
+                                "Padding": "6, 0",
+                                "Source": "{Item.Time}",
+                                "HorizontalAlignment": "Left",
+                                "TextOptions": {
+                                    "FontName": "{MgMI}",
+                                    "FontSize":"{TableCellFontSize}",
+                                    "Foreground" :"{ForeGroundWhite}",
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "RenderIf": true,
+                                "Triggers" :[
+                                    {
+                                        "Condition" : "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                        "Property" : "RenderIf",
+                                        "Value" : false
+                                    }
+                                ]
+                            }
+                        },
+                        //laps
+                        {
+                            "Header": "LAPS",
+                            "Template": {
+                                "BlockType": "text",
+                                "Padding": "6, 0",
+                                "Source": "{Item.LapsCount}",
+                                //"MarginRight": 20,
+                                "MarginLeft": 180,
+                                "HorizontalAlignment": "Left",
+                                "Width":75,
+                                "TextOptions": {
+                                    "FontName": "{MgMI}",
+                                    "FontSize":"{TableCellFontSize}",
+                                    "Foreground" :"{ForeGroundWhite}",
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            //bg-footer
+            {
+                "BlockType" : "component",
+                "ComponentName" : "bg_footer"
+            }          
+        ]
+    }
+}
