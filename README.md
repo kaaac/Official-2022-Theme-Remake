@@ -21,7 +21,6 @@ RacingLeagueTools/user/mods/
 - DriverStandings (SeasonProgressPositions)
 - DriverStandings (SeasonProgressPoints)
 - DriverStandings (SeasonProgressQualificationPositions)
-- TeamStandings (SeasonTeamProgressPositions)
 - TeamStandings (teamStandings)
 
 Official renders of the session results do not always have information about the tires used during the session, so it is possible to disable their display.
