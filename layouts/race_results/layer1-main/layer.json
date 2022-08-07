@@ -92,7 +92,7 @@
                                         "Value" : false
                                     },
                                     {
-                                        "Condition" : "{RenderRaceStints, Converter=StringNotEquals, Parameter=false}",
+                                        "Condition" : "{RenderRaceStints}",
                                         "Property" : "MarginRight",
                                         "Value" : 0
                                     }
@@ -106,7 +106,7 @@
                                 "Spacing": 4,
                                 "HorizontalAlignment": "Left",
                                 "MarginRight": 150,
-                                "RenderIf" : "{RenderRaceStints, Converter=StringNotEquals, Parameter=false}",
+                                "RenderIf" : "{RenderRaceStints}",
                                 "ItemStackOptions": {
                                     "ItemSource": "{Item.Stints}",
                                     "Template": {

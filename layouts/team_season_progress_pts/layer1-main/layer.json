@@ -25,6 +25,7 @@
                 "Name": "mainTable",
                 "BlockType": "table",
                 "Margin": "{MarginTable}",
+                "PaddingRight" : 25,
                 "TableOptions": {
                     "ItemsSource": "{Standings.Teams}",
                     "HeaderTemplate": {
@@ -133,12 +134,24 @@
                                 "BlockType": "text",
                                 "Source": "{Item.PointsString}",
                                 "HorizontalAlignment": "Left",
+                                "Opacity":100,
                                 "TextOptions": {
                                     "FontName": "{MgB}",
                                     "FontSize" : "{TableCellFontSize}",
                                     "HorizontalAlignment": "Center",
                                     "Foreground": "{ForeGroundWhite}"
-                                }
+                                },
+                                "Triggers" : [
+                                    {
+                                        "Condition": "{Item.PointsString, Converter=StringEquals, Parameter=0}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": ""
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         }
                     ]

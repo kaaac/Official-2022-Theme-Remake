@@ -1,0 +1,174 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_lineup"
+            },
+
+            //separator
+            {
+                "BlockType" : "component",
+                "ComponentName" : "separator"
+            },
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "{MarginTable}",
+                "TableOptions": {
+                    "ItemsSource": "{Lineups.Lineups}",
+                    "RowSpacing": 16,
+                    "ColSpacing": 8,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 8,
+                        "FontSize": "{TableHeaderFontSize}",                        
+                        "TextOptionsExtern": "tableColumnHeader",
+                        "Foreground" : "{ForegroundRed}",
+                        "TextAlignment" : "Left",
+                        "MarginLeft" : -10
+                        //"Width": 100
+                    },
+                    "Columns": [
+                        {
+                            "Header": "",                           
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "team_line_cell",
+                                "MarginLeft" : 25,
+                            }
+                        },
+                        //driver line
+                        {
+                            "Header": "",
+                            "MarginLeft" : 50,
+                            "MarginRight" : 24, 
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "driver_line_cell_race",
+                                "RenderIf": "{Item.IsDriverSet}"
+                            }
+                            
+                        },
+                        // races count
+                        {
+                            "Header": "RACES",
+                            "Template":
+                            {
+                                "BlockType": "text",
+                                "Source": "{Item.DriverRaces}",
+                                "RenderIf": "{Item.IsDriverSet}",
+                                "Width": 55,
+                                //"PaddingLeft" : 15
+                            }
+                        }                                          
+                    ]
+                }
+            },
+            //Lineup
+            //{
+            //   "Name": "LineupStack",
+            //   "BlockType": "itemstack",
+            //   "Orientation": "Vertical",
+            //   "ItemStackOptions":{
+            //       "ItemSource" : "{Lineups.Lineups}",
+            //       "Template" :{
+            //           "BlockType" : "dock",
+            //           "Orientation" : "Vertical",
+            //           "Source" : "{Item.Teams}",
+            //           "Items": [
+            //               {
+            //                   "BlockType" : "stack",
+            //                   "Items": [
+            //                       //left part
+            //                       {
+            //                           "BlockType" : "stack",
+            //                           "HorizontalAlignment": "Left",
+            //                           "VerticalAlignment" : "Center",
+            //                           "Items" : [
+            //                            //name
+            //                                {
+            //                                    "BlockType": "text",
+            //                                    //"Width": 5,
+            //                                    "Source": "{Item.Team.Name}",
+            //                                    "HorizontalAlignment": "Left",
+            //                                    "VerticalAlignment": "Center",
+            //                                    "FontName": "{FontNameDefault}",
+            //                                    "FontSize": 42
+            //                                }
+            //                            ]
+            //                       },
+            //                       //middle part
+            //                       {
+            //                           "BlockType" : "itemstack",
+            //                           "HorizontalAlignment": "Center",
+            //                           "VerticalAlignment" : "Center",
+            //                           "ItemStackOptions":{
+            //                                "ItemSource" : "{Item.Drivers}",
+            //                                "Template": {
+            //                                    "BlockType" : "stack",
+            //                                    "Orientation" : "Horizontal",
+            //                                    "Items" : [
+            //                                        //flag
+            //                                        {
+            //                                            "BlockType": "image",
+            //                                            "Height": 24,
+            //                                            "MarginRight": 12,
+            //                                            "VerticalAlignment": "Center",
+            //                                            "HorizontalAlignment": "Left",
+            //                                            "ImageOptions": {
+            //                                                "Path": "{Item.Driver.Nationality.LogoPath}",
+            //                                                "VerticalAlignment": "Center"
+            //                                            },
+            //                                            "RenderIf": "{RenderDriverFlags}"
+
+            //                                        },
+            //                                        //Driver Name
+            //                                        {
+            //                                            "BlockType": "text",
+            //                                            "MaxWidth": 300,
+            //                                            "MarginRight": 150,
+            //                                            "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+            //                                            "HorizontalAlignment": "Left",
+            //                                            "VerticalAlignment": "Center",
+            //                                            "Foreground" :"{ForeGroundWhite}",
+            //                                            "FontName": "{MgMI}",
+            //                                            "FontSize": "{TableCellFontSize}"
+            //                                        },
+            //                                        // Races count
+            //                                        {
+            //                                            "BlockType": "text",
+            //                                            "MaxWidth": 300,
+            //                                            "MarginRight": 150,
+            //                                            "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+            //                                            "HorizontalAlignment": "Left",
+            //                                            "VerticalAlignment": "Center",
+            //                                            "Foreground" :"{ForeGroundWhite}",
+            //                                            "FontName": "{MgMI}",
+            //                                            "FontSize": "{TableCellFontSize}"
+            //                                        }
+            //                                    ]
+            //                                }
+            //                            }
+            //                       }
+            //                   ]
+            //               }
+            //           ]
+            //       }
+            //   }
+            //   
+            //},
+            //bg-footer
+            {
+                "BlockType" : "component",
+                "ComponentName" : "bg_footer"
+            }
+        ]
+    }
+}

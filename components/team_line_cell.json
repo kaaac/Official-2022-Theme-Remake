@@ -12,7 +12,7 @@
                     "BlockType": "image",
                     "MarginLeft" : 5,
                     "Height": 35,
-                    "MarginRight": 5,
+                    "MarginRight": 10,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
                         "Path": "{Item.Team.LogoPath}",
@@ -27,9 +27,9 @@
                     "Source": "{Item.Team.Name}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
-                    "FontName": "{MgMI}",
+                    "FontName": "{MgB}",
+                    "Foreground" :"{ForeGroundWhite}",
                     "FontSize": "{TableCellFontSize}",
-                    "Foreground" : "{ForeGroundWhite}"
                 }               
             ]
         }

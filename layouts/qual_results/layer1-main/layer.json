@@ -99,7 +99,7 @@
                                 },
                                 "Triggers" :[
                                     {
-                                        "Condition" : "{RenderQualiStints, Converter=StringNotEquals, Parameter=false}",
+                                        "Condition" : "{RenderQualiStints}",
                                         "Property" : "MarginRight",
                                         "Value" : 0
                                     }
@@ -116,7 +116,7 @@
                                 //"VerticalAlignment": "Center",
                                 "MarginRight": 150,
                                 //"Height" : 17,
-                                "RenderIf" : "{RenderQualiStints, Converter=StringNotEquals, Parameter=false}",
+                                "RenderIf" : "{RenderQualiStints}",
                                 "ItemStackOptions": {
                                     "ItemSource": "{Item.Stints}",
                                     "Template": {

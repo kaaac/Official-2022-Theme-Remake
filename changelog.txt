@@ -1,3 +1,13 @@
+v.0.5
+- moved render options to public_vars.json - ability to change options in GUI
+- added lineup layout
+- added team season progress (points)
+- minor changes related to public_vars usage
+- minor changes in driver/team cell components
+
+v.0.4.1
+- fixed driver/team cells in race and quali layout
+
 v.0.4
 - removed stints header in race layout
 - fixed header when sprint/main race

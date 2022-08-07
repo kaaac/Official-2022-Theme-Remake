@@ -3,17 +3,37 @@
     "PaddingLeft": 12,
     "PaddingRight": 4,
     "Items": [
-        //left part
         {
-            "BlockType": "text",
-            "MaxWidth": 300,
-            "MarginRight": 150,
-            "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+            "BlockType": "stack",
             "HorizontalAlignment": "Left",
             "VerticalAlignment": "Center",
-            "Foreground" :"{ForeGroundWhite}",
-            "FontName": "{MgMI}",
-            "FontSize": "{TableCellFontSize}"
+            "Items": [
+                //flag
+                {
+                    "BlockType": "image",
+                    "Height": 24,
+                    "MarginRight": 12,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Driver.Nationality.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    },
+                    "RenderIf": "{RenderDriverFlags}"
+                    
+                },
+                //Driver Name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 300,
+                    "MarginRight": 150,
+                    "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Foreground" :"{ForeGroundWhite}",
+                    "FontName": "{MgMI}",
+                    "FontSize": "{TableCellFontSize}"
+                }
+            ]
         },
 
         //teams block

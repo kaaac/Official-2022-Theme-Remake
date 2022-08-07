@@ -1,5 +1,5 @@
 {
-    "ShowPenaltyPointsInStandings" : true,
-    "ShowWinnerInCalendar" : true,
-    "ShowEventDescriptionInCalendar" : true
+  "RenderQualiStints": true,
+  "RenderRaceStints": true,
+  "RenderDriverFlags": true
 }
