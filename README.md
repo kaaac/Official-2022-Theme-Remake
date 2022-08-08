@@ -15,6 +15,7 @@ RacingLeagueTools/user/mods/
 ### Available render layouts:
 
 - DriverStandings (driverStandings)
+![driverStandigs](docs/images/driverStandings.png "Driver Standings")
 - Calendar (Calendar)
 - QualResults (qualResults)
 - RaceResults (raceResults)
