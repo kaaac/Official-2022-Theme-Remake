@@ -33,7 +33,14 @@
                         "HorizontalAlignment" : "Center",
                         "Foreground" : "{ForegroundRed}",
                         "Width" : "*",
-                        "FontSize" : "{TableHeaderFontSize}"
+                        "FontSize" : "{TableHeaderFontSize}",
+//                        "Triggers" :[
+//                            {
+//                                "Condition" : "{ItemIndex, Converter=NumberNotEquals, Parameter=1}",
+//                                "Property" : "HorizontalAlignment",
+//                                "Value" : "Left"
+//                            }
+//                        ]
                     },
                     "Columns": [
                         // //position

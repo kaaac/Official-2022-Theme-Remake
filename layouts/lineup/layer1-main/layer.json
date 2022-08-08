@@ -65,6 +65,9 @@
                                 "Source": "{Item.DriverRaces}",
                                 "RenderIf": "{Item.IsDriverSet}",
                                 "Width": 55,
+                                "TextOptions":{
+                                    "HorizontalAlignment" : "Center"
+                                }
                                 //"PaddingLeft" : 15
                             }
                         }                                          

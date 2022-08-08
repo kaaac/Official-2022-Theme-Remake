@@ -34,4 +34,3 @@ v.0.2
 
 ToDo:
 - tyre compound usage details (waiting for telemetry gathering update)
-- lineup renders (waiting for app update)
