@@ -17,17 +17,28 @@ RacingLeagueTools/user/mods/
 - DriverStandings (driverStandings)
 ![driverStandigs](docs/images/driverStandings.png "Driver Standings")
 - Calendar (Calendar)
+![Calendar](docs/images/calendar.png "Calendar")
 - QualResults (qualResults)
+![QualResults](docs/images/qualification.png "Qualification Results")
 - RaceResults (raceResults)
+![RaceResults](docs/images/race.png "Race Results")
 - DriverStandings (SeasonProgressPositions)
+![SeasonProgressPositions](docs/images/seasonProgressPos.png "Season Progress Positions")
 - DriverStandings (SeasonProgressPoints)
+![SeasonProgressPoints](docs/images/seasonProgressPts.png "Season Progress Points")
 - DriverStandings (SeasonProgressQualificationPositions)
+![SeasonProgressQualificationPositions](docs/images/seasonProgressQualiPos.png "Season Progress Qualification Positions")
 - TeamStandings (teamStandings)
-- TeamStandings (SeasonTeamProgressPositions)
+![TeamStandings](docs/images/teamStandings.png "Team Standings")
+- TeamStandings (SeasonTeamProgressPoints)
+![SeasonTeamProgressPoints](docs/images/seasonTeamProgressPts.png "Season Team Progress Points")
 - Lineups (Lineup)
+![Lineups](docs/images/teamStandings.png "Line-Ups")
 
 Official renders of the session results do not always have information about the tires used during the session, so it is possible to disable their display.
 Just change particular options in Theme options window.
+
+![Options](docs/images/options.png "Theme Options")
 
 
 ## License
