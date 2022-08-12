@@ -1,3 +1,7 @@
+v.0.5.1
+- enabled display league logotype (if exists) instead F1 logotype
+- added trigger to pit column in race session layout - disable source on zero value
+
 v.0.5
 - moved render options to public_vars.json - ability to change options in GUI
 - added lineup layout

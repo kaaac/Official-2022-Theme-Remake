@@ -26,7 +26,18 @@
                     "VerticalAlignment": "Center",
                     "Height": 22,
                     "MarginRight": 17,
-                    "Source": "images/f1_logo.png"
+                    "Source": "images/f1_logo.png",
+                    "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}"
+                },
+                {
+                    "Name":"LeagueLogo",
+                    "BlockType":"image",
+                    "Height":44,
+                    "Width":"auto",
+                    "MarginRight":17,
+                    "VerticalAlignment": "Center",
+                    "Source": "{Season.LeagueInfo.LeagueLogo}",
+                    "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
                 },
                 {                            
                     "BlockType": "text",

@@ -33,14 +33,7 @@
                         "HorizontalAlignment" : "Center",
                         "Foreground" : "{ForegroundRed}",
                         "Width" : "*",
-                        "FontSize" : "{TableHeaderFontSize}",
-//                        "Triggers" :[
-//                            {
-//                                "Condition" : "{ItemIndex, Converter=NumberNotEquals, Parameter=1}",
-//                                "Property" : "HorizontalAlignment",
-//                                "Value" : "Left"
-//                            }
-//                        ]
+                        "FontSize" : "{TableHeaderFontSize}"
                     },
                     "Columns": [
                         // //position
@@ -151,14 +144,14 @@
                                     "Foreground" :"{ForeGroundWhite}",
                                     "FontSize": "{TableCellFontSize}",
                                     "HorizontalAlignment": "Center"
-                                }//,
-                                //"Triggers":[
-                                //    {
-                                //        "Condition" : "{Item.PitsCount, Converter=NumberEquals, Parameter=0}",
-                                //        "Property" : "Source",
-                                //        "Value" : ""
-                                //    }
-                                //]
+                                },
+                                "Triggers":[
+                                    {
+                                        "Condition" : "{Item.PitsCount, Converter=NumberEquals, Parameter=0}",
+                                        "Property" : "Source",
+                                        "Value" : ""
+                                    }
+                                ]
                             }
                         }
                     ]
