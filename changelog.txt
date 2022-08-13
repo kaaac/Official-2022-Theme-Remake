@@ -1,3 +1,5 @@
+- added option render points on race session layouts
+
 v.0.5.1
 - enabled display league logotype (if exists) instead F1 logotype
 - added trigger to pit column in race session layout - disable source on zero value

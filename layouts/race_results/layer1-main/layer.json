@@ -153,6 +153,25 @@
                                     }
                                 ]
                             }
+                        },
+
+                        //Points
+                        {
+                            "Header": "[POINTS]",
+                            "Template":{
+                                "BlockType" :"text",
+                                "Source" : "{Item.DriverPointsString}",
+                                "HorizontalAlignment" :"Center",
+                                "VerticalAlignment" : "Center",
+                                "Width" : 90,
+                                "RenderIf" : "{RenderPointsOnRaceLayout}",
+                                "TextOptions" : {
+                                    "FontName" : "{MgMI}",
+                                    "Foreground" : "{ForeGroundWhite}",
+                                    "FontSize" : "{TableCellFontSize}",
+                                    "HorizontalAlignment" : "Center"
+                                }
+                            }
                         }
                     ]
                 }
