@@ -8,10 +8,10 @@
             ///header block
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block_progress",
+                "ComponentName" : "header_block",
                 "ComponentOptions" : {
                     "Vars" : {
-                        "displayinfo" : "Progress / Points"
+                        "headerlefttext" : "{Season.LeagueInfo.LeagueShortName} · {Season.Name} · Progress / Points"
                     }
                 }
             },
@@ -20,7 +20,8 @@
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
-            },//table
+            },
+            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",

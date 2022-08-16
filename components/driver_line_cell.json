@@ -48,7 +48,6 @@
                 {
                     "BlockType": "text",
                     "Source": "{Item.Team.Name}",
-                    //"MarginRight": 4,
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
                     "FontName": "{MgMI}",

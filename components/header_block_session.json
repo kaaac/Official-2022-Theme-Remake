@@ -13,51 +13,36 @@
         {
             "Name": "headerLeftPart",
             "BlockType": "stack",
-            "MarginLeft" : 29,
-            "MarginRight" : 20,
+            "Margin" : "{HeaderLeftMargin}",
             "Orientation": "Horizontal",
             "HorizontalAlignment": "Left",
             "VerticalAlignment" : "Center",
             "Items": [
-
                 {
-                    "Name": "f1_logo",
-                    "BlockType": "image",
-                    "VerticalAlignment": "Center",
-                    "Height": 22,
-                    "MarginRight": 17,
-                    "Source": "images/f1_logo.png",
-                    "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}"
+                    "BlockType" : "component",
+                    "ComponentName" : "f1_logo_header",
+                    "VerticalAlignment" : "Center"
                 },
                 {
-                    "Name":"LeagueLogo",
-                    "BlockType":"image",
-                    "Height":44,
-                    "Width":"auto",
-                    "MarginRight":17,
-                    "VerticalAlignment": "Center",
-                    "Source": "{Season.LeagueInfo.LeagueLogo}",
-                    "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                    "BlockType" : "component",
+                    "ComponentName" : "league_logo_header",
+                    "VerticalAlignment" : "Center"
                 },
                 {
                     "BlockType": "text",
                     "HorizontalAlignment":"Left",
                     "Source":"{Season.LeagueInfo.LeagueShortName}",
-                    "Foreground": "{ForegroundRed}",
-                    "FontName": "{MgEB}",
-                    "MarginTop" : 2,
+                    "MarginTop" : "{MarginTopHeaderText}",
                     "VerticalAlignment": "Center",
-                    "FontSize": "{HeaderLeftFontSize}"
+                    "TextOptionsExtern": "headerLeftTextOptions"
                 },
                 {
                     "BlockType": "text",
                     "HorizontalAlignment":"Left",
                     "Source": " {Session.SessionType, Converter=StringToUpperString}",
-                    "Foreground": "{ForegroundRed}",
-                    "FontName": "{MgEB}",
-                    "MarginTop" : 2,  
+                    "MarginTop" : "{MarginTopHeaderText}",  
                     "VerticalAlignment": "Center",
-                    "FontSize": "{HeaderLeftFontSize}",
+                    "TextOptionsExtern": "headerLeftTextOptions",
                     "RenderIf": false,
                     "Triggers" :[
                         {
@@ -71,11 +56,9 @@
                     "BlockType": "text",
                     "HorizontalAlignment":"Left",
                     "Source": " {Session.RaceType, Converter=StringToUpperString} RACE",
-                    "Foreground": "{ForegroundRed}",
-                    "FontName": "{MgEB}",
-                    "MarginTop" : 2,
+                    "MarginTop" : "{MarginTopHeaderText}",
                     "VerticalAlignment": "Center",
-                    "FontSize": "{HeaderLeftFontSize}",
+                    "TextOptionsExtern": "headerLeftTextOptions",
                     "RenderIf": true,
                     "Triggers" :[
                         {
@@ -89,11 +72,9 @@
                     "BlockType": "text",
                     "HorizontalAlignment":"Left",
                     "Source":" CLASSIFICATION",
-                    "Foreground": "{ForegroundRed}",
                     "VerticalAlignment": "Center",
-                    "FontName": "{MgEB}",  
-                    "MarginTop" : 2,
-                    "FontSize": "{HeaderLeftFontSize}"
+                    "MarginTop" : "{MarginTopHeaderText}",
+                    "TextOptionsExtern": "headerLeftTextOptions"
                 }
             ]
         },
@@ -142,7 +123,6 @@
                 {
                     "Name": "headerSessionLine",
                     "BlockType": "stack",
-                    //"VerticalAlignment": "Top",
                     "Orientation": "Horizontal",
                     "Spacing": 8,
                     "Items": [
@@ -181,10 +161,7 @@
                                 }
                                 
                             ]
-                        },
-                        
-
-                        
+                        }
                     ]
                 }
             ]

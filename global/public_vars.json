@@ -2,5 +2,5 @@
   "RenderQualiStints": true,
   "RenderRaceStints": true,
   "RenderDriverFlags": true,
-  "RenderPointsOnRaceLayout" : false
+  "RenderPointsOnRaceLayout": true
 }

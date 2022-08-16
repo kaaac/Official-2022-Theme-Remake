@@ -6,9 +6,15 @@
         "Orientation": "Vertical",
         "Items": [
             //header block
+            //
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block_team_standings"
+                "ComponentName" : "header_block",
+                "ComponentOptions" : {
+                    "Vars" : {
+                        "headerlefttext" : "{Season.LeagueInfo.LeagueName} · {Season.Name} · Team Standings"
+                    }
+                }
             },
 
             //separator

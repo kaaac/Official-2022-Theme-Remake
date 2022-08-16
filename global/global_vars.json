@@ -1,15 +1,5 @@
 {
-    // OPTIONS
-    "RenderQualiStints" : "true",
-    "RenderRaceStints" : "true",
-
     //fonts
-    "FontNameDefault" : "Formula1-Regular",
-    "FontNameWide" : "Formula1-Wide",
-    "FontNameBold" : "Formula1-Bold",
-    "FontSizeDefault" : 20,
-    "ForegroundDefault" : "#FFAFAFAF",    
-    "BackgroundDefault" : "#74101010",
     "MgMI":"Magistral-MediumItalic",
     "MgEB":"Magistral-ExtraBold",
     "MgBI":"Magistral-BoldItalic",
@@ -19,44 +9,25 @@
     "MarginRoot" : "0,0,0,0",
     "MarginTable" : "25,0,0,0",
     "SeparatorMargin" : "25,0,2,8",
+    "HeaderLeftMargin" : "29,0,20,0",
+    "MarginTopHeaderText" : "2",
 
     //colors
-    "ForegroundDarker" : "#FF969696",
     "ForegroundRed" : "#fe0000",
     "ForeGroundWhite" : "#ffffff",
-    "TableColumnHeaderForeground" : "#AABBBBBB",
-    "PenaltyTimeGameForeground" : "#BB7373",
-    "PenaltyTimeStewardsForeground" : "#F03232",
-    "FastestLapRaceSelectedForeground" : "#DC46DC",
-    "FastestLapRaceStickerBackground" : "#20CC00CC",
-    "DriverDayRaceStickerBackground" : "#2000CC00",
-    "FastestLapQualSelectedForeground" : "#CC25CC",
-    "StandingsPointsForeground" : "#c7c7c7",
-    "Standings1stCountForeground" : "#D2B200",
-    "Standings2ndCountForeground" : "#AEB6BF",
-    "Standings3rdCountForeground" : "#BA957B",
-    "StandingsFastestLapCountForeground" : "#C46AC4",
-    "StandingsPoleCountForeground" : "#E046E0",
-    "StandingsPenaltyPointCountForeground" : "#BC0505",
     "SeasonProgressPositionDefaultForeground" : "#999999",
     "SeasonProgressPositionNotClassifiedForeground" : "#999999",
     "SeasonProgressPositionTop10Foreground" : "#CCCCCC",
     "SeasonProgressPositionTop1Foregound" : "#DDDD11",
-    "SeasonProgressPointsForeground" : "#AFAFAF",
     "SeasonProgressPointsZeroForeground" : "#666666",
     "SeasonProgressPointsTopForeground" : "#C2C2C2",
+    "SticlerFLTimeForeGround": "#CC00CC",
+
+    //FontSizes
     "TableCellFontSize":"18",
     "TableHeaderFontSize":"14",
     "StickerHeaderFontSize": "22",
     "StickerDriverFontSize": "26",
     "StickerFLTimeFontSize": "28",
-    "SticlerFLTimeForeGround": "#CC00CC",
-    "HeaderLeftFontSize" :"34",
-    "FirstLineHeaderFontSize" : "20",
-    "SecondLineHeaderFontSize" : "25"
-
-
-
-    
-
+    "HeaderLeftFontSize" :"34"
 }

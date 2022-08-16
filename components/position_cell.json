@@ -11,6 +11,6 @@
     "Foreground": "{ForeGroundWhite}",
     "RenderIf": "{Item.ClassificationPosition, Converter=NumberNotEquals, Parameter=-1}",
     "TextOptions": {
-        "HorizontalAlignment": "Right"       
+        "HorizontalAlignment": "Center"       
     }
 }

@@ -3,115 +3,37 @@
     "Name": "headerBlock",
     "BlockType": "dock",
     "Orientation": "Horizontal",
+    "Foreground" : "{ForeGroundWhite}",
+    "MarginLeft" : 0,
+    "PaddingTop" : 7,
+    "UseBackgroundCrop": true,
+    "Width" : "*",
     "Items": [
         //headerLeft
         {
             "Name": "headerLeftPart",
             "BlockType": "stack",
-            "Orientation": "Vertical",
-            "Spacing": 12,
+            "Orientation": "Horizontal",
+            "Margin" : "{HeaderLeftMargin}",
             "HorizontalAlignment": "Left",
-            "Items": [
-                //league name
-                {
-                    "BlockType" : "stack",
-                    "VerticalAlignment" : "Center",
-                    "Items" :
-                    [
-                        {                            
-                            "BlockType": "text",
-                            "Source": "{Season.LeagueInfo.LeagueName}",                            
-                            "FontName": "{FontNameWide}",
-                            "FontSize": 20
-                        },
-                        {                            
-                            "BlockType": "text",
-                            "Source": " · {Season.Name}",
-                            "VerticalAlignment" : "Center",
-                            "FontName": "{FontNameWide}",
-                            "FontSize": 16,
-                            "Foreground" : "{ForegroundDarker}"
-                        }
-                    ]
-                },       
-
-                //main header
-                {
-                    "Name": "headerMainContent",
-                    "BlockType": "stack",
-                    "Spacing": 8,
-                    "Items": [
-                        // {                           
-                        //     "BlockType": "image",
-                        //     "Height": 36,
-                        //     "Source": ""
-                        // },
-
-                        {
-                            "BlockType": "text",                            
-                            "VerticalAlignment": "Center",                            
-                            "Source": "<header>",
-                            "FontName": "{FontNameWide}",
-                            "FontSize": 28
-                        },
-
-                        {                            
-                            "BlockType": "text",                                                                         
-                            "MarginLeft": 12,
-                            "MarginTop": 4,
-                            "VerticalAlignment": "Center",
-                            "Source": "<subHeader>",
-                            "FontName": "{FontNameWide}",
-                            "FontSize": 18
-                        }
-                    ]
-                }
-            ]
-        },
-
-        //headerRight
-        {
-            "Name": "headerRightPart",
-            "BlockType": "stack",
-            "Orientation": "Vertical",
-            "MarginLeft" : 48,
-            "HorizontalAlignment": "Right",
+            "VerticalAlignment" : "Center",
             "Items": [
                 {
-                    "BlockType": "stack",
-                    "Items": [
-                        {
-                            "BlockType": "stack",
-                            "Orientation": "Vertical",
-                            "Spacing": 8,
-                            "Items": [
-                                {
-                                    "BlockType": "text",
-                                    "HorizontalAlignment": "Right",
-                                    "Source": "[Round] {Season.SeasonCurrentNumberEvent} [of] {Season.SeasonOverallNumberEvents}",
-                                    "FontName": "{FontNameWide}",
-                                    "Foreground" : "{ForegroundDarker}",
-                                    "FontSize": 18
-                                },
-
-                                {
-                                    "BlockType": "text",
-                                    "HorizontalAlignment": "Right",
-                                    "Source": "[Season progress] {Season.SeasonProgressPercent}%",
-                                    "FontName": "{FontNameWide}",                                   
-                                    "FontSize": 18
-                                }                                
-                            ]
-                        },
-
-                        {
-                            "Name": "leagueLogo",
-                            "BlockType": "image",
-                            "Height": 82,
-                            "MarginLeft": 36,
-                            "Source": "{Season.LeagueInfo.LeagueLogo}"
-                        }
-                    ]
+                    "BlockType" : "component",
+                    "ComponentName" : "f1_logo_header",
+                    "VerticalAlignment" : "Center"
+                },
+                {
+                    "BlockType" : "component",
+                    "ComponentName" : "league_logo_header",
+                    "VerticalAlignment" : "Center"
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "<headerlefttext>",                            
+                    "MarginTop" : "{MarginTopHeaderText}",
+                    "TextOptionsExtern": "headerLeftTextOptions",
+                    "VerticalAlignment": "Center"
                 }
             ]
         }

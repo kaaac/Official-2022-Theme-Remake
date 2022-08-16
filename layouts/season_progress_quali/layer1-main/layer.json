@@ -8,10 +8,10 @@
             //header block
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block_progress",
+                "ComponentName" : "header_block",
                 "ComponentOptions" : {
                     "Vars" : {
-                        "displayinfo" : "Qualification Positions"
+                        "headerlefttext" : "{Season.LeagueInfo.LeagueShortName} · {Season.Name} · Qualification Positions"
                     }
                 }
             },
@@ -32,7 +32,6 @@
                         "BlockType": "text",
                         "MarginBottom": 8,
                         "FontSize": "{TableHeaderFontSize}",
-                        //"TextOptionsExtern": "tableColumnHeader",
                         "Foreground" : "{ForegroundRed}"
                     },
                     "Columns": [
@@ -103,10 +102,6 @@
                                     {
                                         "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
                                         "Setters": [
-                                            //{
-                                            //    "Property": "FontSize",
-                                            //    "Value": 22
-                                            //},
                                             {
                                                 "Property": "Foreground",
                                                 "Value": "{SeasonProgressPositionNotClassifiedForeground}"
@@ -122,16 +117,6 @@
                                             }
                                         ]
                                     },
-                                    // {
-                                    //     "Condition": "{Item.Position, Converter=NumberLess, Parameter=4}",
-                                    //     "Setters":
-                                    //     [
-                                    //         {
-                                    //             "Property": "Foreground",
-                                    //             "Value": "#DDDD55"
-                                    //         }
-                                    //     ]
-                                    // },
                                     {
                                         "Condition": "{Item.QualMajorPosition, Converter=NumberEquals, Parameter=1}",
                                         "Setters": [

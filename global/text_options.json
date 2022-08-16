@@ -6,9 +6,9 @@
         "HorizontalAlignment" : "Center"        
     },
     {
-        "Name" : "tableColumnHeader",
-        "FontName": "{FontNameDefault}",
-        "FontSize": 16,
-        "Foreground": "{TableColumnHeaderForeground}"        
-    },
+        "Name" : "headerLeftTextOptions",
+        "FontName": "{MgEB}",
+        "FontSize": "{HeaderLeftFontSize}",
+        "Foreground": "{ForegroundRed}"
+    }
 ]

@@ -8,7 +8,12 @@
             //header block
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block_standings"
+                "ComponentName" : "header_block",
+                "ComponentOptions" : {
+                    "Vars" : {
+                        "headerlefttext" : "{Season.LeagueInfo.LeagueName} · {Season.Name} · Driver Standings"
+                    }
+                }
             },
 
             //separator

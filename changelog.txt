@@ -1,3 +1,8 @@
+v.0.5.2
+- removed unused global variables
+- merged text block options from headers to defined TextOptionsExtern
+- removed 5 header components - merged to one universal with options
+- added 2 image components for header images - component nesting was used
 - added option render points on race session layouts
 
 v.0.5.1
