@@ -4,6 +4,7 @@ v.0.5.2
 - removed 5 header components - merged to one universal with options
 - added 2 image components for header images - component nesting was used
 - added option render points on race session layouts
+- other minor cosmetic changes 
 
 v.0.5.1
 - enabled display league logotype (if exists) instead F1 logotype
