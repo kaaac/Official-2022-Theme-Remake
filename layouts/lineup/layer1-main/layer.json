@@ -26,7 +26,6 @@
                 "Name": "mainTable",
                 "BlockType": "table",
                 "Margin": "{MarginTable}",
-                //"PaddingTop" : 8,
                 "TableOptions": {
                     "ItemsSource": "{Lineups.Lineups}",
                     "RowSpacing": 16,
@@ -34,19 +33,22 @@
                     "HeaderTemplate": {
                         "BlockType": "text",
                         "MarginBottom": 8,
-                        "FontSize": "{TableHeaderFontSize}",
-                        "Foreground" : "{ForegroundRed}",
-                        "TextAlignment" : "Left",
-                        "MarginLeft" : -10
-                        //"Width": 100
+                        "TextOptionsExtern" : "tableHeader",
+                        "TextAlignment" : "Center",
                     },
                     "Columns": [
                         {
                             "Header": "",                           
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_line_cell",
+                                "ComponentName" : "team_cell",
                                 "MarginLeft" : 25,
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "MarginRight" : "",
+                                        "RenderIf" : "{RenderTeamBadgesOnOtherLayouts}"
+                                    }
+                                }
                             }
                         },
                         //driver line
@@ -56,7 +58,7 @@
                             "MarginRight" : 24, 
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "driver_line_cell_race",
+                                "ComponentName" : "driver_cell",
                                 "RenderIf": "{Item.IsDriverSet}"
                             }
                             
@@ -73,7 +75,6 @@
                                 "TextOptions":{
                                     "HorizontalAlignment" : "Center"
                                 }
-                                //"PaddingLeft" : 15
                             }
                         }                                          
                     ]

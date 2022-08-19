@@ -1,14 +1,97 @@
 [
     {
         "Name" : "primaryNumber",
-        "FontName": "{FontNameDefault}",
-        "FontSize": 34,
-        "HorizontalAlignment" : "Center"        
+        "FontName": "{MgBI}",
+        "FontSize": "{TableCellFontSize}",
+        "Foreground" : "{ForeGroundWhite}"
     },
     {
         "Name" : "headerLeftTextOptions",
         "FontName": "{MgEB}",
         "FontSize": "{HeaderLeftFontSize}",
         "Foreground": "{ForegroundRed}"
+    },
+    {
+        "Name" : "tableHeader",
+        "FontName" : "{MgBk}",
+        "FontSize":"{TableHeaderFontSize}",
+        "Foreground":"{ForegroundRed}"
+    },
+    {
+        "Name" : "driverCell",
+        "FontName" : "{MgMI}",
+        "FontSize" : "{TableCellFontSize}",
+        "Foreground" : "{ForeGroundWhite}"
+    },
+    {
+        "Name" : "positionCell",
+        "FontName" : "{MgMe}",
+        "FontSize" : "{TableCellFontSize}",
+        "Foreground" : "{ForeGroundWhite}"
+    },
+    {
+        "Name" : "stickerHeader",
+        "FontName" : "{MgMI}",
+        "FontSize" : "{StickerHeaderFontSize}",
+        "Foreground" : "{ForeGroundWhite}"
+    },
+    {
+        "Name" : "stickerDriver",
+        "FontName" : "{MgMI}",
+        "FontSize" : "{StickerDriverFontSize}",
+        "Foreground" : "{SticlerFLTimeForeGround}"
+    },
+    {
+        "Name" : "stickerFLTime",
+        "FontName" : "{MgMI}",
+        "FontSize" : "{StickerFLTimeFontSize}",
+        "Foreground" : "{SticlerFLTimeForeGround}"
+    },
+    {
+        "Name" : "teamCell",
+        "FontName" : "{MgBo}",
+        "FontSize" : "{TableCellFontSize}",
+        "Foreground" : "{ForeGroundWhite}"
+    },
+    {
+        "Name" : "jumpCell",
+        "FontName" : "{MgBo}",
+        "FontSize" : "{TableCellFontSize}"
+    },
+    {
+        "Name" : "locationName",
+        "FontName" : "{MgBo}",
+        "FontSize" : "{LocationNameFontSize}",
+        "Foreground" : "{ForeGroundWhite}"
+    },
+    {
+        "Name" : "countryName",
+        "FontName" : "{MgMI}",
+        "FontSize" : "{CountryNameFontSize}",
+        "Foreground" : "{ForegroundRed}"
+    },
+    {
+        "Name" : "headerMiddle",
+        "FontName": "{MgMI}",
+        "Foreground": "{ForegroundRed}",
+        "FontSize": "{LocationNameFontSize}"
+    },
+    {
+        "Name" : "positionNumber",
+        "FontName": "{MgBo}",
+        "Foreground": "{ForegroundWhite}",
+        "FontSize": "{TableCellFontSize}"
+    },
+    {
+        "Name" : "calendarText",
+        "FontName": "{MgBo}",
+        "Foreground": "{ForegroundCal}",
+        "FontSize": "{TableCellFontSize}"
+    },
+    {
+        "Name" : "calendarWinner",
+        "FontName": "{MgBo}",
+        "Foreground": "{CalendarEventWinner}",
+        "FontSize": "{TableCellFontSize}"
     }
 ]

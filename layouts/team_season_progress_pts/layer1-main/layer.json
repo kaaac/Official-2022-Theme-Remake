@@ -30,8 +30,7 @@
                     "HeaderTemplate": {
                         "BlockType": "text",
                         "MarginBottom": 8,
-                        "FontSize": "{TableHeaderFontSize}",
-                        "TextOptionsExtern" : "tableColumnHeader"
+                        "TextOptionsExtern" : "tableHeader"
                     },
                     "Columns": [
                         //position
@@ -53,7 +52,13 @@
                             "WidthStretch" : true,                            
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_line_cell"   
+                                "ComponentName" : "team_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "MarginRight" : "",
+                                        "RenderIf" : "{RenderTeamBadgesOnOtherLayouts}"
+                                    }
+                                }
                             }
                         },
                          //points
@@ -69,13 +74,9 @@
                                     {
                                         "BlockType": "text",
                                         "Source": "{Item.Points}",
-                                        ///////HEEREEEE LEFT
                                         "HorizontalAlignment": "Left",
                                         "VerticalAlignment": "Center",
-                                        "Foreground" : "{ForeGroundWhite}",
-                                        "FontSize" : "{TableCellFontSize}",
-                                        "FontName": "{MgB}",
-                                        "TextOptionsExtern": "primaryNumber"
+                                        "TextOptionsExtern": "positionNumber"
                                     }
                                 ],
                                 "Triggers" :
@@ -98,7 +99,7 @@
                                 "BlockType" : "component",
                                 "PaddingLeft" : 0,                               
                                 "PaddingRight" : 12,
-                                "ComponentName" : "position_jump_cell"    
+                                "ComponentName" : "jump_cell"    
                             }
                         },//events
                         {
@@ -120,10 +121,9 @@
                                     {
                                         "BlockType": "text",
                                         "MarginBottom": 8,
-                                        "FontSize" : "{TableCellFontSize}",
                                         "HorizontalAlignment": "Center",
                                         "Source": "{Item.Track.Nation.Code}",
-                                        "Foreground" : "{ForegroundRed}"                                       
+                                        "TextOptionsExtern" : "tableHeader"
                                     }
                                 ]
                             },
@@ -134,11 +134,9 @@
                                 "Source": "{Item.PointsString}",
                                 "HorizontalAlignment": "Left",
                                 "Opacity":100,
+                                "TextOptionsExtern" : "positionNumber",
                                 "TextOptions": {
-                                    "FontName": "{MgB}",
-                                    "FontSize" : "{TableCellFontSize}",
-                                    "HorizontalAlignment": "Center",
-                                    "Foreground": "{ForeGroundWhite}"
+                                    "HorizontalAlignment": "Center"
                                 },
                                 "Triggers" : [
                                     {

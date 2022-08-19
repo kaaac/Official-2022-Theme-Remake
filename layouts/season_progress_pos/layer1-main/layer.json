@@ -49,13 +49,13 @@
                             }
                         },
 
-                        //driver line
+                        //driver with team line
                         {
                             "Header": "",
                             "MarginRight" : 24,
                             "Template": {
                                 "BlockType": "component",
-                                "ComponentName": "driver_line_cell"
+                                "ComponentName": "driver_and_team_dock"
                             }
                         },
 
@@ -74,10 +74,7 @@
                                         "Source": "{Item.Points}",
                                         "HorizontalAlignment": "Right",
                                         "VerticalAlignment": "Center",
-                                        "Foreground" : "{ForeGroundWhite}",
-                                        "FontSize" : "{TableCellFontSize}",
-                                        "FontName": "{MgB}",
-                                        "TextOptionsExtern": "primaryNumber"
+                                        "TextOptionsExtern": "teamCell"
                                     }
                                 ],
                                 "Triggers" :
@@ -101,7 +98,7 @@
                                 "BlockType" : "component",
                                 "PaddingLeft" : 0,                               
                                 "PaddingRight" : 12,
-                                "ComponentName" : "position_jump_cell"    
+                                "ComponentName" : "jump_cell"    
                             }
                         },
 
@@ -125,10 +122,9 @@
                                     {
                                         "BlockType": "text",
                                         "MarginBottom": 8,
-                                        "FontSize" : "{TableCellFontSize}",
                                         "HorizontalAlignment": "Center",
                                         "Source": "{Item.Track.Nation.Code}",
-                                        "Foreground" : "{ForegroundRed}"                                        
+                                        "TextOptionsExtern" : "tableHeader"                                        
                                     }
                                 ]
                             },
@@ -138,11 +134,9 @@
                                 "BlockType": "text",
                                 "Source": "{Item.RaceMajorPositionString}",
                                 "HorizontalAlignment": "Left",
+                                "TextOptionsExtern": "teamCell",
                                 "TextOptions": {
-                                    "FontName": "{MgB}",
-                                    "FontSize" : "{TableCellFontSize}",
-                                    "HorizontalAlignment": "Center",
-                                    "Foreground": "{ForeGroundWhite}"
+                                    "HorizontalAlignment": "Center"
                                 },
                                 "Triggers": [
                                     {

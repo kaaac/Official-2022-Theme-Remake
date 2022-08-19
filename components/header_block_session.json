@@ -86,16 +86,13 @@
             "VerticalAlignment" : "Bottom",
             "MarginRight" : 50,
             "MarginBottom" : 3,
-            //"MarginTop" : 30,
             "Items": [
                 {
                     "BlockType": "text",                                            
                     "RenderIf": false,
                     "Source": "[LAP]: {Session.TotalLaps}/{Session.TotalLaps}",
-                    "FontName": "{MgMI}",
-                    "Foreground": "{ForegroundRed}",
                     "VerticalAlignment": "Bottom",
-                    "FontSize": 22,
+                    "TextOptionsExtern": "headerMiddle",
                     "Triggers" : 
                     [
                         {
@@ -146,18 +143,14 @@
                                     "BlockType": "text",
                                     "HorizontalAlignment" : "Right",
                                     "Source": "{Session.Track.LocationName, Converter=StringToUpperString}",
-                                    "FontName": "{MgB}",                            
-                                    "FontSize": 22,
-                                    "Foreground" : "{ForeGroundWhite}"
+                                    "TextOptionsExtern": "locationName"
                                 },
                                 {
                                     "Name": "CountryName",
                                     "BlockType": "text",
                                     "HorizontalAlignment" : "Right",
                                     "Source": "#[{Session.Track.CircuitName}GP]",
-                                    "FontName": "{MgMI}",
-                                    "Foreground": "{ForegroundRed}",
-                                    "FontSize": 20
+                                    "TextOptionsExtern": "countryName"
                                 }
                                 
                             ]

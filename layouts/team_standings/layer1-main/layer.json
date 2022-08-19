@@ -31,9 +31,7 @@
                     "ItemsSource": "{Standings.Teams}",
                     "HeaderTemplate": {
                         "BlockType": "text",
-                        "Foreground" : "{ForegroundRed}",
-                        "TextOptionsExtern" : "tableColumnHeader",
-                        "FontSize" : "{TableHeaderFontSize}"
+                        "TextOptionsExtern" : "tableHeader"
                     },
                     "Columns": [
                         //position
@@ -56,7 +54,13 @@
                             "WidthStretch" : true,                            
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_line_cell"   
+                                "ComponentName" : "team_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "MarginRight" : "",
+                                        "RenderIf" : "{RenderTeamBadgesOnOtherLayouts}"
+                                    }
+                                }
                             }
                         },                        
 
@@ -75,9 +79,7 @@
                                         "Source": "{Item.Points}",
                                         "HorizontalAlignment": "Right",
                                         "VerticalAlignment": "Center",
-                                        "Foreground" : "{ForeGroundWhite}",
-                                        "FontSize": "{TableCellFontSize}",
-                                        "TextOptionsExtern": "primaryNumber"
+                                        "TextOptionsExtern": "positionNumber"
                                     }
                                 ],
                                 "Triggers" :
@@ -101,7 +103,7 @@
                                 "BlockType" : "component",
                                 "PaddingLeft" : 0,                               
                                 "PaddingRight" : 12,
-                                "ComponentName" : "position_jump_cell"    
+                                "ComponentName" : "jump_cell"    
                             }
                         },
 
@@ -113,9 +115,7 @@
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
                                 "Source" : "{Item.CountP1, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{ForeGroundWhite}",
-                                "FontSize": "{TableCellFontSize}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
                         },
                         {
@@ -125,9 +125,7 @@
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
                                 "Source" : "{Item.CountP2, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{ForeGroundWhite}",
-                                "FontSize": "{TableCellFontSize}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
                         },
                         {
@@ -137,9 +135,7 @@
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
                                 "Source" : "{Item.CountP3, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{ForeGroundWhite}",
-                                "FontSize": "{TableCellFontSize}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
                         },
 
@@ -151,9 +147,7 @@
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
                                 "Source" : "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{ForeGroundWhite}",
-                                "FontSize": "{TableCellFontSize}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
                         },
                         {
@@ -163,9 +157,7 @@
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
                                 "Source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{ForeGroundWhite}",
-                                "FontSize": "{TableCellFontSize}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
                         },                        
 
@@ -177,9 +169,7 @@
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
                                 "Source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",                                
-                                "TextOptionsExtern" : "primaryNumber",
-                                "Foreground" : "{ForeGroundWhite}",
-                                "FontSize": "{TableCellFontSize}",
+                                "TextOptionsExtern" : "positionNumber",
                                 "MarginRight":30
                             }
                         }

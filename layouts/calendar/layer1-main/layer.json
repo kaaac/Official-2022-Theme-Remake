@@ -31,8 +31,7 @@
                     "ColSpacing": 0,
                     "HeaderTemplate": {
                         "BlockType": "text",
-                        "MarginBottom": 8,
-                        "TextOptionsExtern" : "tableColumnHeader"
+                        "MarginBottom": 8
                     },
                     "Columns": [
                         //number
@@ -43,9 +42,7 @@
                                 "Source": "{Item.Position}",
                                 "HorizontalAlignment": "Center",
                                 "VerticalAlignment": "Center",
-                                "FontName": "{MgB}",
-                                "Foreground": "{ForegroundWhite}",
-                                "FontSize":"{TableCellFontSize}",
+                                "TextOptionsExtern" : "positionNumber",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
                                 }
@@ -64,7 +61,6 @@
                                     {
                                         "BlockType": "image",
                                         "Height": 56,
-                                        //"Padding" : "0, 8",
                                         "PaddingTop": 0,
                                         "PaddingBottom": 0,
                                         "MarginRight": 20,
@@ -81,9 +77,7 @@
                                         "Source": "{Item.Track.Nation.Code}",
                                         "HorizontalAlignment": "Left",
                                         "VerticalAlignment": "Center",
-                                        "FontName": "{MgB}",
-                                        "Foreground": "#B0B0B0",
-                                        "FontSize":"{TableCellFontSize}"
+                                        "TextOptionsExtern" : "calendarText"
                                     }
                                 ]
                             }
@@ -99,9 +93,7 @@
                                 "Source": "{Item.Track.CircuitName}",
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Center",
-                                "FontName": "{MgB}",
-                                "Foreground": "{ForegroundWhite}",
-                                "FontSize":"{TableCellFontSize}"
+                                "TextOptionsExtern" : "calendarText"
                             }
                         },
 
@@ -112,35 +104,10 @@
                                 "PaddingLeft": 48,
                                 "PaddingRight": 48,
                                 "Source": "{Item.Date, Converter=DateToDayOfMonth}.{Item.Date, Converter=DateToMonth}",
-                                "FontSize":"{TableCellFontSize}",
-                                "Foreground": "{ForegroundWhite}",
+                                "TextOptionsExtern" : "calendarText",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
                                 }
-                            }
-                        },
-
-                        //description
-                        {
-                            "Template": {
-                                "BlockType": "text",
-                                "RenderIf": "{ShowEventDescriptionInCalendar}",
-                                "MaxWidth": 480,
-                                "PaddingLeft": 48,
-                                "PaddingRight": 48,
-                                "Source": "{Item.Description}",
-                                "HorizontalAlignment": "Left",
-                                "VerticalAlignment": "Center",
-                                "FontName": "{MgB}",
-                                "Foreground": "#95C2C2C2",
-                                "FontSize":"{TableCellFontSize}",
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
-                                        "Property": "Foreground",
-                                        "Value": "#757575"
-                                    }
-                                ]
                             }
                         },
 
@@ -155,9 +122,7 @@
                                 "Source": "{Item.WinnerString}",
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Center",
-                                "FontName": "{MgB}",
-                                "Foreground": "#CCD2B200",
-                                "FontSize":"{TableCellFontSize}"
+                                "TextOptionsExtern" : "calendarWinner"
                             }
                         }
                     ]

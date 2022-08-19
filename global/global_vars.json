@@ -3,7 +3,9 @@
     "MgMI":"Magistral-MediumItalic",
     "MgEB":"Magistral-ExtraBold",
     "MgBI":"Magistral-BoldItalic",
-    "MgB":"Magistral-Bold",
+    "MgBo":"Magistral-Bold",
+    "MgBk":"Magistral-Book",
+    "MgMe":"Magistral-Medium",
     
     //margins
     "MarginRoot" : "0,0,0,0",
@@ -15,6 +17,7 @@
     //colors
     "ForegroundRed" : "#fe0000",
     "ForeGroundWhite" : "#ffffff",
+    "ForegroundCal" : "#B0B0B0",
     "SeasonProgressPositionDefaultForeground" : "#999999",
     "SeasonProgressPositionNotClassifiedForeground" : "#999999",
     "SeasonProgressPositionTop10Foreground" : "#CCCCCC",
@@ -22,6 +25,7 @@
     "SeasonProgressPointsZeroForeground" : "#666666",
     "SeasonProgressPointsTopForeground" : "#C2C2C2",
     "SticlerFLTimeForeGround": "#CC00CC",
+    "CalendarEventWinner" : "#CCD2B200",
 
     //FontSizes
     "TableCellFontSize":"18",
@@ -29,5 +33,7 @@
     "StickerHeaderFontSize": "22",
     "StickerDriverFontSize": "26",
     "StickerFLTimeFontSize": "28",
-    "HeaderLeftFontSize" :"34"
+    "HeaderLeftFontSize" :"34",
+    "LocationNameFontSize" : "22",
+    "CountryNameFontSize" : "20"
 }

@@ -30,9 +30,7 @@
                     "ItemsSource": "{Standings.Drivers}",
                     "HeaderTemplate": {
                         "BlockType": "text",
-                        "Foreground" : "{ForegroundRed}",
-                        "TextOptionsExtern" : "tableColumnHeader",
-                        "FontSize" : "{TableHeaderFontSize}"
+                        "TextOptionsExtern" : "tableHeader"
                     },
                     "Columns": [
                         //position
@@ -49,13 +47,13 @@
                             }
                         },
 
-                        //driver line
+                        //driver and team line
                         {
                             "Header": "",
                             "WidthStretch" : true,                            
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "driver_line_cell"   
+                                "ComponentName" : "driver_and_team_dock"   
                             }
                         },                        
 
@@ -68,15 +66,12 @@
                                 "BlockType": "dock",
                                 "PaddingLeft" : 24,
                                 "PaddingRight" : 26,
-                                //"Width": 50,
                                 "Items": [                                    
                                     {
                                         "BlockType": "text",
                                         "Source": "{Item.Points}",
                                         "HorizontalAlignment": "Right",
                                         "VerticalAlignment": "Center",
-                                        "FontSize": "{TableCellFontSize}",
-                                        "Foreground" : "{ForeGroundWhite}",
                                         "TextOptionsExtern": "primaryNumber"
                                     }
                                 ],
@@ -101,7 +96,7 @@
                                 "BlockType" : "component",
                                 "PaddingLeft" : 0,                               
                                 "PaddingRight" : 12,
-                                "ComponentName" : "position_jump_cell"    
+                                "ComponentName" : "jump_cell"    
                             }
                         },
 
@@ -113,8 +108,6 @@
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
                                 "Source" : "{Item.CountP1, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{ForeGroundWhite}",
-                                "FontSize":"{TableCellFontSize}",
                                 "TextOptionsExtern" : "primaryNumber"
                             }
                         },
@@ -124,8 +117,6 @@
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "FontSize":"{TableCellFontSize}",
-                                "Foreground" : "{ForeGroundWhite}",
                                 "Source" : "{Item.CountP2, Converter=NumberZeroToEmpty}",
                                 "TextOptionsExtern" : "primaryNumber"
                             }
@@ -136,9 +127,7 @@
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "FontSize":"{TableCellFontSize}",
                                 "Source" : "{Item.CountP3, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{ForeGroundWhite}",
                                 "TextOptionsExtern" : "primaryNumber"
                             }
                         },
@@ -150,9 +139,7 @@
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "FontSize":"{TableCellFontSize}",
                                 "Source" : "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{ForeGroundWhite}",
                                 "TextOptionsExtern" : "primaryNumber"
                             }
                         },
@@ -162,9 +149,7 @@
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "FontSize":"{TableCellFontSize}",
                                 "Source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{ForeGroundWhite}",
                                 "TextOptionsExtern" : "primaryNumber"
                             }
                         },
@@ -177,8 +162,6 @@
                                 "BlockType" : "text",
                                 "RenderIf" : "{ShowPenaltyPointsInStandings}",
                                 "Padding": "24, 0",
-                                "FontSize":"{TableCellFontSize}",
-                                "Foreground" : "{ForeGroundWhite}",
                                 "Source" : "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
                                 "TextOptionsExtern" : "primaryNumber"
                             }
@@ -191,8 +174,6 @@
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "FontSize":"{TableCellFontSize}",
-                                "Foreground" : "{ForeGroundWhite}",
                                 "Source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",                                
                                 "TextOptionsExtern" : "primaryNumber",
                                 "MarginRight":30

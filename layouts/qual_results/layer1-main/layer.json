@@ -29,22 +29,9 @@
                     "HeaderTemplate": {
                         "BlockType": "text",
                         "MarginBottom": 0,
-                        "TextOptionsExtern" : "tableColumnHeader",
+                        "TextOptionsExtern" : "tableHeader",
                         "HorizontalAlignment" : "Center",
-                        "Foreground" : "{ForegroundRed}",
-                        "Width" : "*",
-                        "FontSize" : "{TableHeaderFontSize}",
-                        //"Triggers" :[
-                        //    {
-                        //        "Condition" : "{ItemIndex, Converter=NumberLess, Parameter=2}",
-                        //        "Setters": [
-                        //            {
-                        //                "Property" : "HorizontalAlignment",
-                        //                "Value" : "Left"
-                        //            }
-                        //        ]
-                        //    }
-                        //] 
+                        "Width" : "*"
                     },
                     "Columns": [
                         //position
@@ -64,21 +51,25 @@
                         //driver line
                         {
                             "Header": "DRIVER",
-                            //"WidthStretch" : true,
                             "Template":
                             {
                                 "BlockType" : "component",
-                                "ComponentName" : "driver_line_cell_race"                                
+                                "ComponentName" : "driver_cell"                                
                             }
                         },
                         // Team
                         {
                             "Header": "TEAM",
-                            //"WidthStretch" : true,
                             "Template":
                             {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_cell"
+                                "ComponentName" : "team_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "MarginRight" : "200",
+                                        "RenderIf" : "{RenderTeamBadgesOnSessionResults}"
+                                    }
+                                }
                             }
                         },                     
 
@@ -91,10 +82,8 @@
                                 "Source": "{Item.FastestLapTime}",
                                 "MarginRight": 180,
                                 "HorizontalAlignment": "Left",
+                                "TextOptionsExtern" : "driverCell",
                                 "TextOptions": {
-                                    "FontName": "{MgMI}",
-                                    "FontSize":"{TableCellFontSize}",
-                                    "Foreground" :"{ForeGroundWhite}",
                                     "HorizontalAlignment": "Center"
                                 },
                                 "Triggers" :[
@@ -111,11 +100,8 @@
                             "Template": {
                                 "BlockType": "itemstack",
                                 "Spacing": 4,
-                                //"Padding": "12, 0",
                                 "HorizontalAlignment": "Left",
-                                //"VerticalAlignment": "Center",
                                 "MarginRight": 150,
-                                //"Height" : 17,
                                 "RenderIf" : "{RenderQualiStints}",
                                 "ItemStackOptions": {
                                     "ItemSource": "{Item.Stints}",
@@ -123,7 +109,6 @@
                                         "BlockType": "stack",
                                         "VerticalAlignment": "Top",
                                         "PaddingTop" : 7,
-                                        //"MarginRight" : 4,
                                         "HorizontalAlignment":"Center",
                                         "Spacing": 0,
                                         "Height": 17,
@@ -148,10 +133,8 @@
                                 "Padding": "6, 0",
                                 "Source": "{Item.Time}",
                                 "HorizontalAlignment": "Left",
+                                "TextOptionsExtern" : "driverCell",
                                 "TextOptions": {
-                                    "FontName": "{MgMI}",
-                                    "FontSize":"{TableCellFontSize}",
-                                    "Foreground" :"{ForeGroundWhite}",
                                     "HorizontalAlignment": "Center"
                                 },
                                 "RenderIf": true,
@@ -171,14 +154,11 @@
                                 "BlockType": "text",
                                 "Padding": "6, 0",
                                 "Source": "{Item.LapsCount}",
-                                //"MarginRight": 20,
                                 "MarginLeft": 180,
                                 "HorizontalAlignment": "Left",
                                 "Width":75,
+                                "TextOptionsExtern" : "driverCell",
                                 "TextOptions": {
-                                    "FontName": "{MgMI}",
-                                    "FontSize":"{TableCellFontSize}",
-                                    "Foreground" :"{ForeGroundWhite}",
                                     "HorizontalAlignment": "Center"
                                 }
                             }

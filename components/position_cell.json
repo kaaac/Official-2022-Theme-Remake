@@ -4,11 +4,8 @@
     "Width": 25,
     "Height": 30,
     "MarginRight" : 10,
-    //"BackgroundImage": "position_bg.png",
-    "FontName": "{MgB}",
-    "FontSize": "{TableCellFontSize}",
     "PaddingBottom" : 5,
-    "Foreground": "{ForeGroundWhite}",
+    "TextOptionsExtern": "positionCell",
     "RenderIf": "{Item.ClassificationPosition, Converter=NumberNotEquals, Parameter=-1}",
     "TextOptions": {
         "HorizontalAlignment": "Center"       

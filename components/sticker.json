@@ -10,30 +10,24 @@
             "Name" : "txt1",
             "BlockType" : "text",
             "Source" : "<header>",
-            "VerticalAlignment" : "Center",   
-            "FontName": "{MgMI}",
-            "Foreground" :"{ForeGroundWhite}",
-            "FontSize": "{StickerHeaderFontSize}"
+            "VerticalAlignment" : "Center",
+            "TextOptionsExtern": "stickerHeader"
         },
 
         {
             "Name" : "txt1",
             "BlockType" : "text",
             "Source" : "<main>",
-            "VerticalAlignment" : "Center",   
-            "FontName": "{MgMI}",
-            "Foreground" :"{SticlerFLTimeForeGround}",
-            "FontSize": "{StickerDriverFontSize}"
+            "VerticalAlignment" : "Center",
+            "TextOptionsExtern": "stickerDriver"
         },
 
         {
             "Name" : "txt1",
             "BlockType" : "text",
             "Source" : "<data>",
-            "VerticalAlignment" : "Center",   
-            "FontName": "{MgMI}",
-            "Foreground" :"{SticlerFLTimeForeGround}",
-            "FontSize": "{StickerFLTimeFontSize}"         
+            "VerticalAlignment" : "Center",
+            "TextOptionsExtern": "stickerFLTime"       
         }
     ]
 }

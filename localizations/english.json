@@ -14,6 +14,10 @@
     "Time" : "Time",
     "Laps" : "Laps",
     "DNF" : "OUT",
+    "QTRegular" : "Qual |",
+    "RTSprint":"Sprint |",
+    "RTMain": "Race",
+    "RTRegular" : "Race",
 
     "Paul RicardGP" : "FrenchGP",
     "AustinGP" : "USGP",

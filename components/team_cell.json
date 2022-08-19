@@ -1,23 +1,38 @@
+{
+    "BlockType": "dock",
+    "MarginRight": "<MarginRight>",
+    "VerticalAlignment" : "Center",
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //logo
                 {
-                    "BlockType": "stack",
+                    "BlockType": "image",
+                    "MarginLeft" : 5,
+                    "Height": 35,
+                    "MarginRight": 10,
                     "VerticalAlignment": "Center",
-                    "Spacing": 4,
-                    "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
-                    "Items": [
-                        //name
-                        {
-                            "BlockType": "text",
-                            "Source": "{Item.Team.Name}",
-                            "MarginRight": 200,
-                            "HorizontalAlignment": "Left",
-                            "VerticalAlignment": "Center",
-                            "FontName": "{MgB}",
-                            "Foreground" :"{ForeGroundWhite}",
-                            "FontSize": "{TableCellFontSize}",
-                            "TextOptions": {
-                                "VerticalAlignment": "Center"
-                            }
-                            
-                        }
-                    ]
-                }
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    },
+                    "RenderIf" : "<RenderIf>"
+                },
+
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Team.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "TextOptionsExtern": "teamCell" 
+                }               
+            ]
+        }
+    ]
+}

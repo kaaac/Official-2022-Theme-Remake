@@ -1,3 +1,11 @@
+v.0.5.3
+- reogranized components
+- moved text options from layouts to file text_options
+- fixed alignment of driver flag
+- added 3 more public_vars visible on theme options window
+- removed event description from calendar layout
+- other minor cosmetic changes
+
 v.0.5.2
 - removed unused global variables
 - merged text block options from headers to defined TextOptionsExtern

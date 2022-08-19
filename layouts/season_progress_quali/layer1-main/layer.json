@@ -30,9 +30,7 @@
                     "ItemsSource": "{Standings.Drivers}",
                     "HeaderTemplate": {
                         "BlockType": "text",
-                        "MarginBottom": 8,
-                        "FontSize": "{TableHeaderFontSize}",
-                        "Foreground" : "{ForegroundRed}"
+                        "MarginBottom": 8
                     },
                     "Columns": [
                         //position
@@ -49,13 +47,13 @@
                             }
                         },
 
-                        //driver line
+                        //driver and team line
                         {
                             "Header": "",
                             "MarginRight" : 24,
                             "Template": {
                                 "BlockType": "component",
-                                "ComponentName": "driver_line_cell"
+                                "ComponentName": "driver_and_team_dock"
                             }
                         },
 
@@ -79,10 +77,9 @@
                                     {
                                         "BlockType": "text",
                                         "MarginBottom": 8,
-                                        "FontSize" : "{TableCellFontSize}",
                                         "HorizontalAlignment": "Center",
                                         "Source": "{Item.Track.Nation.Code}",
-                                        "Foreground" : "{ForegroundRed}"                                        
+                                        "TextOptionsExtern" : "tableHeader"                                       
                                     }
                                 ]
                             },
@@ -92,11 +89,9 @@
                                 "BlockType": "text",
                                 "Source": "{Item.QualMajorPositionString}",
                                 "HorizontalAlignment": "Left",
+                                "TextOptionsExtern" : "positionCell",
                                 "TextOptions": {
-                                    "FontName": "{MgB}",
-                                    "FontSize" : "{TableCellFontSize}",
                                     "HorizontalAlignment": "Center",
-                                    "Foreground": "{ForeGroundWhite}"
                                 },
                                 "Triggers": [
                                     {

@@ -6,12 +6,12 @@
         //flag
         {
             "BlockType": "image",
-            "Height": 24,
+            "Height": 19,
             "MarginRight": 12,
+            "PaddingBottom" : 4,
             "VerticalAlignment": "Center",
             "ImageOptions": {
                 "Path": "{Item.Driver.Nationality.LogoPath}",
-                "VerticalAlignment": "Center"
             },
             "RenderIf": "{RenderDriverFlags}"
         },
@@ -19,12 +19,10 @@
             "BlockType": "text",
             "MaxWidth": 300,
             "MarginRight": 150,
+            "TextOptionsExtern": "driverCell",
             "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
             "HorizontalAlignment": "Left",
-            "VerticalAlignment": "Center",
-            "Foreground" :"{ForeGroundWhite}",
-            "FontName": "{MgMI}",
-            "FontSize": "{TableCellFontSize}"
+            "VerticalAlignment": "Center"
         }
     ]
 }

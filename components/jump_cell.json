@@ -33,8 +33,7 @@
                     "Source": "{Item.PositionJump, Converter=NumberAbs}",                            
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment" : "Center",
-                    "FontName": "{MgB}",
-                    "FontSize": 18,
+                    "TextOptionsExtern": "jumpCell",
                     "TextOptions": {
                         "HorizontalAlignment": "Center"
                     },
