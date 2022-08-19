@@ -26,5 +26,19 @@
     "HungaroringGP" : "HungarianGP",
     "MonzaGP" : "ItalianGP",
     "Yas MarinaGP" : "YasMarinaGP",
-    "BarcelonaGP" : "SpanishGP"
+    "BarcelonaGP" : "SpanishGP",
+    "SuzukaGP" : "JapagneseGP",
+    "SpielbergGP" : "AustrianGP",
+    "ZandvoortGP" : "DutchGP",
+    "Spa-FrancorchampsGP" : "BelgianGP",
+    "BakuGP" : "AzerbaijanGP",
+    //BahrainGP is ok :)
+    "JeddahGP" : "SaudiArabianGP",
+    //ImolaGP is ok :D
+    //MonacoGP too
+    //MexicoGP also ok
+    "MontrealGP" : "CanadianGP",
+    "ShanghaiGP" : "ChinaGP",
+    "PortimãoGP" : "PortimaoGP",
+    //SingaporeGP ok
 }
