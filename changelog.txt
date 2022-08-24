@@ -1,3 +1,9 @@
+v.0.5.4
+- added all hashtags for race headers
+- removed unused fonts
+- disabled laps column on qual results if not live data
+- minor fixes
+
 v.0.5.3
 - reogranized components
 - moved text options from layouts to file text_options

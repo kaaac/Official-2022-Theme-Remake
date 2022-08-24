@@ -158,6 +158,7 @@
                                 "HorizontalAlignment": "Left",
                                 "Width":75,
                                 "TextOptionsExtern" : "driverCell",
+                                "RenderIf" : "{Session.IsLiveData}",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
                                 }
