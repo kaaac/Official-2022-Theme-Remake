@@ -1,0 +1,36 @@
+//header block
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Vertical",
+    "Foreground" : "{ForegroundRed}",
+    "Width" : "*",
+    "Items": [
+        {
+            "Name": "f1_logo",
+            "BlockType": "image",
+            "Height": 44,
+            "HorizontalAlignment" : "Center",
+            "Source": "images/f1_logo.png",
+            "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}"
+        },
+        {
+            "Name":"LeagueLogo",
+            "BlockType":"image",
+            "Height":88,
+            "Width":"auto",
+            "HorizontalAlignment" : "Center",
+            "Source": "{Season.LeagueInfo.LeagueLogo}",
+            "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+        },
+        //headerLeft
+        {
+            "BlockType": "text",
+            "Source" : "{Season.Name, converter=StringToUpperString} · CALENDAR",
+            "FontSize" : 45,
+            "FontName" : "{MgEB}",
+            "Foreground" : "{ForegroundRed}",
+            "HorizontalAlignment": "Center",
+        }
+    ]
+}

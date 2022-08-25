@@ -1,3 +1,5 @@
+v.0.5.5
+
 v.0.5.4
 - added all hashtags for race headers
 - removed unused fonts

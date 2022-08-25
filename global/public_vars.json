@@ -5,5 +5,6 @@
   "RenderPointsOnRaceLayout": true,
   "RenderTeamBadgesOnSessionResults": false,
   "RenderTeamBadgesOnOtherLayouts": true,
-  "ShowWinnerInCalendar": true
+  "ShowWinnerInCalendar": true,
+  "SecondCalendarEventsInColumn": 11
 }

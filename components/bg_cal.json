@@ -1,0 +1,10 @@
+{
+    "Name": "bg-cal",
+    "BlockType": "shape", 
+    "Width": 5000,
+    "Height" : 5000,
+    "ShapeOptions": {
+        "ShapeType" : "rectangle",
+        "Fill": "#0a0a0a"
+    }
+}

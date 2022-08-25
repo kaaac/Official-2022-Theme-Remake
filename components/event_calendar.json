@@ -1,0 +1,131 @@
+{
+    "BlockType" : "stack",
+    "Witdh" : "*",
+    "Orientation" : "Vertical",
+    "Items" : [
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "Width" : "auto",
+            "Height" : 60,
+            "MarginTop" : 5,
+            "MarginBottom" : 5,
+            "Items" : [
+                //left
+                {
+                    "BlockType" : "stack",
+                    "Width" : 75,
+                    "Orientation" : "Vertical",
+                    "MarginRight" : 20,
+                    "Items" : [
+                        {
+                            "BlockType" : "dock",
+                            "Orientation" : "Horizontal",
+                            "Width" : "",
+                            "Height" : 45,
+                            "Items" :[
+                                {
+                                    "BlockType" :"text",
+                                    "Foreground" : "{ForeGroundWhite}",
+                                    "FontName" : "{MgMe}",
+                                    "FontSize" : 25,
+                                    "Source" : "0",
+                                    "RenderIf" : "{Item.Position, Converter=NumberLess, Parameter=10}",
+                                    "HorizontalAlignment" : "Left",
+                                    "VerticalAlignment" : "Center"
+                                },
+                                {
+                                    "BlockType" :"text",
+                                    "Foreground" : "{ForeGroundWhite}",
+                                    "FontName" : "{MgMe}",
+                                    "FontSize" : 25,
+                                    "Source" : "{Item.Position}",
+                                    "HorizontalAlignment" : "Left",
+                                    "VerticalAlignment" : "Center",
+                                    "MarginRight" : 10
+                                },
+                                {
+                                    "BlockType" : "image",
+                                    "HorizontalAlignment" : "Right",
+                                    "VerticalAlignment" : "Center",
+                                    "Height" : 36,
+                                    "PaddingBottom" : 6,
+                                    "ImageOptions": {
+                                        "Path": "{Item.Track.Nation.LogoPath}"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "text",
+                            "Foreground" : "{ForeGroundWhite}",
+                            "FontName" : "{MgMe}",
+                            "MarginTop" : -5,
+                            "HorizontalAlignment": "Left",
+                            "Source" : "{Item.Date, Converter=DateToDayOfMonth}.{Item.Date, Converter=DateToMonth}"
+                        }
+                    ]
+                },
+                //right
+                {
+                    "BlockType" : "stack",
+                    "Width" : "*",
+                    "Orientation" : "Vertical",
+                    "Items" : [
+                        {
+                            "BlockType": "text",
+                            "Foreground" : "{ForegroundRed}",
+                            "FontName" : "{MgEB}",
+                            "VerticalAlignment": "Top",
+                            "FontSize" : 20,
+                            "PaddingTop" : 10,
+                            "Source" : "{Item.Track.CountryName, Converter=StringToUpperString}"
+                        },
+                        {
+                            "BlockType" : "dock",
+                            "Orientation" : "Horizontal",
+                            "VerticalAlignment" : "Top",
+                            "Width" : "*",
+                            "Items" : [
+                                {
+                                    "BlockType": "text",
+                                    "Foreground" : "{ForeGroundWhite}",
+                                    "HorizontalAlignment": "Left",
+                                    "FontName" : "{MgMe}",
+                                    "FontSize" : 20,
+                                    "Source" : "{Item.Track.CircuitName, Converter=StringToUpperString}"
+                                },
+                                {
+                                    "BlockType":"itemstack",
+                                    "Orientation" : "Horizontal",
+                                    "HorizontalAlignment":"Right",
+                                    "ItemStackOptions" : {
+                                        "ItemSource" : "{Item.Races}",
+                                        "Template" : {
+                                            "BlockType" : "text",
+                                            "Source" : "[R{Item.RaceType}]",
+                                            "HorizontalAlignment" : "Right",
+                                            "Foreground" : "{ForegroundRed}",
+                                            "FontName" : "{MgEB}",
+                                            "FontSize" : 20,
+                                            "RenderIf" : "{Item.RaceType, converter=StringEquals, parameter=Sprint}"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "shape",
+            "Width" : "420",
+            "Height" : 3,
+            "ShapeOptions" : {
+                "ShapeType" : "rectangle",
+                "Fill" : "#903735"
+            }
+        }
+    ]
+}

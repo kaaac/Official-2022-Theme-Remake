@@ -1,0 +1,50 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "25,25,25,25",       
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_cal"
+            },
+
+            {
+                "BlockType" : "dock",
+                "Orientation" : "Horizontal",
+                "Width" : "*",
+                "Items" : [
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "MarginRight" : 25,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Events.Events}",
+                            "Limit" : "{SecondCalendarEventsInColumn}",
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "event_calendar"
+                            }
+                        }
+                        
+                    },
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Events.Events}",
+                            "Limit" : "{SecondCalendarEventsInColumn}",
+                            "IndexStart" : "{SecondCalendarEventsInColumn}",
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "event_calendar"
+                            }
+                        }
+                        
+                    }
+                ]
+            }
+        ]
+    }
+}
