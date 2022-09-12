@@ -71,7 +71,7 @@
                 {
                     "BlockType": "text",
                     "HorizontalAlignment":"Left",
-                    "Source":" CLASSIFICATION",
+                    "Source":" [CLASSIFICATION]",
                     "VerticalAlignment": "Center",
                     "MarginTop" : "{MarginTopHeaderText}",
                     "TextOptionsExtern": "headerLeftTextOptions"

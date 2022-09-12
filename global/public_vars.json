@@ -1,9 +1,9 @@
 {
-  "RenderQualiStints": false,
+  "RenderQualiStints": true,
   "RenderRaceStints": true,
   "RenderDriverFlags": true,
   "RenderPointsOnRaceLayout": true,
-  "RenderTeamBadgesOnSessionResults": false,
+  "RenderTeamBadgesOnSessionResults": true,
   "RenderTeamBadgesOnOtherLayouts": true,
   "ShowWinnerInCalendar": true,
   "SecondCalendarEventsInColumn": 11

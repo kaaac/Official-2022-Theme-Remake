@@ -11,7 +11,7 @@
                 "ComponentName" : "header_block",
                 "ComponentOptions" : {
                     "Vars" : {
-                        "headerlefttext" : "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString}  ·  {Season.Name, Converter=StringToUpperString}  LINE-UP"
+                        "headerlefttext" : "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString}  ·  {Season.Name, Converter=StringToUpperString}  [LINE-UP]"
                     }
                 }
             },
@@ -65,7 +65,7 @@
                         },
                         // races count
                         {
-                            "Header": "RACES",
+                            "Header": "[RACES]",
                             "Template":
                             {
                                 "BlockType": "text",

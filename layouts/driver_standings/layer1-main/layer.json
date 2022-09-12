@@ -11,7 +11,7 @@
                 "ComponentName" : "header_block",
                 "ComponentOptions" : {
                     "Vars" : {
-                        "headerlefttext" : "{Season.LeagueInfo.LeagueName} · {Season.Name} · Driver Standings"
+                        "headerlefttext" : "{Season.LeagueInfo.LeagueName} · {Season.Name} · [Driver Standings]"
                     }
                 }
             },
@@ -59,7 +59,7 @@
 
                         //points
                         {
-                            "Header": "      PTS",
+                            "Header": "      [PTS]",
                             "MarginLeft" : 0,
                             "Template": {
                                 
@@ -102,7 +102,7 @@
 
                         //podiums
                         {
-                            "Header" : "Wins",
+                            "Header" : "[Wins]",
                             "MarginLeft" : 20,
                             "Template":{
                                 "BlockType" : "text",
@@ -112,7 +112,7 @@
                             }
                         },
                         {
-                            "Header" : "2nd",
+                            "Header" : "[2nd]",
                             "MarginLeft" : 0,
                             "Template":{
                                 "BlockType" : "text",
@@ -122,7 +122,7 @@
                             }
                         },
                         {
-                            "Header" : "3rd",
+                            "Header" : "[3rd]",
                             "MarginLeft" : 0,
                             "Template":{
                                 "BlockType" : "text",
@@ -134,7 +134,7 @@
 
                         //stats
                         {
-                            "Header" : "FL",
+                            "Header" : "[FL]",
                             "MarginLeft" : 12,
                             "Template":{
                                 "BlockType" : "text",
@@ -144,7 +144,7 @@
                             }
                         },
                         {
-                            "Header" : "Poles",
+                            "Header" : "[Poles]",
                             "MarginLeft" : 0,
                             "Template":{
                                 "BlockType" : "text",
@@ -156,7 +156,7 @@
 
                         //penalty points
                         {
-                            "Header" : "Pen. pts",                            
+                            "Header" : "[Pen. pts]",                            
                             "MarginLeft" : 16,
                             "Template":{
                                 "BlockType" : "text",
@@ -169,7 +169,7 @@
 
                         //events
                         {
-                            "Header" : "Events",
+                            "Header" : "[Events]",
                             "MarginLeft" : 12,
                             "Template":{
                                 "BlockType" : "text",

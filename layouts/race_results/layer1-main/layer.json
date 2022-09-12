@@ -50,7 +50,7 @@
 
                         //driver line
                         {
-                            "Header": "DRIVER",
+                            "Header": "[DRIVER]",
                             "Template":
                             {
                                 "BlockType" : "component",
@@ -59,7 +59,7 @@
                         },
                         // Team
                         {
-                            "Header": "TEAM",
+                            "Header": "[TEAM]",
                             "Template":
                             {
                                 "BlockType" : "component",
@@ -72,7 +72,29 @@
                                 }                              
                             }
                         },
-
+                        //time
+                        {
+                            "Header": "[FL TIME]",
+                            "Template": {
+                                "BlockType": "text",
+                                "Padding": "6, 0",
+                                "Source": "{Item.FastestLapTime}",
+                                "MarginRight": 180,
+                                "HorizontalAlignment": "Left",
+                                "TextOptionsExtern" : "driverCell",
+                                //"RenderIf" : "{Session.IsLiveData}",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "Triggers" :[
+                                    {
+                                        "Condition" : "{Item.FastestLapTime, Converter=EmptyObjectToTrue}",
+                                        "Property" : "Source",
+                                        "Value" : "--:--.---"
+                                    }
+                                ] 
+                            }
+                        },
                         //GAP
                         {
                             "Header": "[GAP]",
@@ -188,7 +210,7 @@
                         "RenderIf" : "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
                         "ComponentOptions" : {
                             "Vars" : {
-                                "header" : "Fastest Lap:",
+                                "header" : "[Fastest Lap]:",
                                 "main" : "{Session.FastestLapDriver.Name}",
                                 "data" : "{Session.FastestLapTime}"
                             }
@@ -201,7 +223,7 @@
                         "RenderIf" : "{Session.DriverDayDriver, Converter=EmptyObjectToFalse}",
                         "ComponentOptions" : {
                             "Vars" : {
-                                "header" : "Driver of the Day:",
+                                "header" : "[Driver of the Day]:",
                                 "main" : "{Session.DriverDayDriver.Name}",
                                 "data" : ""
                             }

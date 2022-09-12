@@ -9,7 +9,7 @@
     
     //margins
     "MarginRoot" : "0,0,0,0",
-    "MarginTable" : "25,0,0,0",
+    "MarginTable" : "25,0,15,0",
     "SeparatorMargin" : "25,0,2,8",
     "HeaderLeftMargin" : "29,0,20,0",
     "MarginTopHeaderText" : "2",

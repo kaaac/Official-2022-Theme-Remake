@@ -50,7 +50,7 @@
 
                         //driver line
                         {
-                            "Header": "DRIVER",
+                            "Header": "[DRIVER]",
                             "Template":
                             {
                                 "BlockType" : "component",
@@ -59,7 +59,7 @@
                         },
                         // Team
                         {
-                            "Header": "TEAM",
+                            "Header": "[TEAM]",
                             "Template":
                             {
                                 "BlockType" : "component",
@@ -75,7 +75,7 @@
 
                         //time
                         {
-                            "Header": "LAP TIME",
+                            "Header": "[LAP TIME]",
                             "Template": {
                                 "BlockType": "text",
                                 "Padding": "6, 0",
@@ -83,6 +83,7 @@
                                 "MarginRight": 180,
                                 "HorizontalAlignment": "Left",
                                 "TextOptionsExtern" : "driverCell",
+                                "RenderIf" : "{Session.IsLiveData}",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
                                 },
@@ -91,12 +92,17 @@
                                         "Condition" : "{RenderQualiStints}",
                                         "Property" : "MarginRight",
                                         "Value" : 0
+                                    },
+                                    {
+                                        "Condition" : "{Item.FastestLapTime, Converter=EmptyObjectToTrue}",
+                                        "Property" : "Source",
+                                        "Value" : "--:--.---"
                                     }
                                 ] 
                             }
                         },
                         {
-                            "Header": "STINTS",
+                            "Header": "[STINTS]",
                             "Template": {
                                 "BlockType": "itemstack",
                                 "Spacing": 4,
@@ -127,7 +133,7 @@
                         },                                  
                         //Gap
                         {
-                            "Header": "GAP",
+                            "Header": "[TIME/GAP]",
                             "Template": {
                                 "BlockType": "text",
                                 "Padding": "6, 0",
@@ -140,16 +146,32 @@
                                 "RenderIf": true,
                                 "Triggers" :[
                                     {
-                                        "Condition" : "{Item.Index, Converter=NumberEquals, Parameter=0}",
-                                        "Property" : "RenderIf",
-                                        "Value" : false
+                                        "Condition" : "{Item.Time, Converter=EmptyObjectToTrue}",
+                                        "Property" : "Source",
+                                        "Value" : "--:--.---"
                                     }
                                 ]
                             }
                         },
+                        //penalties
+                        {
+                            "Header" : "[PLACE PEN.]",
+                            "Template" : {
+                                "BlockType" : "text",
+                                "Source" : "+{Item.PenaltyPosIngame}",
+                                "RenderIf" : "{Item.PenaltyPosIngame, Converter=NumberNotEquals, Parameter=0}",
+                                "Width" :85,
+                                "TextOptionsExtern":"PenPos",
+                                "MarginLeft": 80,
+                                "HorizontalAlignment":"Center",
+                                "TextOptions" : {
+                                    "HorizontalAlignment" : "Center",
+                                }
+                            }
+                        },
                         //laps
                         {
-                            "Header": "LAPS",
+                            "Header": "[LAPS]",
                             "Template": {
                                 "BlockType": "text",
                                 "Padding": "6, 0",

@@ -24,6 +24,12 @@
         "Foreground" : "{ForeGroundWhite}"
     },
     {
+        "Name" : "PenPos",
+        "FontName" : "{MgMI}",
+        "FontSize" : "{TableCellFontSize}",
+        "Foreground" : "{ForegroundRed}"
+    },
+    {
         "Name" : "positionCell",
         "FontName" : "{MgMe}",
         "FontSize" : "{TableCellFontSize}",
