@@ -74,7 +74,8 @@
                     "Source":" [CLASSIFICATION]",
                     "VerticalAlignment": "Center",
                     "MarginTop" : "{MarginTopHeaderText}",
-                    "TextOptionsExtern": "headerLeftTextOptions"
+                    "TextOptionsExtern": "headerLeftTextOptions",
+                    "RenderIf" : "{Metadata.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}"
                 }
             ]
         },
@@ -86,6 +87,7 @@
             "VerticalAlignment" : "Bottom",
             "MarginRight" : 50,
             "MarginBottom" : 3,
+            "RenderIf" : "{Metadata.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}",
             "Items": [
                 {
                     "BlockType": "text",                                            

@@ -26,7 +26,7 @@
         //headerLeft
         {
             "BlockType": "text",
-            "Source" : "{Season.Name, converter=StringToUpperString} · CALENDAR",
+            "Source" : "{Season.Name, converter=StringToUpperString} · [CALENDAR]",
             "FontSize" : 45,
             "FontName" : "{MgEB}",
             "Foreground" : "{ForegroundRed}",

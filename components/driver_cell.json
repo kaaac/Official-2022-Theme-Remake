@@ -22,7 +22,24 @@
             "TextOptionsExtern": "driverCell",
             "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
             "HorizontalAlignment": "Left",
-            "VerticalAlignment": "Center"
+            "VerticalAlignment": "Center",
+            "Triggers" : [
+                {
+                    "Condition" : "{Metadata.RenderType, Converter=StringEquals, Parameter=DriverSeasonStatistics}",
+                    "ConditionOr" : "{Metadata.RenderType, Converter=StringEquals, Parameter=DriverSessionStatistics}",
+                    "Setters" : [
+                        {
+                            "Property" : "MarginRight",
+                            "Value" : "0"
+                        },
+                        {
+                            "Property" : "MaxWidth",
+                            "Value" : ""
+                        }
+                    ]
+                    
+                }
+            ]
         }
     ]
 }

@@ -42,7 +42,9 @@
     "RSprint" : "SPRINT",
     "Driver of the Day" : "Driver of the Day",
     
+    // DO NOT TRANSLATE LINES BELOW - COPY TO YOUR LANGUAGE BUT NOT CHANGE
     // Hash Tags for header
+
     "Paul RicardGP" : "FrenchGP",
     "AustinGP" : "USGP",
     "InterlagosGP" : "BrazilGP",
@@ -63,6 +65,6 @@
     //MexicoGP also ok
     "MontrealGP" : "CanadianGP",
     "ShanghaiGP" : "ChinaGP",
-    "PortimãoGP" : "PortimaoGP"
+    "PortimãoGP" : "PortimaoGP",
     //SingaporeGP ok
 }

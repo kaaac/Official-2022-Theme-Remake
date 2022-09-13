@@ -1,0 +1,40 @@
+{
+    "BlockType": "dock",
+    "Width": "13",
+    "Height": "auto",
+    "Margin": "0,0,0,0",
+    "Padding" : "30,0,30,0",
+    "RenderIf" : "{Statistics.Description, Converter=EmptyObjectToFalse}",
+    "Items": [
+        {
+            "BlockType": "text",
+            "Width": "*",
+            "Foreground": "{ForeGroundWhite}",
+            "Padding" : "10,10,10,0",
+            "Source": "{Statistics.Description}",
+            "HorizontalAlignment": "Center",
+            "TextOptions": {
+                "FontSize": 15,
+                "Wrap": true,
+                "HorizontalAlignment": "Center"
+            }
+        }
+    ],
+    "Triggers" : [
+        {
+            "Condition" : "{Metadata.RenderDataType, Converter=StringEquals, Parameter=PureRacePaceRating}",
+            "Property" : "Height",
+            "Value" : "300"
+        },
+        {
+            "Condition" : "{Metadata.RenderDataType, Converter=StringEquals, Parameter=ConsistancyRating}",
+            "Property" : "Height",
+            "Value" : "290"
+        },
+        {
+            "Condition" : "{Metadata.RenderDataType, Converter=StringEquals, Parameter=LongestStintsRating}",
+            "Property" : "Height",
+            "Value" : "80"
+        }
+    ]
+}

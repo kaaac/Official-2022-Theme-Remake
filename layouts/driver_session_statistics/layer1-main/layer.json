@@ -1,0 +1,254 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Width" : "*",
+        "Items": [
+            ///header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_session"
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Statistics.Header}",                            
+                "MarginTop" : "{MarginTopHeaderText}",
+                "HorizontalAlignment" : "Center",
+                "VerticalAlignment": "Center",
+                "TextOptions" : {
+                    "FontSize" : 25,
+                    "HorizontalAlignment" : "Center",
+                    "FontName": "{MgEB}",
+                    "Foreground": "{ForegroundRed}"
+                },
+                "Triggers": [
+                    {
+                        "Condition" : "{Statistics.SubHeader, Converter=EmptyObjectToFalse}",
+                        "Property" : "Source",
+                        "Value" : "{Statistics.Header} · {Statistics.SubHeader}"
+                    }
+                ]
+            },
+            //separator
+            {
+                "BlockType" : "component",
+                "ComponentName" : "separator"
+            },
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "0,0,0,0",
+                "Padding" : "30,0,30,0",
+                "TableOptions": {
+                    "ItemsSource": "{Statistics.Drivers}",
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 8,
+                        "TextOptionsExtern": "tableHeader"
+                    },
+                    "Columns": [
+                        // //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "position_cell",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "position": "{Item.Position}"
+                                    }
+                                }
+                            }
+                        },
+
+                        //driver line
+                        {
+                            "Header": "",
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "driver_cell"
+                            }
+                        },
+
+                        //column 0
+                        {
+                            "Header": "{Statistics.Column0.Header}",
+                            "IsSeparator": "{Statistics.Column0.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column0.GroupId}",
+                            "WidthStretch": true,
+                            "MarginLeft": 8,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value0"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 1
+                        {
+                            "Header": "{Statistics.Column1.Header}",
+                            "IsSeparator": "{Statistics.Column1.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column1.GroupId}",
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value1"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 2
+                        {
+                            "Header": "{Statistics.Column2.Header}",
+                            "WidthStretch": true,
+                            "IsSeparator": "{Statistics.Column2.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column2.GroupId}",
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value2"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 3
+                        {
+                            "Header": "{Statistics.Column3.Header}",
+                            "WidthStretch": true,
+                            "IsSeparator": "{Statistics.Column3.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column3.GroupId}",
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value3"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 4
+                        {
+                            "Header": "{Statistics.Column4.Header}",
+                            "IsSeparator": "{Statistics.Column4.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column4.GroupId}",
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value4"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 5
+                        {
+                            "Header": "{Statistics.Column5.Header}",
+                            "IsSeparator": "{Statistics.Column5.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column5.GroupId}",
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value5"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 6
+                        {
+                            "Header": "{Statistics.Column6.Header}",
+                            "IsSeparator": "{Statistics.Column6.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column6.GroupId}",
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value6"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 7
+                        {
+                            "Header": "{Statistics.Column7.Header}",
+                            "IsSeparator": "{Statistics.Column7.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column7.GroupId}",
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value7"
+                                    }
+                                }
+                            }
+                        },
+
+                        //column 8
+                        {
+                            "Header": "{Statistics.Column8.Header}",
+                            "IsSeparator": "{Statistics.Column8.Type, Converter=EnumEquals, Parameter=Separator}",
+                            "GroupId": "{Statistics.Column8.GroupId}",
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "Name": "statist",
+                                "ComponentOptions": {
+                                    "ComponentName": "statistics_cell",
+                                    "Vars": {
+                                        "data": "Item.Value8"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+             //footer
+            {
+                "BlockType" : "component",
+                "ComponentName" : "statistics_dock"
+            },
+            //bg-footer
+            {
+                "BlockType" : "component",
+                "ComponentName" : "bg_footer"
+            }
+        ]
+    }
+}

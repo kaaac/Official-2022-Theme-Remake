@@ -1,7 +1,7 @@
 {
   "RenderQualiStints": true,
   "RenderRaceStints": true,
-  "RenderDriverFlags": true,
+  "RenderDriverFlags": false,
   "RenderPointsOnRaceLayout": true,
   "RenderTeamBadgesOnSessionResults": true,
   "RenderTeamBadgesOnOtherLayouts": true,

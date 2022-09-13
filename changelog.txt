@@ -1,3 +1,7 @@
+v.0.6.0
+- added support for layout templates: driver_session_statistics and driver_season_statistics (premium statistics renders and more)
+- translation ready at most of strings - copy /localizations/english.json, to your language file and just translate values. (Translation statistics headers and descriptions not available yet)
+
 v.0.5.6
 - enabled display time of quali winner in time/gap column
 - added placeholder when driver not set time - in time columns

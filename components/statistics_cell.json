@@ -1,0 +1,324 @@
+{
+    "Name" : "statisticsCell",
+    "BlockType" : "stack",    
+    "VerticalAlignment" : "Center",   
+    "Spacing" : 0,
+
+    "Items" :
+    [
+        //time
+        {            
+            "BlockType" : "text",
+            "RenderIf" : false,
+            "Width" : "*",
+            "Height" : "*",
+            "Padding": "12, 0",
+            "Source" : "<{data.Value}>",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",           
+            "TextOptions": {
+                "FontName": "{MgMe}",
+                "FontSize": "{TableCellFontSize}",
+                "HorizontalAlignment": "Center"
+            },                   
+            "Triggers" : [
+                {
+                    "Condition" : "<{data.Type, Converter=EnumEquals, Parameter=Time}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]                
+                },
+                
+                {
+                    "Condition" : "<{data.IsHighlighted}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "Foreground",
+                            "Value" : "{FastestLapQualSelectedForeground}"
+                        }
+                    ]                
+                }    
+            ]          
+        },
+
+        //string
+        {            
+            "BlockType" : "text",
+            "RenderIf" : false,
+            "Width" : "*",
+            "Height" : "*",
+            "Padding": "12, 0",
+            "Source" : "<{data.Value}>",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",           
+            "TextOptions": {
+                "FontName": "{MgMe}",
+                "FontSize": "{TableCellFontSize}",
+                "HorizontalAlignment": "Center"
+            },                   
+            "Triggers" : [
+                {
+                    "Condition" : "<{data.Type, Converter=EnumEquals, Parameter=String}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]                
+                },
+                
+                {
+                    "Condition" : "<{data.IsHighlighted}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "Foreground",
+                            "Value" : "{FastestLapQualSelectedForeground}"
+                        }
+                    ]                
+                }    
+            ]          
+        },
+
+        //gap
+        {            
+            "BlockType" : "text",
+            "RenderIf" : false,
+            "Width" : "*",
+            "Height" : "*",
+            "Padding": "12, 0",
+            "Source" : "<{data.Value}>",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",        
+            "TextOptions": {
+                "FontName": "{MgMe}",
+                "FontSize": "{TableCellFontSize}",
+                "HorizontalAlignment": "Center"
+            },                   
+            "Triggers" : [
+                {
+                    "Condition" : "<{data.Type, Converter=EnumEquals, Parameter=Gap}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]                
+                },
+                
+                {
+                    "Condition" : "<{data.IsHighlighted}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "Foreground",
+                            "Value" : "{FastestLapQualSelectedForeground}"
+                        }
+                    ]                
+                }    
+            ]          
+        },
+
+        //number
+        {            
+            "BlockType" : "text",
+            "RenderIf" : false,
+            "Width" : "*",
+            "Height" : "*",
+            "Padding": "12, 0",
+            "Source" : "<{data.Value}>",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",
+            "TextOptions": {
+                "FontName": "{MgMe}",
+                "FontSize": "{TableCellFontSize}",
+                "HorizontalAlignment": "Center"
+            },                   
+            "Triggers" : [
+                {
+                    "Condition" : "<{data.Type, Converter=EnumEquals, Parameter=Number}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]                
+                },
+                
+                {
+                    "Condition" : "<{data.IsHighlighted}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "Foreground",
+                            "Value" : "{FastestLapQualSelectedForeground}"
+                        }
+                    ]                
+                }    
+            ]          
+        },
+
+        //secondary number
+        {            
+            "BlockType" : "text",
+            "RenderIf" : false,
+            "Width" : "*",
+            "Height" : "*",
+            "Padding": "12, 0",
+            "Source" : "<{data.Value}>",
+            "Foreground" : "#585858",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",
+            "TextOptions": {
+                "FontName": "{MgMe}",
+                "FontSize": "{TableCellFontSize}",
+                "HorizontalAlignment": "Center"
+            },                   
+            "Triggers" : [
+                {
+                    "Condition" : "<{data.Type, Converter=EnumEquals, Parameter=SecondaryNumber}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]                
+                },
+                
+                {
+                    "Condition" : "<{data.IsHighlighted}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "Foreground",
+                            "Value" : "{FastestLapQualSelectedForeground}"
+                        }
+                    ]                
+                }    
+            ]          
+        },
+        
+        //rating
+        {           
+            "BlockType" : "text",
+            "RenderIf" : false,
+            "Width" : "*",
+            "Height" : "*",
+            "Source" : "<{data.Value}>",
+            "Padding": "12, 0",
+            "VerticalAlignment" : "Center",
+            "TextOptions" :
+            {
+                "FontName": "{MgMe}",
+                "FontSize": "{TableCellFontSize}",
+                "HorizontalAlignment": "Center",
+                "ColorizeRating" : 
+                {
+                    "IsEnabled" : true,
+                    "Level" : "<{data.Level}>"
+                }                
+            },            
+            "Triggers" : [
+                {
+                    "Condition" : "<{data.Type, Converter=EnumEquals, Parameter=Rating}>",
+                    "Setters":
+                    [                        
+                        {
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]                
+                }                 
+            ]          
+        },
+        
+        //stints
+        {
+            "BlockType": "itemstack",
+            "Width" : "*",
+            "Height" : "*",
+            "Spacing": 4,
+            "Padding": "12, 0",
+            "ItemStackOptions": {
+                "ItemSource": "<{data.Stints}>",
+                "Template": {
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "MarginRight" : 4,
+                    "Spacing": 3,
+                    "Items": [
+                        {
+                            "BlockType": "image",
+                            "Height": 18,
+                            "VerticalAlignment": "Top",
+                            "Source": "tyres_{Item.Tyres}.png",
+                            "RenderIf": true,
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{Item.IsPercentage}",
+                                    "ConditionAnd" : "{Item.Percentage, Converter=StringEquals, Parameter=0}",
+                                    "Property" : "RenderIf",
+                                    "Value" : false
+                                }
+                                                 
+                            ]
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "{Item.Laps}",
+                            "HorizontalAlignment": "Center",
+                            "VerticalAlignment": "Center",
+                            "RenderIf": true,
+                            "TextOptions": {
+                                "FontName": "{MgMe}",
+                                "FontSize": "{TableCellFontSize}",
+                                "HorizontalAlignment": "Center"
+                            },
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{Item.IsPercentage}",
+                                    "Setters":
+                                    [                        
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : "{Item.Percentage, Converter=StringAdd, Parameter=%}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition" : "{Item.IsPercentage}",
+                                    "ConditionAnd" : "{Item.Percentage, Converter=StringEquals, Parameter=0}",
+                                    "Property" : "RenderIf",
+                                    "Value" : false
+                                }
+                                                 
+                            ]      
+                        }
+                        
+                    ]
+                }
+            }
+        },
+
+        //tyres
+        {
+            "BlockType": "image",
+            "MarginLeft" : 12,
+            "MarginRight" : 0,
+            "PaddingTop": 8,
+            "Source": "<{data.Tyres, Converter=StringFormatReverse, Parameter=tyres_SUB.png}>",
+            "VerticalAlignment" : "Top",
+            "HorizontalAlignment": "Right",
+            "Height" : 15                                        
+        }
+    ]
+}
