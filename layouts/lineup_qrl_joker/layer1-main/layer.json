@@ -1,0 +1,121 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}", 
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_qrl_lineup",
+                "ComponentOptions" : {
+                    "Vars" : {
+                        "headerlefttext" : "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString}  ·  {Season.Name, Converter=StringToUpperString}  [LINE-UP]"
+                    }
+                }
+            },
+            //separator
+            {
+                "BlockType" : "component",
+                "ComponentName" : "separator"
+            },
+            {
+                "BlockType": "Dock",
+                "Orientation": "Vertical",
+                "Width": "*",
+                "Margin": "{DockTeamTable}",
+                "Items": [
+                    //
+                    //Block for each team
+                    {
+                        "BlockType": "Dock",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "center",
+                        "StretchWidth": "True",
+                        "MarginBottom": 20,
+                        "Items": [
+                            
+                            {
+                                "Name": "LineupStackRow",
+                                "BlockType": "Itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Lineups.Teams}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriver"
+                                    }
+                                }
+                            },
+                        ]
+                    },
+                    
+                    // //Reserve Drivers
+                    {
+                        "BlockType": "Dock",
+                        "RenderIf": "{RenderReserveDriver}",
+                        "Orientation": "Horizontal",
+                        "MarginBottom": 20,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Center",
+                                "MinWidth": 400,
+                                "MarginRight": 12,
+                                "Source": "[Reserve drivers]",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameBold}",
+                                "Foreground": "{ForegroundGrey}",
+                                "FontSize": "25"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "Dock",
+                        "RenderIf": "{RenderReserveDriver}",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "MarginBottom": 20,
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "ItemStackOptions": {
+                                    "RenderIf": "{RenderReserveDriver}",
+                                    "ItemSource": "{Lineups.LineupsReserves}",
+                                    "Limit": "{ReserveDriverMax}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriverReserve"
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "ItemStackOptions": {
+                                    "RenderIf": "{RenderReserveDriver}",
+                                    "ItemSource": "{Lineups.LineupsReserves}",
+                                    "Limit": "{ReserveDriverMax}",
+                                    "IndexStart": "{ReserveDriverMax}",
+                                    "Template": {
+                                        "BlockType": "component",
+                                        "ComponentName": "LineupDriverReserve"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+                //bg-footer
+            {
+                "BlockType" : "component",
+                "ComponentName" : "bg_footer"
+            }
+        ]
+    }
+}

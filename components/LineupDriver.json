@@ -1,0 +1,515 @@
+{
+    "BlockType": "dock",
+    "Padding": "0,0,0,16",
+    "Orientation": "Horizontal",
+    "HorizontalAlignment":"Center",
+    "Width": "*",
+    "Items": [
+        {
+            "BlockType": "stack",
+            "Height": "120",
+            "Width": "600",
+            "MarginRight": 50,
+            "BackgroundImage": "images/team/{Item.Team.Name}bg.png",
+            "Items": [
+                //left part
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "MarginLeft": 10,
+                    "Orientation": "Vertical",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "HorizontalAlignment": "Left",
+                            "MarginLeft": 5,
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                //name
+                                //{
+                                //    "BlockType": "text",
+                                //    //"MinWidth": 400,
+                                //    "MarginRight": 12,
+                                //    "Source": "{Item.Line0.Driver.RealName, Converter=StringToUpperString}",
+                                //    "HorizontalAlignment": "Left",
+                                //    "VerticalAlignment": "Center",
+                                //    "FontName": "{FontNameBold}",
+                                //    "Foreground": "{ForegroundWhithe}",
+                                //    "FontSize": "25"
+                                //},
+                                //Clear
+                                {
+                                    "BlockType": "image",
+                                    "Height": 30,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "images/Clear.png",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //flag
+                                {
+                                    "BlockType": "image",
+                                    "RenderIf": "{ShowCountryFlagsForDrivers}",
+                                    "Height": 30,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Line0.Driver.Nationality.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "text",
+                            //"MinWidth": 400,
+                            "Source": "{Item.Line0.Driver.Name, Converter=StringToUpperString}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{Item.Team.Color}",
+                            "FontSize": "35"
+                        },
+                        //Need another block for team logo and team text
+                        {
+                            "BlockType": "stack",
+                            "HorizontalAlignment": "Left",
+                            "MarginLeft": 5,
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "MinWidth": 400,
+                                    "Source": "{Item.Team.Name}",
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Center",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{ForegroundWhithe}",
+                                    "FontSize": "20",
+                                },
+                                //logo
+                                {
+                                    "BlockType": "image",
+                                    "MarginLeft": 5,
+                                    "Height": 28,
+                                    "MarginRight": 10,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Team.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        },
+                    ]
+                },
+                //right part
+                {
+                    "BlockType": "dock",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    //"Orientation": "Horizontal",
+                    "Opacity": "75",
+                    "Items": [
+                        //number
+                        {
+                            "BlockType": "text",
+                            "Source": "{Item.Line0.Driver.RaceNumber, Converter=StringToUpperString}",
+                            "HorizontalAlignment": "Right",
+                            "RenderIf" : "{Item.Line0.Driver.RaceNumber, Converter=NumberNotEquals, Parameter=0}",
+                            "MarginRight": 50,
+                            "VerticalAlignment": "Center",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersMercedes-Bold"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "120"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersWilliams"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersFerrari"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "130"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersAlfaRomeo"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "130"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersMclaren"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersAlphaTauri"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Haas}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersHaas"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Aston Martin}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersAstonMartin"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "110"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersAlpine-Bold"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersRedBull"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "150"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "Foreground": "{Item.Team.Color}"
+                        }
+                    ]
+                }
+                
+            ]
+        },
+        {
+            "BlockType": "stack",
+            "Height": "120",
+            "Width": "600",
+            "MarginRight": 50,
+            "BackgroundImage": "images/team/{Item.Team.Name}bg.png",
+            "Items": [
+                //left part
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "MarginLeft": 10,
+                    "Orientation": "Vertical",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "HorizontalAlignment": "Left",
+                            "MarginLeft": 5,
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                //name
+                                //{
+                                //    "BlockType": "text",
+                                //    //"MinWidth": 400,
+                                //    "MarginRight": 12,
+                                //    "Source": "{Item.Line1.Driver.RealName, Converter=StringToUpperString}",
+                                //    "HorizontalAlignment": "Left",
+                                //    "VerticalAlignment": "Center",
+                                //    "FontName": "{FontNameBold}",
+                                //    "Foreground": "{ForegroundWhithe}",
+                                //    "FontSize": "25"
+                                //},
+                                //Clear
+                                {
+                                    "BlockType": "image",
+                                    "Height": 30,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "images/Clear.png",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //flag
+                                {
+                                    "BlockType": "image",
+                                    "RenderIf": "{ShowCountryFlagsForDrivers}",
+                                    "Height": 30,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Line1.Driver.Nationality.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "text",
+                            //"MinWidth": 400,
+                            "Source": "{Item.Line1.Driver.Name, Converter=StringToUpperString}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{Item.Team.Color}",
+                            "FontSize": "35"
+                        },
+                        //Need another block for team logo and team text
+                        {
+                            "BlockType": "stack",
+                            "HorizontalAlignment": "Left",
+                            "MarginLeft": 5,
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "MinWidth": 400,
+                                    "Source": "{Item.Team.Name}",
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Center",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{ForegroundWhithe}",
+                                    "FontSize": "20",
+                                },
+                                //logo
+                                {
+                                    "BlockType": "image",
+                                    "MarginLeft": 5,
+                                    "Height": 28,
+                                    "MarginRight": 10,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Team.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        },
+                    ]
+                },
+                //right part
+                {
+                    "BlockType": "dock",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    //"Orientation": "Horizontal",
+                    "Opacity": "75",
+                    "Items": [
+                        //number
+                        {
+                            "BlockType": "text",
+                            "Source": "{Item.Line1.Driver.RaceNumber, Converter=StringToUpperString}",
+                            "RenderIf" : "{Item.Line1.Driver.RaceNumber, Converter=NumberNotEquals, Parameter=0}",
+                            "HorizontalAlignment": "Right",
+                            "MarginRight": 50,
+                            "VerticalAlignment": "Center",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersMercedes-Bold"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "120"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersWilliams"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersFerrari"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "130"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersAlfaRomeo"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "130"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersMclaren"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersAlphaTauri"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Haas}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersHaas"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Aston Martin}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersAstonMartin"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "110"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersAlpine-Bold"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "160"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "F1NumbersRedBull"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": "150"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "Foreground": "{Item.Team.Color}"
+                        }
+                    ]
+                },
+                
+            ]
+        }
+    ]
+}

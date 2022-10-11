@@ -6,5 +6,8 @@
   "RenderTeamBadgesOnSessionResults": true,
   "RenderTeamBadgesOnOtherLayouts": true,
   "ShowWinnerInCalendar": true,
-  "SecondCalendarEventsInColumn": 11
+  "ShowCountryFlagsForDrivers": false,
+  "SecondCalendarEventsInColumn": 11,
+  "ReserveDriverMax": 2,
+  "Commentator": ""
 }

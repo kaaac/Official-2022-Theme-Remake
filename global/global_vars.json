@@ -13,6 +13,7 @@
     "SeparatorMargin" : "25,0,2,8",
     "HeaderLeftMargin" : "29,0,20,0",
     "MarginTopHeaderText" : "2",
+    "DockTeamTable" : "25,25,15,0",
 
     //colors
     "ForegroundRed" : "#fe0000",

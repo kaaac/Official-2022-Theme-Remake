@@ -1,0 +1,52 @@
+//header block
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Foreground" : "{ForeGroundWhite}",
+    "MarginLeft" : 0,
+    "PaddingTop" : 7,
+    "UseBackgroundCrop": true,
+    "Width" : "*",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Horizontal",
+            "Margin" : "{HeaderLeftMargin}",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",
+            "Items": [
+                {
+                    "Name": "f1_logo",
+                    "BlockType": "image",
+                    "Height": 44,
+                    "MarginRight": 34,
+                    "Source": "images/f1_logo.png",
+                    "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}"
+                },
+                {
+                    "Name":"LeagueLogo",
+                    "BlockType":"image",
+                    "Height":88,
+                    "Width":"auto",
+                    "MarginRight":34,
+                    "MarginTop" : 10,
+                    "MarginBottom" : 10,
+                    "Source": "{Season.LeagueInfo.LeagueLogo}",
+                    "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "<headerlefttext>",                            
+                    "MarginTop" : "{MarginTopHeaderText}",
+                    "FontName": "{MgEB}",
+                    "FontSize": 45,
+                    "Foreground": "{ForegroundRed}",
+                    "VerticalAlignment": "Center"
+                }
+            ]
+        }
+    ]
+}

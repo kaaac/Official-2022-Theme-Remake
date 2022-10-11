@@ -1,0 +1,108 @@
+{
+    "BlockType": "stack",
+    "Height": "120",
+    "Width": "600",
+    "MarginRight": 50,
+    "MarginBottom": 20,
+    "BackgroundImage": "images/team/reservebg.png",
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "MarginLeft": 10,
+            "Orientation": "Vertical",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "MarginLeft": 5,
+                    "Orientation": "Horizontal",
+                    "Items": [
+                        //name
+                        //{
+                        //    "BlockType": "text",
+                        //    "MarginRight": 12,
+                        //    "Source": "{Item.Driver.RealName, Converter=StringToUpperString}",
+                        //    "HorizontalAlignment": "Left",
+                        //    "VerticalAlignment": "Center",
+                        //    "FontName": "{FontNameBold}",
+                        //    "Foreground": "{ForegroundWhithe}",
+                        //    "FontSize": "25"
+                        //},
+                        //Clear
+                        {
+                            "BlockType": "image",
+                            "Height": 30,
+                            "VerticalAlignment": "Center",
+                            "ImageOptions": {
+                                "Path": "images/Clear.png",
+                                "VerticalAlignment": "Center"
+                            }
+                        },
+                        //flag
+                        {
+                            "BlockType": "image",
+                            "RenderIf":"{ShowCountryFlagsForDrivers}",
+                            "Height": 30,
+                            "VerticalAlignment": "Center",
+                            "ImageOptions": {
+                                "Path": "{Item.Driver.Nationality.LogoPath}",
+                                "VerticalAlignment": "Center"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameBold}",
+                    "Foreground": "{ForegroundGrey}",
+                    "FontSize": "35"
+                },
+                //Need another block for team logo and team text
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "MarginLeft": 5,
+                    "Orientation": "Horizontal",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "MinWidth": 400,
+                            "Source": "{Reserve Driver}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundWhithe}",
+                            "FontSize": "20"
+                        }
+                    ]
+                }
+            ]
+        },
+        //right part
+        {
+            "BlockType": "dock",
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //number
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Driver.RaceNumber, Converter=StringToUpperString}",
+                    "RenderIf" : "{Item.Driver.RaceNumber, Converter=NumberNotEquals, Parameter=0}",
+                    "HorizontalAlignment": "Right",
+                    "MarginRight": 50,
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameBold}",
+                    "Foreground": "{ForegroundGrey}",
+                    "FontSize": 55,
+                    "Opacity": 50
+                }
+            ]
+        }
+    ]
+}

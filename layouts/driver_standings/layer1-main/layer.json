@@ -25,7 +25,7 @@
                 "Name": "mainTable",
                 "BlockType": "table",
                 "Margin" : "{MarginTable}",
-                "MarginRight" : 200,
+                "MarginRight" : 0,
                 "TableOptions": {
                     "ItemsSource": "{Standings.Drivers}",
                     "HeaderTemplate": {

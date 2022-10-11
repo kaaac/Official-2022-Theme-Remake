@@ -56,6 +56,14 @@
                                 "BlockType" : "component",
                                 "ComponentName" : "driver_cell"                                
                             }
+                        },                        //position_jump
+                        {
+                            "Header": "",
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "position_jump_cell"    
+                            }
                         },
                         // Team
                         {
@@ -82,7 +90,7 @@
                                 "MarginRight": 180,
                                 "HorizontalAlignment": "Left",
                                 "TextOptionsExtern" : "driverCell",
-                                //"RenderIf" : "{Session.IsLiveData}",
+                                "RenderIf" : "{Session.IsLiveData}",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
                                 },
@@ -229,6 +237,18 @@
                             }
                         }
                     },
+                    {
+                        "BlockType" :"component",
+                        "ComponentName" : "sticker",
+                        "RenderIf" : "{Commentator, Converter=EmptyObjectToFalse}",
+                        "ComponentOptions" : {
+                            "Vars" : {
+                                "header" : "Commentator:",
+                                "main" : "{Commentator}",
+                                "data" : ""
+                            }
+                        }
+                    }
                 ]
             },
             //bg-footer
