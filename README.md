@@ -22,9 +22,13 @@ RacingLeagueTools/user/mods/
 
 ![Calendar](docs/images/calendar.png "Calendar")
 
+- Calendar v2
+
 - QualResults (qualResults)
 
 ![QualResults](docs/images/qualification.png "Qualification Results")
+
+- CombinedQual Results
 
 - RaceResults (raceResults)
 
@@ -53,6 +57,14 @@ RacingLeagueTools/user/mods/
 - Lineups (Lineup)
 
 ![Lineups](docs/images/teamStandings.png "Line-Ups")
+
+- QRL Joker's Lineup
+
+- Drivers Season Statistics
+
+- Drivers Session Statistics
+
+- Race Battles Statictics
 
 
 Official renders of the session results do not always have information about the tires used during the session, so it is possible to disable their display.
