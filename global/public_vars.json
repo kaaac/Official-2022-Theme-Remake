@@ -9,5 +9,6 @@
   "ShowCountryFlagsForDrivers": false,
   "SecondCalendarEventsInColumn": 11,
   "ReserveDriverMax": 2,
-  "Commentator": ""
+  "Commentator": "",
+  "DNSReplacementForSeasonProgress" : ""
 }

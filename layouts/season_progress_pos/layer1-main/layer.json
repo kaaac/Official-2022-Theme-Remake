@@ -5,7 +5,6 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            ///header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block",
@@ -15,13 +14,10 @@
                     }
                 }
             },
-
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
             },
-            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
@@ -35,7 +31,6 @@
                         "Foreground" : "{ForegroundRed}"
                     },
                     "Columns": [
-                        //position
                         {
                             "Header": "",
                             "Template": {
@@ -48,8 +43,6 @@
                                 }
                             }
                         },
-
-                        //driver with team line
                         {
                             "Header": "",
                             "MarginRight" : 24,
@@ -58,8 +51,6 @@
                                 "ComponentName": "driver_and_team_dock"
                             }
                         },
-
-                        //points
                         {
                             "Header": "",
                             "MarginLeft" : 20,
@@ -87,8 +78,6 @@
                                 ]
                             }
                         },
-
-                         //position_jump
                          {
                             "Header": "",
                             "PaddingLeft" : 0,
@@ -101,8 +90,6 @@
                                 "ComponentName" : "jump_cell"    
                             }
                         },
-
-                        //events
                         {
                             "MarginLeft" : 6,
                             "MultiColumnHeadersSource": "{Standings.Events}",
@@ -110,6 +97,7 @@
                             "MultiColumnHeaderTemplate": {
                                 "BlockType": "stack",
                                 "Orientation": "Vertical",
+                                "RenderIf" : "{Item.WinnerString, Converter=EmptyObjectToFalse}",
                                 "Spacing": 4,
                                 "HorizontalAlignment": "Center",
                                 "Items": [
@@ -128,41 +116,55 @@
                                     }
                                 ]
                             },
-                            "Width": 55,
                             "Template": {
-                                "Padding": "12, 0",
-                                "BlockType": "text",
-                                "Source": "{Item.RaceMajorPositionString}",
-                                "HorizontalAlignment": "Left",
-                                "TextOptionsExtern": "teamCell",
-                                "TextOptions": {
-                                    "HorizontalAlignment": "Center"
-                                },
-                                "Triggers": [
+                                "BlockType" : "dock",
+                                "RenderIf" : "{Item.Event.WinnerString, Converter=EmptyObjectToFalse}",
+                                "Items" : [
                                     {
-                                        "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
-                                        "Setters": [
+                                        "Padding": "12, 0",
+                                        "BlockType": "text",
+                                        "Source": "{Item.RaceMajorPositionString}",
+                                        "HorizontalAlignment": "Center",
+                                        "TextOptionsExtern": "teamCell",
+                                        "TextOptions": {
+                                            "HorizontalAlignment": "Center"
+                                        },
+                                        "Triggers": [
                                             {
-                                                "Property": "Foreground",
-                                                "Value": "{SeasonProgressPositionNotClassifiedForeground}"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberLess, Parameter=11}",
-                                        "Setters": [
+                                                "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Foreground",
+                                                        "Value": "{SeasonProgressPositionNotClassifiedForeground}"
+                                                    }
+                                                ]
+                                            },
                                             {
-                                                "Property": "Foreground",
-                                                "Value": "{SeasonProgressPositionTop10Foreground}"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=1}",
-                                        "Setters": [
+                                                "Condition": "{Item.RaceMajorPosition, Converter=NumberLess, Parameter=11}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Foreground",
+                                                        "Value": "{SeasonProgressPositionTop10Foreground}"
+                                                    }
+                                                ]
+                                            },
                                             {
-                                                "Property": "Foreground",
-                                                "Value": "{SeasonProgressPositionTop1Foregound}"
+                                                "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=1}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Foreground",
+                                                        "Value": "{SeasonProgressPositionTop1Foregound}"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Condition" : "{Item.RaceMajorPositionString, Converter=EmptyObjectToTrue}",
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "Source",
+                                                        "Value" : "{DNSReplacementForSeasonProgress}"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -172,7 +174,6 @@
                     ]
                 }
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"
