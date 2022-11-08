@@ -5,7 +5,6 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            //header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block",
@@ -15,8 +14,6 @@
                     }
                 }
             },
-
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
@@ -33,7 +30,6 @@
                         "TextOptionsExtern" : "tableHeader"
                     },
                     "Columns": [
-                        //position
                         {
                             "Header": "",
                             "Template": {
@@ -46,8 +42,6 @@
                                 }                           
                             }
                         },
-
-                        //driver and team line
                         {
                             "Header": "",
                             "WidthStretch" : true,                            
@@ -55,9 +49,7 @@
                                 "BlockType" : "component",
                                 "ComponentName" : "driver_and_team_dock"   
                             }
-                        },                        
-
-                        //points
+                        },
                         {
                             "Header": "      [PTS]",
                             "MarginLeft" : 0,
@@ -85,9 +77,7 @@
                                 ]
                             }
                         },
-
-                         //position_jump
-                         {
+                        {
                             "Header": "",
                             "PaddingLeft" : 0,
                             "MarginLeft" : -4,
@@ -99,8 +89,6 @@
                                 "ComponentName" : "jump_cell"    
                             }
                         },
-
-                        //podiums
                         {
                             "Header" : "[Wins]",
                             "MarginLeft" : 20,
@@ -131,8 +119,6 @@
                                 "TextOptionsExtern" : "primaryNumber"
                             }
                         },
-
-                        //stats
                         {
                             "Header" : "[FL]",
                             "MarginLeft" : 12,
@@ -153,8 +139,6 @@
                                 "TextOptionsExtern" : "primaryNumber"
                             }
                         },
-
-                        //penalty points
                         {
                             "Header" : "[Pen. pts]",                            
                             "MarginLeft" : 16,
@@ -166,8 +150,6 @@
                                 "TextOptionsExtern" : "primaryNumber"
                             }
                         },
-
-                        //events
                         {
                             "Header" : "[Events]",
                             "MarginLeft" : 12,
@@ -179,13 +161,10 @@
                                 "MarginRight":30
                             }
                         }
-
-
                     ]
                 }
                 
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

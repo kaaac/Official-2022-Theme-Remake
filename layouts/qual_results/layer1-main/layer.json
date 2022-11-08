@@ -5,19 +5,14 @@
         "Margin": "{MarginRoot}",    
         "Orientation": "Vertical",
         "Items": [
-            //header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block_session"
             },
-
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
             },
-
-            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
@@ -34,7 +29,6 @@
                         "Width" : "*"
                     },
                     "Columns": [
-                        //position
                         {
                             "Header": "",
                             "Template": {
@@ -47,8 +41,6 @@
                                 }
                             }
                         },
-
-                        //driver line
                         {
                             "Header": "[DRIVER]",
                             "Template":
@@ -57,7 +49,6 @@
                                 "ComponentName" : "driver_cell"                                
                             }
                         },
-                        // Team
                         {
                             "Header": "[TEAM]",
                             "Template":
@@ -71,9 +62,7 @@
                                     }
                                 }
                             }
-                        },                     
-
-                        //time
+                        },
                         {
                             "Header": "[LAP TIME]",
                             "Template": {
@@ -130,8 +119,7 @@
                                     }
                                 }
                             }
-                        },                                  
-                        //Gap
+                        },
                         {
                             "Header": "[TIME/GAP]",
                             "Template": {
@@ -153,7 +141,6 @@
                                 ]
                             }
                         },
-                        //penalties
                         {
                             "Header" : "[PLACE PEN.]",
                             "Template" : {
@@ -165,11 +152,10 @@
                                 "MarginLeft": 80,
                                 "HorizontalAlignment":"Center",
                                 "TextOptions" : {
-                                    "HorizontalAlignment" : "Center",
+                                    "HorizontalAlignment" : "Center"
                                 }
                             }
                         },
-                        //laps
                         {
                             "Header": "[LAPS]",
                             "Template": {
@@ -189,7 +175,6 @@
                     ]
                 }
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

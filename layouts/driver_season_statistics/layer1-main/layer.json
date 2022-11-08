@@ -6,7 +6,6 @@
         "Orientation": "Vertical",
         "Width" : "*",
         "Items": [
-            ///header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block",
@@ -38,7 +37,6 @@
                 ]
                 
             },
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
@@ -57,7 +55,6 @@
                         "TextOptionsExtern": "tableHeader"
                     },
                     "Columns": [
-                        // //position
                         {
                             "Header": "",
                             "WidthStretch": false,
@@ -71,8 +68,6 @@
                                 }
                             }
                         },
-
-                        //driver line
                         {
                             "Header": "",
                             "WidthStretch": true,
@@ -81,8 +76,6 @@
                                 "ComponentName": "driver_cell"
                             }
                         },
-
-                        //column 0
                         {
                             "Header": "{Statistics.Column0.Header}",
                             "IsSeparator": "{Statistics.Column0.Type, Converter=EnumEquals, Parameter=Separator}",
@@ -100,8 +93,6 @@
                                 }
                             }
                         },
-
-                        //column 1
                         {
                             "Header": "{Statistics.Column1.Header}",
                             "IsSeparator": "{Statistics.Column1.Type, Converter=EnumEquals, Parameter=Separator}",
@@ -118,8 +109,6 @@
                                 }
                             }
                         },
-
-                        //column 2
                         {
                             "Header": "{Statistics.Column2.Header}",
                             "WidthStretch": false,
@@ -136,8 +125,6 @@
                                 }
                             }
                         },
-
-                        //column 3
                         {
                             "Header": "{Statistics.Column3.Header}",
                             "WidthStretch": false,
@@ -154,8 +141,6 @@
                                 }
                             }
                         },
-
-                        //column 4
                         {
                             "Header": "{Statistics.Column4.Header}",
                             "IsSeparator": "{Statistics.Column4.Type, Converter=EnumEquals, Parameter=Separator}",
@@ -172,8 +157,6 @@
                                 }
                             }
                         },
-
-                        //column 5
                         {
                             "Header": "{Statistics.Column5.Header}",
                             "IsSeparator": "{Statistics.Column5.Type, Converter=EnumEquals, Parameter=Separator}",
@@ -190,8 +173,6 @@
                                 }
                             }
                         },
-
-                        //column 6
                         {
                             "Header": "{Statistics.Column6.Header}",
                             "IsSeparator": "{Statistics.Column6.Type, Converter=EnumEquals, Parameter=Separator}",
@@ -208,8 +189,6 @@
                                 }
                             }
                         },
-
-                        //column 7
                         {
                             "Header": "{Statistics.Column7.Header}",
                             "IsSeparator": "{Statistics.Column7.Type, Converter=EnumEquals, Parameter=Separator}",
@@ -226,8 +205,6 @@
                                 }
                             }
                         },
-
-                        //column 8
                         {
                             "Header": "{Statistics.Column8.Header}",
                             "IsSeparator": "{Statistics.Column8.Type, Converter=EnumEquals, Parameter=Separator}",
@@ -247,7 +224,6 @@
                     ]
                 }
             },
-            //footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "statistics_dock"
@@ -273,7 +249,6 @@
                     }
                 ]
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

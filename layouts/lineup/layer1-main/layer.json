@@ -5,7 +5,6 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            //header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block",
@@ -15,13 +14,10 @@
                     }
                 }
             },
-
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
             },
-            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
@@ -34,7 +30,7 @@
                         "BlockType": "text",
                         "MarginBottom": 8,
                         "TextOptionsExtern" : "tableHeader",
-                        "TextAlignment" : "Center",
+                        "TextAlignment" : "Center"
                     },
                     "Columns": [
                         {
@@ -51,7 +47,6 @@
                                 }
                             }
                         },
-                        //driver line
                         {
                             "Header": "",
                             "MarginLeft" : 50,
@@ -63,7 +58,6 @@
                             }
                             
                         },
-                        // races count
                         {
                             "Header": "[RACES]",
                             "Template":
@@ -80,7 +74,6 @@
                     ]
                 }
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

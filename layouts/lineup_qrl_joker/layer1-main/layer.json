@@ -5,7 +5,6 @@
         "Margin": "{MarginRoot}", 
         "Orientation": "Vertical",
         "Items": [
-            //header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block_qrl_lineup",
@@ -15,7 +14,6 @@
                     }
                 }
             },
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
@@ -26,8 +24,6 @@
                 "Width": "*",
                 "Margin": "{DockTeamTable}",
                 "Items": [
-                    //
-                    //Block for each team
                     {
                         "BlockType": "Dock",
                         "Orientation": "Horizontal",
@@ -48,11 +44,9 @@
                                         "ComponentName": "LineupDriver"
                                     }
                                 }
-                            },
+                            }
                         ]
                     },
-                    
-                    // //Reserve Drivers
                     {
                         "BlockType": "Dock",
                         "RenderIf": "{RenderReserveDriver}",
@@ -111,7 +105,6 @@
                     }
                 ]
             },
-                //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

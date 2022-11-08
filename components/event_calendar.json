@@ -11,7 +11,6 @@
             "MarginTop" : 5,
             "MarginBottom" : 5,
             "Items" : [
-                //left
                 {
                     "BlockType" : "stack",
                     "Width" : 75,
@@ -66,7 +65,6 @@
                         }
                     ]
                 },
-                //right
                 {
                     "BlockType" : "stack",
                     "Width" : "*",

@@ -5,7 +5,6 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            ///header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block",
@@ -15,13 +14,10 @@
                     }
                 }
             },
-
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
             },
-            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
@@ -34,7 +30,6 @@
                         "TextOptionsExtern" : "tableHeader"
                     },
                     "Columns": [
-                        //position
                         {
                             "Header": "",
                             "Template": {
@@ -47,8 +42,6 @@
                                 }
                             }
                         },
-
-                        //driver with team line
                         {
                             "Header": "",
                             "MarginRight" : 24,
@@ -57,9 +50,7 @@
                                 "ComponentName": "driver_and_team_dock"
                             }
                         },
-
-                         //points
-                         {
+                        {
                             "Header": "",
                             "MarginLeft" : 20,
                             "Template": {
@@ -86,9 +77,7 @@
                                 ]
                             }
                         },
-
-                         //position_jump
-                         {
+                        {
                             "Header": "",
                             "PaddingLeft" : 0,
                             "MarginLeft" : -8,
@@ -100,8 +89,6 @@
                                 "ComponentName" : "jump_cell"    
                             }
                         },
-
-                        //events
                         {
                             "MarginLeft" : 6,
                             "MultiColumnHeadersSource": "{Standings.Events}",
@@ -172,7 +159,6 @@
                     ]
                 }
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

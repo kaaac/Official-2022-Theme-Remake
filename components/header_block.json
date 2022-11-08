@@ -1,4 +1,3 @@
-//header block
 {
     "Name": "headerBlock",
     "BlockType": "dock",
@@ -9,7 +8,6 @@
     "UseBackgroundCrop": true,
     "Width" : "*",
     "Items": [
-        //headerLeft
         {
             "Name": "headerLeftPart",
             "BlockType": "stack",

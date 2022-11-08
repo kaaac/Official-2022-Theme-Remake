@@ -1,4 +1,3 @@
-//header block
 {
     "Name": "headerBlock",
     "BlockType": "dock",
@@ -23,14 +22,13 @@
             "Source": "{Season.LeagueInfo.LeagueLogo}",
             "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
         },
-        //headerLeft
         {
             "BlockType": "text",
             "Source" : "{Season.Name, converter=StringToUpperString} · [CALENDAR]",
             "FontSize" : 45,
             "FontName" : "{MgEB}",
             "Foreground" : "{ForegroundRed}",
-            "HorizontalAlignment": "Center",
+            "HorizontalAlignment": "Center"
         }
     ]
 }

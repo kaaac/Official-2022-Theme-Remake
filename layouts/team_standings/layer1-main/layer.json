@@ -5,8 +5,6 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            //header block
-            //
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block",
@@ -16,8 +14,6 @@
                     }
                 }
             },
-
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
@@ -34,7 +30,6 @@
                         "TextOptionsExtern" : "tableHeader"
                     },
                     "Columns": [
-                        //position
                         {
                             "Header": "",
                             "Template": {
@@ -47,8 +42,6 @@
                                 }                           
                             }
                         },
-
-                        //team line
                         {
                             "Header": "",
                             "WidthStretch" : true,                            
@@ -62,9 +55,7 @@
                                     }
                                 }
                             }
-                        },                        
-
-                        //points
+                        },
                         {
                             "Header": "[PTS]",
                             "MarginLeft" : 20,
@@ -92,9 +83,7 @@
                                 ]
                             }
                         },
-
-                         //position_jump
-                         {
+                        {
                             "Header": "",
                             "PaddingLeft" : 0,
                             "MarginLeft" : -4,
@@ -106,8 +95,6 @@
                                 "ComponentName" : "jump_cell"    
                             }
                         },
-
-                        //podiums
                         {
                             "Header" : "[Wins]",
                             "MarginLeft" : 20,
@@ -138,8 +125,6 @@
                                 "TextOptionsExtern" : "positionNumber"
                             }
                         },
-
-                        //stats
                         {
                             "Header" : "[FL]",
                             "MarginLeft" : 12,
@@ -159,9 +144,7 @@
                                 "Source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
                                 "TextOptionsExtern" : "positionNumber"
                             }
-                        },                        
-
-                        //events
+                        },
                         {
                             "Header" : "[Events]",
                             "MarginLeft" : 12,
@@ -178,7 +161,6 @@
                     ]
                 }
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

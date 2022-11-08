@@ -14,12 +14,10 @@
                     }
                 }
             },
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
             },
-            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
@@ -33,7 +31,6 @@
                         "TextOptionsExtern" : "tableHeader"
                     },
                     "Columns": [
-                        //position
                         {
                             "Header": "",
                             "Template": {
@@ -46,7 +43,6 @@
                                 }
                             }
                         },
-                        //team line
                         {
                             "Header": "",
                             "WidthStretch" : true,                            
@@ -61,8 +57,7 @@
                                 }
                             }
                         },
-                         //points
-                         {
+                        {
                             "Header": "",
                             "MarginLeft" : 20,
                             "Template": {
@@ -89,7 +84,6 @@
                                 ]
                             }
                         },
-                        //position_jump
                         {
                             "Header": "",
                             "PaddingLeft" : 0,
@@ -101,7 +95,7 @@
                                 "PaddingRight" : 12,
                                 "ComponentName" : "jump_cell"    
                             }
-                        },//events
+                        },
                         {
                             "MarginLeft" : 6,
                             "MultiColumnHeadersSource": "{Standings.Events}",
@@ -154,7 +148,6 @@
                     ]
                 }
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

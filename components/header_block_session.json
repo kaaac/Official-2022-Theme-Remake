@@ -8,8 +8,6 @@
     "UseBackgroundCrop": true,
     "Width" : "*",
     "Items": [
-        
-        //headerLeft
         {
             "Name": "headerLeftPart",
             "BlockType": "stack",
@@ -79,7 +77,6 @@
                 }
             ]
         },
-        //headerMiddle
         {
             "Name": "headerMiddlePart",
             "BlockType" : "stack",
@@ -107,7 +104,6 @@
                 }
             ]
         },
-        //headerRight
         {
             "Name": "headerRightPart",
             "BlockType": "stack",
@@ -117,8 +113,6 @@
             "VerticalAlignment" : "Center",
             "MarginRight": 50,
             "Items": [
-
-                //session
                 {
                     "Name": "headerSessionLine",
                     "BlockType": "stack",

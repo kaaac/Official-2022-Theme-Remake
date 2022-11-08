@@ -3,7 +3,6 @@
     "HorizontalAlignment": "Left",
     "VerticalAlignment": "Center",
     "Items": [
-        //flag
         {
             "BlockType": "image",
             "Height": 19,
@@ -11,7 +10,7 @@
             "PaddingBottom" : 4,
             "VerticalAlignment": "Center",
             "ImageOptions": {
-                "Path": "{Item.Driver.Nationality.LogoPath}",
+                "Path": "{Item.Driver.Nationality.LogoPath}"
             },
             "RenderIf": "{RenderDriverFlags}"
         },

@@ -5,19 +5,14 @@
         "Margin": "{MarginRoot}",    
         "Orientation": "Vertical",
         "Items": [
-            //header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block_session"
             },
-
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
             },
-
-            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
@@ -34,7 +29,6 @@
                         "Width" : "*"
                     },
                     "Columns": [
-                        //position
                         {
                             "Header": "",
                             "Template": {
@@ -47,8 +41,6 @@
                                 }
                             }
                         },
-
-                        //driver line
                         {
                             "Header": "[DRIVER]",
                             "Template":
@@ -57,7 +49,6 @@
                                 "ComponentName" : "driver_cell"                                
                             }
                         },
-                        // Team
                         {
                             "Header": "[TEAM]",
                             "Template":
@@ -71,9 +62,7 @@
                                     }
                                 }
                             }
-                        },                     
-
-                        //Q1 time
+                        },
                         {
                             "Header": "[Q1]",
                             "Template": {
@@ -83,7 +72,6 @@
                                 "MarginRight": 180,
                                 "HorizontalAlignment": "Left",
                                 "TextOptionsExtern" : "driverCell",
-                                //"RenderIf" : "{Session.IsLiveData}",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
                                 },
@@ -101,7 +89,6 @@
                                 ] 
                             }
                         },
-                        // Q2 time
                         {
                             "Header": "[Q2]",
                             "Template": {
@@ -111,7 +98,6 @@
                                 "MarginRight": 180,
                                 "HorizontalAlignment": "Left",
                                 "TextOptionsExtern" : "driverCell",
-                                //"RenderIf" : "{Session.IsLiveData}",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
                                 },
@@ -129,7 +115,6 @@
                                 ] 
                             }
                         },
-                        //time
                         {
                             "Header": "[Q3]",
                             "Template": {
@@ -139,7 +124,6 @@
                                 "MarginRight": 180,
                                 "HorizontalAlignment": "Left",
                                 "TextOptionsExtern" : "driverCell",
-                                //"RenderIf" : "{Session.IsLiveData}",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
                                 },
@@ -157,29 +141,6 @@
                                 ] 
                             }
                         },
-                        //Gap
-                        //{
-                        //    "Header": "[TIME/GAP]",
-                        //    "Template": {
-                        //        "BlockType": "text",
-                        //        "Padding": "6, 0",
-                        //        "Source": "{Item.Time}",
-                        //        "HorizontalAlignment": "Left",
-                        //        "TextOptionsExtern" : "driverCell",
-                        //        "TextOptions": {
-                        //            "HorizontalAlignment": "Center"
-                        //        },
-                        //        "RenderIf": true,
-                        //        "Triggers" :[
-                        //            {
-                        //                "Condition" : "{Item.Time, Converter=EmptyObjectToTrue}",
-                        //                "Property" : "Source",
-                        //                "Value" : ""
-                        //            }
-                        //        ]
-                        //    }
-                        //},
-                        //penalties
                         {
                             "Header" : "[PLACE PEN.]",
                             "Template" : {
@@ -191,11 +152,10 @@
                                 "MarginLeft": 80,
                                 "HorizontalAlignment":"Center",
                                 "TextOptions" : {
-                                    "HorizontalAlignment" : "Center",
+                                    "HorizontalAlignment" : "Center"
                                 }
                             }
                         },
-                        //laps
                         {
                             "Header": "[LAPS]",
                             "Template": {
@@ -215,7 +175,6 @@
                     ]
                 }
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

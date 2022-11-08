@@ -1,5 +1,5 @@
 {
-    //fonts
+
     "MgMI":"Magistral-MediumItalic",
     "MgEB":"Magistral-ExtraBold",
     "MgBI":"Magistral-BoldItalic",
@@ -7,7 +7,7 @@
     "MgBk":"Magistral-Book",
     "MgMe":"Magistral-Medium",
     
-    //margins
+
     "MarginRoot" : "0,0,0,0",
     "MarginTable" : "25,0,15,0",
     "SeparatorMargin" : "25,0,2,8",
@@ -15,7 +15,7 @@
     "MarginTopHeaderText" : "2",
     "DockTeamTable" : "25,25,15,0",
 
-    //colors
+
     "ForegroundRed" : "#fe0000",
     "ForeGroundWhite" : "#ffffff",
     "ForegroundCal" : "#B0B0B0",
@@ -28,7 +28,7 @@
     "SticlerFLTimeForeGround": "#CC00CC",
     "CalendarEventWinner" : "#CCD2B200",
 
-    //FontSizes
+
     "TableCellFontSize":"18",
     "TableHeaderFontSize":"14",
     "StickerHeaderFontSize": "22",

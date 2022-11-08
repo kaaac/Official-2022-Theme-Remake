@@ -14,12 +14,10 @@
                     }
                 }
             },
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
             },
-            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
@@ -34,7 +32,6 @@
                         "MarginBottom": 8
                     },
                     "Columns": [
-                        //number
                         {
                             "Template": {
                                 "BlockType": "text",
@@ -57,7 +54,6 @@
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Center",
                                 "Items": [
-                                    //flag
                                     {
                                         "BlockType": "image",
                                         "Height": 56,
@@ -70,8 +66,6 @@
                                             "VerticalAlignment": "Center"
                                         }
                                     },
-
-                                    //country
                                     {
                                         "BlockType": "text",
                                         "Source": "{Item.Track.Nation.Code}",
@@ -82,8 +76,6 @@
                                 ]
                             }
                         },
-
-                        //location
                         {
                             "WidthStretch": true,
                             "Template": {
@@ -96,8 +88,6 @@
                                 "TextOptionsExtern" : "calendarText"
                             }
                         },
-
-                        //date
                         {
                             "Template": {
                                 "BlockType": "text",
@@ -110,8 +100,6 @@
                                 }
                             }
                         },
-
-                        //winner
                         {
                             "Template": {
                                 "BlockType": "text",
@@ -128,7 +116,6 @@
                     ]
                 }
             },
-            //bg-footer
             {
                 "BlockType" : "component",
                 "ComponentName" : "bg_footer"

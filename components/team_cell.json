@@ -3,13 +3,11 @@
     "MarginRight": "<MarginRight>",
     "VerticalAlignment" : "Center",
     "Items": [
-        //left part
         {
             "BlockType": "stack",                    
             "HorizontalAlignment": "Left",
             "VerticalAlignment": "Center",
             "Items": [
-                //logo
                 {
                     "BlockType": "image",
                     "MarginLeft" : 5,
@@ -22,8 +20,6 @@
                     },
                     "RenderIf" : "<RenderIf>"
                 },
-
-                //name
                 {
                     "BlockType": "text",
                     "MaxWidth": 600,                    

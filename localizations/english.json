@@ -41,9 +41,6 @@
     "RTRegular" : "Race",
     "RSprint" : "SPRINT",
     "Driver of the Day" : "Driver of the Day",
-    
-    // DO NOT TRANSLATE LINES BELOW - COPY TO YOUR LANGUAGE BUT NOT CHANGE
-    // Hash Tags for header
 
     "Paul RicardGP" : "FrenchGP",
     "AustinGP" : "USGP",
@@ -58,15 +55,15 @@
     "ZandvoortGP" : "DutchGP",
     "Spa-FrancorchampsGP" : "BelgianGP",
     "BakuGP" : "AzerbaijanGP",
-    //BahrainGP is ok :)
+    
     "JeddahGP" : "SaudiArabianGP",
-    //ImolaGP is ok :D
-    //MonacoGP too
-    //MexicoGP also ok
+    
+    
+    
     "MontrealGP" : "CanadianGP",
     "ShanghaiGP" : "ChinaGP",
     "PortimãoGP" : "PortimaoGP",
-    //SingaporeGP ok
+    
 
     "CSoft" : "#ffffff"
 }
