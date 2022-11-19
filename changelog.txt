@@ -1,3 +1,7 @@
+v.0.6.2
+- added option to change display of DNS races in Season Progress Position layout
+- minor fixes
+
 v.0.6.1
 - added second Lineup layout made by QRL Joker
 - added combined qual results layout

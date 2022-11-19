@@ -80,7 +80,7 @@
                                 "MarginRight": 180,
                                 "HorizontalAlignment": "Left",
                                 "TextOptionsExtern" : "driverCell",
-                                "RenderIf" : "{Session.IsLiveData}",
+                                "RenderIf" : "{Item.FastestLapTime, Converter=EmptyObjectToFalse}",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
                                 },
