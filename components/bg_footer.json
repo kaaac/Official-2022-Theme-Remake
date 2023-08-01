@@ -8,7 +8,8 @@
     "Items": [
         {
             "BlockType": "text",
-            "Source": " ",
+            "Source": "abc",
+            "Foreground" : "#00FFFFFF",
             "Height" : 23,
             "Width" : "*"
         }
