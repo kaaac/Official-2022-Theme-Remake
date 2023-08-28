@@ -6,9 +6,8 @@
   "RenderTeamBadgesOnSessionResults": true,
   "RenderTeamBadgesOnOtherLayouts": true,
   "ShowWinnerInCalendar": true,
-  "ShowCountryFlagsForDrivers": false,
-  "SecondCalendarEventsInColumn": 11,
+  "SecondCalendarEventsInColumn": 6,
   "ReserveDriverMax": 2,
   "Commentator": "",
-  "DNSReplacementForSeasonProgress" : ""
+  "DNSReplacementForSeasonProgress": ""
 }

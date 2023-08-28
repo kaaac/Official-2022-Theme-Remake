@@ -304,6 +304,91 @@
             "VerticalAlignment" : "Top",
             "HorizontalAlignment": "Right",
             "Height" : 15                                        
+        },
+        //driver short
+        {           
+            "BlockType" : "dock",
+            "RenderIf" : false,
+            "Width" : "*",
+            "Height" : "*",           
+            "Padding": "12, 0",
+            "Background": "{BackgroundDefault}",
+            "VerticalAlignment" : "Center",               
+            "Triggers" : [
+                {
+                    "Condition" : "<{data.Type, Converter=EnumEquals, Parameter=DriverCompact}>",
+                    "Setters":
+                    [                        
+                        {
+                            "Property" : "RenderIf",
+                            "Value" : true
+                        }
+                    ]                
+                }                 
+            ],
+            "Items": [
+                //left part
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        // //flag
+                        // {
+                        //     "BlockType": "image",
+                        //     "Height": 48,
+                        //     "MarginRight": 12,
+                        //     "VerticalAlignment": "Center",
+                        //     "ImageOptions": {
+                        //         "Path": "<{data.RawValue.LogoPath}>",
+                        //         "VerticalAlignment": "Center"
+                        //     }
+                        // },        
+                        //name
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 400,
+                            "MarginLeft": 8,
+                            "Source" : "<{data.RawValue.Name}>",
+                            //"HorizontalAlignment": "Left",
+                            "Foreground" : "{ForeGroundWhite}",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{MgMe}",
+                            "FontSize": "{TableCellFontSize}",
+                            "HorizontalAlignment": "Center",
+                        } 
+                    ]                        
+                },
+        
+                //right part
+                {
+                    "BlockType": "stack",
+                    "Height": "*",
+                    "MarginLeft": 64,
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    "Items": [                        
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "Spacing": 8,                            
+                            "Items": [ 
+                                // //logo
+                                // {
+                                //     "BlockType": "image",
+                                //     "Height": 40,
+                                //     "MarginRight": 0,
+                                //     "VerticalAlignment": "Center",
+                                //     "ImageOptions": {
+                                //         "Path": "<{data.RawValue.TeamCarLogoPath}>",
+                                //         "VerticalAlignment": "Center"
+                                //     }
+                                // }
+                            ]
+                        }
+                    ]
+                }
+            ]          
         }
     ]
 }

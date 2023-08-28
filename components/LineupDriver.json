@@ -35,7 +35,7 @@
                                 },
                                 {
                                     "BlockType": "image",
-                                    "RenderIf": "{ShowCountryFlagsForDrivers}",
+                                    "RenderIf": "{RenderDriverFlags}",
                                     "Height": 30,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
@@ -267,7 +267,7 @@
                                 },
                                 {
                                     "BlockType": "image",
-                                    "RenderIf": "{ShowCountryFlagsForDrivers}",
+                                    "RenderIf": "{RenderDriverFlags}",
                                     "Height": 30,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {

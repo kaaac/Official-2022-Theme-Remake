@@ -21,7 +21,7 @@
                 "MarginTop" : "{MarginTopHeaderText}",
                 "HorizontalAlignment" : "Center",
                 "VerticalAlignment": "Center",
-                "Width" : "",
+                "Width" : "700",
                 "TextOptions" : {
                     "FontSize" : 25,
                     "HorizontalAlignment" : "Center",

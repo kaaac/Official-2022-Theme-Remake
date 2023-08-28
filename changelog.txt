@@ -1,3 +1,11 @@
+v.0.8
+- remove duplicated public variable
+- fix top battles render driver cells
+- theme tested with RLT 0.9.3 - beta 3
+
+v.0.7
+- fix footer behaviour
+
 v.0.6.2
 - added option to change display of DNS races in Season Progress Position layout
 - minor fixes
