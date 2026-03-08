@@ -1,0 +1,6 @@
+{
+    "StyleName": "primaryNumber",
+    "FontName": "{MgBI}",
+    "FontSize": "{TableCellFontSize}",
+    "Foreground": "{ForeGroundWhite}"
+}

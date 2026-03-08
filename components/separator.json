@@ -1,5 +1,5 @@
 {
-    "Name" : "separator",
+    "ComponentName" : "separator",
     "BlockType": "image",
     "Margin" : "{SeparatorMargin}",
     "Width": "*",

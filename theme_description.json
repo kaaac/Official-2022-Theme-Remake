@@ -1,0 +1,27 @@
+{
+  "Name": "Remake of Official 2022 theme",
+  "ThemeId": "kaaac.official_2022_theme_remake",
+  "Author": "Kaac",
+  "Description" : "https://github.com/kaaac/Official-2022-Theme-Remake/",
+  "DefaultLocalizationId": "en-US",
+  "Version": "1.0.0",
+  "DisableUnspecifiedLocalization": true,
+  "DownloadUrl": "https://github.com/kaaac/Official-2022-Theme-Remake/releases/latest/download/Official-2022-Theme-Remake.zip",
+  "Links": [
+    {
+      "Url": "https://github.com/kaaac/Official-2022-Theme-Remake",
+      "Type" : "ThemeRepository",
+      "Caption": "Repository"
+    },
+    {
+      "Type" : "ThemeIssueReport",
+      "Url" : "https://github.com/kaaac/Official-2022-Theme-Remake/issues/new",
+      "Caption": "Report Issue"
+    },
+    {
+      "Type": "SupportAuthor",
+      "Url" : "https://buymeacoffee.com/kaaac",
+      "Caption": "Support me"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "Properties": [
+    {
+      "Name": "RenderQualiStints",
+      "PublicName": "Render Quali Stints",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "RenderRaceStints",
+      "PublicName": "Render Race Stints",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "RenderDriverFlags",
+      "PublicName": "Render Driver Flags",
+      "Type": "Bool",
+      "DefaultValue": false
+    },
+    {
+      "Name": "RenderPointsOnRaceLayout",
+      "PublicName": "Render Points on Race Layout",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "RenderTeamBadgesOnSessionResults",
+      "PublicName": "Render Team Badges on Session Results",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "RenderTeamBadgesOnOtherLayouts",
+      "PublicName": "Render Team Badges on Other Layouts",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "ShowWinnerInCalendar",
+      "PublicName": "Show Winner in Calendar",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "SecondCalendarEventsInColumn",
+      "PublicName": "Second Calendar Events in Column",
+      "Type": "Integer",
+      "DefaultValue": 6
+    },
+    {
+      "Name": "ReserveDriverMax",
+      "PublicName": "Reserve Driver Max",
+      "Type": "Integer",
+      "DefaultValue": 2
+    },
+    {
+      "Name": "Commentator",
+      "PublicName": "Commentator",
+      "Type": "String",
+      "DefaultValue": ""
+    },
+    {
+      "Name": "DNSReplacementForSeasonProgress",
+      "PublicName": "DNS Replacement for Season Progress",
+      "Type": "String",
+      "DefaultValue": ""
+    }
+  ]
+}

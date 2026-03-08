@@ -21,7 +21,7 @@
                     "BlockType": "image",
                     "Height": 44,
                     "MarginRight": 34,
-                    "Source": "images/f1_logo.png",
+                    "Source": "f1_logo.png",
                     "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}"
                 },
                 {

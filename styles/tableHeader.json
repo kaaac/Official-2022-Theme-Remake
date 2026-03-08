@@ -1,0 +1,6 @@
+{
+    "StyleName": "tableHeader",
+    "FontName": "{MgBk}",
+    "FontSize": "{TableHeaderFontSize}",
+    "Foreground": "{ForegroundRed}"
+}

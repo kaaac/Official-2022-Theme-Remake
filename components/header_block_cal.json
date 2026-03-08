@@ -1,5 +1,5 @@
 {
-    "Name": "headerBlock",
+    "ComponentName": "header_block_cal",
     "BlockType": "dock",
     "Orientation": "Vertical",
     "Foreground" : "{ForegroundRed}",
@@ -10,7 +10,7 @@
             "BlockType": "image",
             "Height": 44,
             "HorizontalAlignment" : "Center",
-            "Source": "images/f1_logo.png",
+            "Source": "f1_logo.png",
             "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}"
         },
         {
@@ -26,7 +26,11 @@
             "BlockType": "text",
             "Source" : "{Season.Name, converter=StringToUpperString} · [CALENDAR]",
             "FontSize" : 45,
-            "FontName" : "{MgEB}",
+            "Height": 64,
+            "TextOptions": {
+                "VerticalAlignment": "Bottom"
+            },
+            "FontName" : "{ForBold}",
             "Foreground" : "{ForegroundRed}",
             "HorizontalAlignment": "Center"
         }

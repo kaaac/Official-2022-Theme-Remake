@@ -1,0 +1,6 @@
+{
+    "StyleName": "calendarText",
+    "FontName": "{MgBo}",
+    "FontSize": "{TableCellFontSize}",
+    "Foreground": "{ForegroundCal}"
+}

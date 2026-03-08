@@ -1,0 +1,6 @@
+{
+    "StyleName": "calendarWinner",
+    "FontName": "{MgBo}",
+    "FontSize": "{TableCellFontSize}",
+    "Foreground": "{CalendarEventWinner}"
+}

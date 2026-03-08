@@ -8,9 +8,6 @@ on:
    types:
      - created
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -29,13 +26,13 @@ jobs:
       - name: Create ZIP Package
         run: |
           shopt -s dotglob
-          zip -r Official-2022-Theme-Remake-${{ github.event.release.tag_name }}.zip * -x "**/.*" "**/.*/**"
+          zip -r Official-2022-Theme-Remake.zip * -x "**/.*" "**/.*/**"
 
       # Runs a set of commands using the runners shell
       # Runs a set of commands using the runners shell
       - name: Upload ZIP as release asset
         uses: softprops/action-gh-release@v1
         with:
-          files: Official-2022-Theme-Remake-${{ github.event.release.tag_name }}.zip
+          files: Official-2022-Theme-Remake.zip
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}

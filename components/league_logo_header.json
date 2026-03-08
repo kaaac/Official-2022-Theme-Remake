@@ -1,5 +1,5 @@
 {
-    "Name":"LeagueLogo",
+    "ComponentName":"league_logo_header",
     "BlockType":"image",
     "Height":44,
     "Width":"auto",

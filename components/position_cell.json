@@ -5,7 +5,7 @@
     "Height": 30,
     "MarginRight" : 10,
     "PaddingBottom" : 5,
-    "TextOptionsExtern": "positionCell",
+    "Style": "positionCell",
     "RenderIf": "{Item.ClassificationPosition, Converter=NumberNotEquals, Parameter=-1}",
     "TextOptions": {
         "HorizontalAlignment": "Center"       

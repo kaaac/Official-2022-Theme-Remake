@@ -340,7 +340,7 @@
                         //     "MarginRight": 12,
                         //     "VerticalAlignment": "Center",
                         //     "ImageOptions": {
-                        //         "Path": "<{data.RawValue.LogoPath}>",
+                        //         "Path": "<{data.RawValue.LogotypePath}>",
                         //         "VerticalAlignment": "Center"
                         //     }
                         // },        
@@ -380,7 +380,7 @@
                                 //     "MarginRight": 0,
                                 //     "VerticalAlignment": "Center",
                                 //     "ImageOptions": {
-                                //         "Path": "<{data.RawValue.TeamCarLogoPath}>",
+                                //         "Path": "<{data.RawValue.TeamCarLogotypePath}>",
                                 //         "VerticalAlignment": "Center"
                                 //     }
                                 // }

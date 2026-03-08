@@ -1,4 +1,5 @@
 {
+    "ComponentName": "event_calendar",
     "BlockType" : "stack",
     "Witdh" : "*",
     "Orientation" : "Vertical",
@@ -13,7 +14,7 @@
             "Items" : [
                 {
                     "BlockType" : "stack",
-                    "Width" : 75,
+                    "Width" : 80,
                     "Orientation" : "Vertical",
                     "MarginRight" : 20,
                     "Items" : [
@@ -26,7 +27,7 @@
                                 {
                                     "BlockType" :"text",
                                     "Foreground" : "{ForeGroundWhite}",
-                                    "FontName" : "{MgMe}",
+                                    "FontName" : "{ForBold}",
                                     "FontSize" : 25,
                                     "Source" : "0",
                                     "RenderIf" : "{Item.Position, Converter=NumberLess, Parameter=10}",
@@ -36,21 +37,22 @@
                                 {
                                     "BlockType" :"text",
                                     "Foreground" : "{ForeGroundWhite}",
-                                    "FontName" : "{MgMe}",
+                                    "FontName" : "{ForBold}",
                                     "FontSize" : 25,
                                     "Source" : "{Item.Position}",
                                     "HorizontalAlignment" : "Left",
                                     "VerticalAlignment" : "Center",
-                                    "MarginRight" : 10
+                                    "MarginRight" : 15
                                 },
                                 {
                                     "BlockType" : "image",
                                     "HorizontalAlignment" : "Right",
                                     "VerticalAlignment" : "Center",
+                                    "MarginLeft" : 15,
                                     "Height" : 36,
                                     "PaddingBottom" : 6,
                                     "ImageOptions": {
-                                        "Path": "{Item.Track.Nation.LogoPath}"
+                                        "Path": "{Item.Track.Nation.LogotypePath}"
                                     }
                                 }
                             ]
@@ -99,7 +101,7 @@
                                     "HorizontalAlignment":"Right",
                                     "ItemStackOptions" : {
                                         "ItemSource" : "{Item.Races}",
-                                        "Template" : {
+                                        "ItemTemplate" : {
                                             "BlockType" : "text",
                                             "Source" : "[R{Item.RaceType}]",
                                             "HorizontalAlignment" : "Right",

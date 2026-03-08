@@ -15,7 +15,7 @@
                     "PaddingBottom" : 4,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
-                        "Path": "{Item.Driver.Nationality.LogoPath}"
+                        "Path": "{Item.Driver.Nationality.LogotypePath}"
                     },
                     "RenderIf": "{RenderDriverFlags}"
                     
@@ -27,7 +27,7 @@
                     "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern": "driverCell"
+                    "Style": "driverCell"
                 }
             ]
         },
@@ -43,7 +43,7 @@
                     "Source": "{Item.Team.Name}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern": "teamCell", 
+                    "Style": "teamCell", 
                     "TextOptions": {
                         "VerticalAlignment": "Center"
                     }
@@ -54,7 +54,7 @@
                     "MarginRight": 0,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
-                        "Path": "{Item.Team.LogoPath}",
+                        "Path": "{Item.Team.LogotypePath}",
                         "VerticalAlignment": "Center"
                     }
                 }

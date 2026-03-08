@@ -10,7 +10,7 @@
             "Height": "120",
             "Width": "600",
             "MarginRight": 50,
-            "BackgroundImage": "images/team/{Item.Team.Name}bg.png",
+            "BackgroundImage": "team/{Item.Team.Name}bg.png",
             "Items": [
                 {
                     "BlockType": "stack",
@@ -29,7 +29,7 @@
                                     "Height": 30,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
-                                        "Path": "images/Clear.png",
+                                        "Path": "Clear.png",
                                         "VerticalAlignment": "Center"
                                     }
                                 },
@@ -39,7 +39,7 @@
                                     "Height": 30,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
-                                        "Path": "{Item.Line0.Driver.Nationality.LogoPath}",
+                                        "Path": "{Item.Line0.Driver.Nationality.LogotypePath}",
                                         "VerticalAlignment": "Center"
                                     }
                                 }
@@ -77,7 +77,7 @@
                                     "MarginRight": 10,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
-                                        "Path": "{Item.Team.LogoPath}",
+                                        "Path": "{Item.Team.LogotypePath}",
                                         "VerticalAlignment": "Center"
                                     }
                                 }
@@ -242,7 +242,7 @@
             "Height": "120",
             "Width": "600",
             "MarginRight": 50,
-            "BackgroundImage": "images/team/{Item.Team.Name}bg.png",
+            "BackgroundImage": "team/{Item.Team.Name}bg.png",
             "Items": [
                 {
                     "BlockType": "stack",
@@ -261,7 +261,7 @@
                                     "Height": 30,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
-                                        "Path": "images/Clear.png",
+                                        "Path": "Clear.png",
                                         "VerticalAlignment": "Center"
                                     }
                                 },
@@ -271,7 +271,7 @@
                                     "Height": 30,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
-                                        "Path": "{Item.Line1.Driver.Nationality.LogoPath}",
+                                        "Path": "{Item.Line1.Driver.Nationality.LogotypePath}",
                                         "VerticalAlignment": "Center"
                                     }
                                 }
@@ -309,7 +309,7 @@
                                     "MarginRight": 10,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
-                                        "Path": "{Item.Team.LogoPath}",
+                                        "Path": "{Item.Team.LogotypePath}",
                                         "VerticalAlignment": "Center"
                                     }
                                 }

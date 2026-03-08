@@ -15,7 +15,7 @@
                     "MarginRight": 10,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
-                        "Path": "{Item.Team.LogoPath}",
+                        "Path": "{Item.Team.LogotypePath}",
                         "VerticalAlignment": "Center"
                     },
                     "RenderIf" : "<RenderIf>"
@@ -26,7 +26,7 @@
                     "Source": "{Item.Team.Name}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern": "teamCell" 
+                    "Style": "teamCell" 
                 }               
             ]
         }

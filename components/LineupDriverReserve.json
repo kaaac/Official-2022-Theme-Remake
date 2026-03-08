@@ -4,7 +4,7 @@
     "Width": "600",
     "MarginRight": 50,
     "MarginBottom": 20,
-    "BackgroundImage": "images/team/reservebg.png",
+    "BackgroundImage": "team/reservebg.png",
     "Items": [
         {
             "BlockType": "stack",
@@ -23,7 +23,7 @@
                             "Height": 30,
                             "VerticalAlignment": "Center",
                             "ImageOptions": {
-                                "Path": "images/Clear.png",
+                                "Path": "Clear.png",
                                 "VerticalAlignment": "Center"
                             }
                         },
@@ -33,7 +33,7 @@
                             "Height": 30,
                             "VerticalAlignment": "Center",
                             "ImageOptions": {
-                                "Path": "{Item.Driver.Nationality.LogoPath}",
+                                "Path": "{Item.Driver.Nationality.LogotypePath}",
                                 "VerticalAlignment": "Center"
                             }
                         }

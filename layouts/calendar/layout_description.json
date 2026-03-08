@@ -1,6 +1,5 @@
 {
     "LayoutName": "Calendar",
     "RenderType": "Calendar",
-	"RenderCaption": "",
-    "Index" : 0	
+	"RenderCaption": "Calendar-V1"
 }

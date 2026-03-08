@@ -11,7 +11,7 @@
             "BlockType" : "text",
             "Source" : "<header>",
             "VerticalAlignment" : "Center",
-            "TextOptionsExtern": "stickerHeader"
+            "Style": "stickerHeader"
         },
 
         {
@@ -19,7 +19,7 @@
             "BlockType" : "text",
             "Source" : "<main>",
             "VerticalAlignment" : "Center",
-            "TextOptionsExtern": "stickerDriver"
+            "Style": "stickerDriver"
         },
 
         {
@@ -27,7 +27,7 @@
             "BlockType" : "text",
             "Source" : "<data>",
             "VerticalAlignment" : "Center",
-            "TextOptionsExtern": "stickerFLTime"       
+            "Style": "stickerFLTime"       
         }
     ]
 }
