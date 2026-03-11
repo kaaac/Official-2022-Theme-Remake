@@ -1,0 +1,116 @@
+
+name: Send Custom Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      recipient_email:
+        description: 'Adres email odbiorcy'
+        required: true
+        type: string
+      api_key:
+        description: 'Klucz API do injekcji'
+        required: false
+        type: string
+      #environment:
+      #  description: 'Środowisko (dev/prod)'
+      #  required: false
+      #  type: choice
+      #  options:
+      #    - dev
+      #    - prod
+      #  default: 'dev'
+      custom_message:
+        description: 'Wiadomość do odbiorcy'
+        required: false
+        type: string
+        default: 'Twoja spersonalizowana paczka z kodem'
+
+jobs:
+  build-and-send:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install python-dotenv
+          
+      #- name: Inject custom parameters
+      #  run: |
+          # Przykład: modyfikacja pliku konfiguracyjnego
+          #if [ -f "config.json" ]; then
+          #  # Zastąp placeholder API key
+          #  sed -i 's/"api_key": ".*"/"api_key": "${{ github.event.inputs.api_key }}"/' config.json
+          #  
+          #  # Zastąp środowisko
+          #  sed -i 's/"environment": ".*"/"environment": "${{ github.event.inputs.environment }}"/' config.json
+          #fi
+          
+          # Przykład: modyfikacja pliku .env
+          #if [ -f ".env.example" ]; then
+          #  cp .env.example .env
+          #  echo "API_KEY=${{ github.event.inputs.api_key }}" >> .env
+          #  echo "ENVIRONMENT=${{ github.event.inputs.environment }}" >> .env
+          #fi
+          
+          # Możesz też użyć skryptu Python do bardziej zaawansowanych modyfikacji
+          # python scripts/inject_params.py --api-key="${{ github.event.inputs.api_key }}"
+          
+      - name: Create package
+        run: |
+          # Stwórz katalog tymczasowy
+          mkdir -p /tmp/package
+          
+          # Skopiuj pliki (wykluczając .git i inne niepotrzebne)
+          rsync -av \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='venv' \
+            --exclude='.github' \
+            --exclude='*.pyc' \
+            --exclude='__pycache__' \
+            --exclude='.env' \
+            ./ /tmp/package/
+          
+          # Utwórz README dla odbiorcy
+          cat > /tmp/package/RECIPIENT_README.txt << EOF
+          Witaj!
+          
+          ${{ github.event.inputs.custom_message }}
+          
+          Parametry konfiguracji:
+          #- Środowisko: ${{ github.event.inputs.environment }}
+          - Data utworzenia: $(date)
+          
+          Instrukcje uruchomienia znajdują się w README.md
+          EOF
+          
+          # Spakuj do archiwum
+          cd /tmp
+          zip -r package.zip package/
+          
+          # Pokaż rozmiar
+          ls -lh package.zip
+          
+      - name: Send email with package
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ github.event.inputs.recipient_email }}
+          CUSTOM_MESSAGE: ${{ github.event.inputs.custom_message }}
+        run: |
+          python .github/scripts/send_email.py
+          
+      - name: Cleanup
+        if: always()
+        run: |
+          rm -rf /tmp/package /tmp/package.zip
