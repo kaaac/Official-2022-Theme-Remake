@@ -5,15 +5,15 @@ on:
   workflow_dispatch:
     inputs:
       recipient_email:
-        description: 'Adres email odbiorcy'
+        description: 'Recipient email address'
         required: true
         type: string
       api_key:
-        description: 'Klucz API do injekcji'
+        description: 'API key for injection'
         required: false
         type: string
       #environment:
-      #  description: 'Środowisko (dev/prod)'
+      #  description: 'Environment (dev/prod)'
       #  required: false
       #  type: choice
       #  options:
@@ -21,10 +21,10 @@ on:
       #    - prod
       #  default: 'dev'
       custom_message:
-        description: 'Wiadomość do odbiorcy'
+        description: 'Message to recipient'
         required: false
         type: string
-        default: 'Twoja spersonalizowana paczka z kodem'
+        default: 'Your personalized package with code'
 
 jobs:
   build-and-send:
@@ -44,33 +44,12 @@ jobs:
           pip install --upgrade pip
           pip install python-dotenv
           
-      #- name: Inject custom parameters
-      #  run: |
-          # Przykład: modyfikacja pliku konfiguracyjnego
-          #if [ -f "config.json" ]; then
-          #  # Zastąp placeholder API key
-          #  sed -i 's/"api_key": ".*"/"api_key": "${{ github.event.inputs.api_key }}"/' config.json
-          #  
-          #  # Zastąp środowisko
-          #  sed -i 's/"environment": ".*"/"environment": "${{ github.event.inputs.environment }}"/' config.json
-          #fi
-          
-          # Przykład: modyfikacja pliku .env
-          #if [ -f ".env.example" ]; then
-          #  cp .env.example .env
-          #  echo "API_KEY=${{ github.event.inputs.api_key }}" >> .env
-          #  echo "ENVIRONMENT=${{ github.event.inputs.environment }}" >> .env
-          #fi
-          
-          # Możesz też użyć skryptu Python do bardziej zaawansowanych modyfikacji
-          # python scripts/inject_params.py --api-key="${{ github.event.inputs.api_key }}"
-          
       - name: Create package
         run: |
-          # Stwórz katalog tymczasowy
+          # Create temporary directory
           mkdir -p /tmp/package
           
-          # Skopiuj pliki (wykluczając .git i inne niepotrzebne)
+          # Copy files (excluding .git and other unnecessary files)
           rsync -av \
             --exclude='.git' \
             --exclude='node_modules' \
@@ -81,32 +60,74 @@ jobs:
             --exclude='.env' \
             ./ /tmp/package/
           
-          # Utwórz README dla odbiorcy
+          # Create README for recipient
           cat > /tmp/package/RECIPIENT_README.txt << EOF
-          Witaj!
+          Hello!
           
           ${{ github.event.inputs.custom_message }}
           
-          Parametry konfiguracji:
-          #- Środowisko: ${{ github.event.inputs.environment }}
-          - Data utworzenia: $(date)
+          Configuration parameters:
+          - Creation date: $(date)
           
-          Instrukcje uruchomienia znajdują się w README.md
+          Launch instructions can be found in README.md
           EOF
           
           # Spakuj do archiwum
           cd /tmp
           zip -r package.zip package/
           
-          # Pokaż rozmiar
+          # Show size
           ls -lh package.zip
           
-      - name: Send email with package
+      - name: Generate unique release tag
+        id: release_tag
+        run: |
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          RANDOM_ID=$(openssl rand -hex 4)
+          TAG="package-${TIMESTAMP}-${RANDOM_ID}"
+          echo "tag=${TAG}" >> $GITHUB_OUTPUT
+          echo "Generated tag: ${TAG}"
+          
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.release_tag.outputs.tag }}
+          release_name: Package for ${{ github.event.inputs.recipient_email }}
+          body: |
+            Automated package delivery
+            Created: ${{ steps.release_tag.outputs.tag }}
+            Recipient: ${{ github.event.inputs.recipient_email }}
+          draft: true
+          prerelease: false
+          
+      - name: Upload package to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: /tmp/package.zip
+          asset_name: package.zip
+          asset_content_type: application/zip
+          
+      - name: Get download URL
+        id: download_url
+        run: |
+          ASSET_URL="https://github.com/${{ github.repository }}/releases/download/${{ steps.release_tag.outputs.tag }}/package.zip"
+          echo "url=${ASSET_URL}" >> $GITHUB_OUTPUT
+          echo "Download URL: ${ASSET_URL}"
+          
+      - name: Send email with download link
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          DOWNLOAD_URL: ${{ steps.download_url.outputs.url }}
+          RELEASE_TAG: ${{ steps.release_tag.outputs.tag }}
         run: |
-          python .github/scripts/send_email.py "${{ github.event.inputs.recipient_email }}" /tmp/package.zip
+          python .github/scripts/send_email.py "${{ github.event.inputs.recipient_email }}" --link "${DOWNLOAD_URL}" --tag "${RELEASE_TAG}"
           
       - name: Cleanup
         if: always()

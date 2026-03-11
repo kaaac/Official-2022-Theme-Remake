@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Skrypt do wysyłania emaili z załącznikami przez Gmail SMTP
-Używany przez GitHub Actions workflow
+Script for sending emails with attachments via Gmail SMTP
+Used by GitHub Actions workflow
 """
 
 import smtplib
@@ -15,31 +15,31 @@ from pathlib import Path
 
 def send_email_with_attachment(to_email, subject, body, attachment_path):
     """
-    Wysyła email z załącznikiem przez Gmail SMTP
+    Sends email with attachment via Gmail SMTP
     
     Args:
-        to_email: Adres odbiorcy
-        subject: Temat wiadomości
-        body: Treść emaila
-        attachment_path: Ścieżka do pliku załącznika
+        to_email: Recipient address
+        subject: Email subject
+        body: Email body
+        attachment_path: Attachment file path
     """
     # Pobranie credentials z zmiennych środowiskowych
     from_email = os.environ.get('GMAIL_USER')
     password = os.environ.get('GMAIL_APP_PASSWORD')
     
     if not from_email or not password:
-        raise ValueError("Brak GMAIL_USER lub GMAIL_APP_PASSWORD w zmiennych środowiskowych")
+        raise ValueError("Missing GMAIL_USER or GMAIL_APP_PASSWORD in environment variables")
     
-    # Utworzenie wiadomości
+    # Create message
     msg = MIMEMultipart()
     msg['From'] = from_email
     msg['To'] = to_email
     msg['Subject'] = subject
     
-    # Dodanie treści
+    # Add body
     msg.attach(MIMEText(body, 'plain'))
     
-    # Dodanie załącznika
+    # Add attachment
     if attachment_path and os.path.exists(attachment_path):
         filename = os.path.basename(attachment_path)
         
@@ -53,63 +53,92 @@ def send_email_with_attachment(to_email, subject, body, attachment_path):
             f'attachment; filename= {filename}'
         )
         msg.attach(part)
-        print(f"✓ Załącznik dodany: {filename} ({os.path.getsize(attachment_path)} bytes)")
+        print(f"✓ Attachment added: {filename} ({os.path.getsize(attachment_path)} bytes)")
     else:
-        print(f"⚠ Plik załącznika nie istnieje: {attachment_path}")
+        print(f"⚠ Attachment file does not exist: {attachment_path}")
     
-    # Wysłanie emaila
+    # Send email
     try:
-        print(f"Łączenie z smtp.gmail.com:587...")
+        print(f"Connecting to smtp.gmail.com:587...")
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
         
-        print(f"Logowanie jako {from_email}...")
+        print(f"Logging in as {from_email}...")
         server.login(from_email, password)
         
-        print(f"Wysyłanie do {to_email}...")
+        print(f"Sending to {to_email}...")
         text = msg.as_string()
         server.sendmail(from_email, to_email, text)
         server.quit()
         
-        print(f"✓ Email wysłany pomyślnie do {to_email}")
+        print(f"✓ Email sent successfully to {to_email}")
         return True
         
     except smtplib.SMTPAuthenticationError:
-        print("✗ BŁĄD: Nieprawidłowe dane logowania Gmail")
-        print("  Sprawdź czy App Password jest poprawny i czy 2FA jest włączone")
+        print("✗ ERROR: Invalid Gmail credentials")
+        print("  Check if App Password is correct and 2FA is enabled")
         return False
     except smtplib.SMTPException as e:
-        print(f"✗ BŁĄD SMTP: {e}")
+        print(f"✗ SMTP ERROR: {e}")
         return False
     except Exception as e:
-        print(f"✗ BŁĄD: {e}")
+        print(f"✗ ERROR: {e}")
         return False
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Użycie: python send_email.py <adres_email> [ścieżka_załącznika]")
-        sys.exit(1)
+    import argparse
     
-    recipient = sys.argv[1]
-    attachment = sys.argv[2] if len(sys.argv) > 2 else None
+    parser = argparse.ArgumentParser(description='Send email with package link or attachment')
+    parser.add_argument('email', help='Recipient email address')
+    parser.add_argument('attachment', nargs='?', help='Attachment file path (optional)')
+    parser.add_argument('--link', help='Download link instead of attachment')
+    parser.add_argument('--tag', help='Release tag for reference')
     
-    # Możesz dostosować subject i body
-    subject = "Twoja spersonalizowana paczka z repozytorium"
-    body = """Cześć!
+    args = parser.parse_args()
+    
+    recipient = args.email
+    
+    if args.link:
+        # Send email with download link
+        subject = "Your personalized package - Download Link"
+        body = f"""Hello!
 
-W załączniku znajdziesz spersonalizowaną paczkę z repozytorium.
+Your personalized package is ready for download.
 
-Kod został dostosowany zgodnie z parametrami konfiguracyjnymi.
+🔗 Download Link:
+{args.link}
 
-Pozdrawiam,
-Automatyczny System Dystrybucji
+⚠️ Important:
+- This link is valid for 90 days
+- For private repositories, you'll need GitHub access
+- Package reference: {args.tag or 'N/A'}
+
+If you have any issues accessing the package, please contact support.
+
+Best regards,
+Automated Distribution System"""
+        
+        # Send without attachment
+        success = send_email_with_attachment(recipient, subject, body, None)
+    else:
+        # Original behavior with attachment
+        attachment = args.attachment
+        subject = "Your personalized package from repository"
+        body = """Hello!
+
+Please find attached your personalized package from the repository.
+
+The code has been adjusted according to configuration parameters.
+
+Best regards,
+Automated Distribution System
 """
     
-    success = send_email_with_attachment(
-        to_email=recipient,
-        subject=subject,
-        body=body,
-        attachment_path=attachment
-    )
+        success = send_email_with_attachment(
+            to_email=recipient,
+            subject=subject,
+            body=body,
+            attachment_path=attachment
+        )
     
     sys.exit(0 if success else 1)
