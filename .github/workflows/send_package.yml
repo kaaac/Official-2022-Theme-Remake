@@ -105,10 +105,8 @@ jobs:
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          RECIPIENT_EMAIL: ${{ github.event.inputs.recipient_email }}
-          CUSTOM_MESSAGE: ${{ github.event.inputs.custom_message }}
         run: |
-          python .github/scripts/send_email.py
+          python .github/scripts/send_email.py "${{ github.event.inputs.recipient_email }}" /tmp/package.zip
           
       - name: Cleanup
         if: always()
