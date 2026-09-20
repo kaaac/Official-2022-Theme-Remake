@@ -1,5 +1,6 @@
 {
     "FontNameDefault" : "Formula1-Regular",
+    "FontNameBold" : "Formula1-Bold",
     "ForBold": "Formula1-Bold",
     "ForWide": "Formula1-Wide",
     "MgMI":"Magistral-MediumItalic",
@@ -25,6 +26,7 @@
     "SeasonProgressPointsTopForeground" : "#C2C2C2",
     "SticlerFLTimeForeGround": "#CC00CC",
     "CalendarEventWinner" : "#CCD2B200",
+    "FastestLapQualSelectedForeground" : "#FFC70BF7",
     "TableCellFontSize":"18",
     "TableHeaderFontSize":"14",
     "StickerHeaderFontSize": "22",
@@ -32,5 +34,7 @@
     "StickerFLTimeFontSize": "28",
     "HeaderLeftFontSize" :"34",
     "LocationNameFontSize" : "22",
-    "CountryNameFontSize" : "20"
+    "CountryNameFontSize" : "20",
+    "StatisticsMarginTopSeparator" : "10"
+    
 }

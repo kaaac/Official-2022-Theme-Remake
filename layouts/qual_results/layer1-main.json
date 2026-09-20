@@ -7,11 +7,11 @@
         "Items": [
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block_session"
+                "Component" : "header_block_session"
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "separator"
+                "Component" : "separator"
             },
             {
                 "Name": "mainTable",
@@ -33,7 +33,7 @@
                             "Header": "",
                             "Template": {
                                 "BlockType" : "component",                                
-                                "ComponentName" : "position_cell",
+                                "Component" : "position_cell",
                                 "ComponentOptions" :{
                                     "Vars" :{
                                         "position" : "{Item.PositionString}"
@@ -46,7 +46,7 @@
                             "Template":
                             {
                                 "BlockType" : "component",
-                                "ComponentName" : "driver_cell"                                
+                                "Component" : "driver_cell"                                
                             }
                         },
                         {
@@ -54,7 +54,7 @@
                             "Template":
                             {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_cell",
+                                "Component" : "team_cell",
                                 "ComponentOptions" :{
                                     "Vars" :{
                                         "MarginRight" : "200",
@@ -177,7 +177,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "bg_footer"
+                "Component" : "bg_footer"
             }          
         ]
     }

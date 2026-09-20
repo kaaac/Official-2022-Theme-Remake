@@ -62,6 +62,15 @@
         "MontrealGP" : "CanadianGP",
         "ShanghaiGP" : "ChinaGP",
         "PortimãoGP" : "PortimaoGP",
-        "CSoft" : "#ffffff"
+        "CSoft" : "#ffffff",
+        "CALENDAR" : "CALENDAR",
+        "GAP" : "GAP",
+        "LAP" : "LAP",
+        "PIT STOPS" : "PIT STOPS",
+        "POINTS" : "POINTS",
+        "Q1" : "Q1",
+        "Q2" : "Q2",
+        "Q3" : "Q3",
+        "Reserve drivers" : "Reserve drivers"
     }
 }

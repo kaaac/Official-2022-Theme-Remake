@@ -7,7 +7,7 @@
         "Items": [
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block",
+                "Component" : "header_block",
                 "ComponentOptions" : {
                     "Vars" : {
                         "headerlefttext" : "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString}  ·  {Season.Name, Converter=StringToUpperString}  [LINE-UP]"
@@ -16,7 +16,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "separator"
+                "Component" : "separator"
             },
             {
                 "Name": "mainTable",
@@ -37,7 +37,7 @@
                             "Header": "",                           
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_cell",
+                                "Component" : "team_cell",
                                 "MarginLeft" : 25,
                                 "ComponentOptions" :{
                                     "Vars" :{
@@ -53,7 +53,7 @@
                             "MarginRight" : 24, 
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "driver_cell",
+                                "Component" : "driver_cell",
                                 "RenderIf": "{Item.IsDriverSet}"
                             }
                             
@@ -76,7 +76,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "bg_footer"
+                "Component" : "bg_footer"
             }
         ]
     }

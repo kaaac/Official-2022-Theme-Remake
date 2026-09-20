@@ -1,4 +1,5 @@
 {
+    "ComponentName": "team_cell",
     "BlockType": "dock",
     "MarginRight": "<MarginRight>",
     "VerticalAlignment" : "Center",

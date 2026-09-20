@@ -1,4 +1,5 @@
 {
+    "ComponentName": "position_cell",
     "BlockType": "text",
     "Source": "<position>",
     "Width": 25,

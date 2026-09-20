@@ -8,7 +8,7 @@
         "Items": [
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block",
+                "Component" : "header_block",
                 "ComponentOptions" : {
                     "Vars" : {
                         "headerlefttext" : "{Season.LeagueInfo.LeagueShortName} · {Season.Name}"
@@ -30,7 +30,7 @@
                 },
                 "Triggers" : [
                     {
-                        "Condition" : "{Metadata.RenderDataType, Converter=StringEquals, Parameter=PenTimeAllAvg}",
+                        "Condition" : "{LayoutInfo.RenderDataType, Converter=StringEquals, Parameter=PenTimeAllAvg}",
                         "Property" : "Width",
                         "Value" : "700"
                     }
@@ -39,7 +39,8 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "separator"
+                "Component" : "separator",
+                "MarginTop" : "{StatisticsMarginTopSeparator}"
             },
             {
                 "Name": "mainTable",
@@ -60,7 +61,7 @@
                             "WidthStretch": false,
                             "Template": {
                                 "BlockType": "component",
-                                "ComponentName": "position_cell",
+                                "Component": "position_cell",
                                 "ComponentOptions": {
                                     "Vars": {
                                         "position": "{Item.Position}"
@@ -73,7 +74,7 @@
                             "WidthStretch": true,
                             "Template": {
                                 "BlockType": "component",
-                                "ComponentName": "driver_cell"
+                                "Component": "driver_cell"
                             }
                         },
                         {
@@ -84,9 +85,9 @@
                             "MarginLeft": 8,
                             "Template": {
                                 "BlockType": "component",
+                                "Component": "statistics_cell",
                                 "Name": "statist",
                                 "ComponentOptions": {
-                                    "ComponentName": "statistics_cell",
                                     "Vars": {
                                         "data": "Item.Value0"
                                     }
@@ -100,9 +101,9 @@
                             "WidthStretch": false,
                             "Template": {
                                 "BlockType": "component",
+                                "Component": "statistics_cell",
                                 "Name": "statist",
                                 "ComponentOptions": {
-                                    "ComponentName": "statistics_cell",
                                     "Vars": {
                                         "data": "Item.Value1"
                                     }
@@ -116,9 +117,9 @@
                             "GroupId": "{Statistics.Column2.GroupId}",
                             "Template": {
                                 "BlockType": "component",
+                                "Component": "statistics_cell",
                                 "Name": "statist",
                                 "ComponentOptions": {
-                                    "ComponentName": "statistics_cell",
                                     "Vars": {
                                         "data": "Item.Value2"
                                     }
@@ -132,9 +133,9 @@
                             "GroupId": "{Statistics.Column3.GroupId}",
                             "Template": {
                                 "BlockType": "component",
+                                "Component": "statistics_cell",
                                 "Name": "statist",
                                 "ComponentOptions": {
-                                    "ComponentName": "statistics_cell",
                                     "Vars": {
                                         "data": "Item.Value3"
                                     }
@@ -148,9 +149,9 @@
                             "WidthStretch": false,
                             "Template": {
                                 "BlockType": "component",
+                                "Component": "statistics_cell",
                                 "Name": "statist",
                                 "ComponentOptions": {
-                                    "ComponentName": "statistics_cell",
                                     "Vars": {
                                         "data": "Item.Value4"
                                     }
@@ -164,9 +165,9 @@
                             "WidthStretch": false,
                             "Template": {
                                 "BlockType": "component",
+                                "Component": "statistics_cell",
                                 "Name": "statist",
                                 "ComponentOptions": {
-                                    "ComponentName": "statistics_cell",
                                     "Vars": {
                                         "data": "Item.Value5"
                                     }
@@ -180,9 +181,9 @@
                             "WidthStretch": false,
                             "Template": {
                                 "BlockType": "component",
+                                "Component": "statistics_cell",
                                 "Name": "statist",
                                 "ComponentOptions": {
-                                    "ComponentName": "statistics_cell",
                                     "Vars": {
                                         "data": "Item.Value6"
                                     }
@@ -196,9 +197,9 @@
                             "WidthStretch": false,
                             "Template": {
                                 "BlockType": "component",
+                                "Component": "statistics_cell",
                                 "Name": "statist",
                                 "ComponentOptions": {
-                                    "ComponentName": "statistics_cell",
                                     "Vars": {
                                         "data": "Item.Value7"
                                     }
@@ -212,9 +213,9 @@
                             "WidthStretch": false,
                             "Template": {
                                 "BlockType": "component",
+                                "Component": "statistics_cell",
                                 "Name": "statist",
                                 "ComponentOptions": {
-                                    "ComponentName": "statistics_cell",
                                     "Vars": {
                                         "data": "Item.Value8"
                                     }
@@ -226,7 +227,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "statistics_dock"
+                "Component" : "statistics_dock"
             },
             {
                 "BlockType": "text",
@@ -242,8 +243,8 @@
                 },
                 "Triggers" : [
                     {
-                        "Condition" : "{Metadata.RenderDataType, Converter=StringEquals, Parameter=FinishesBestSeries}",
-                        "ConditionOr" : "{Metadata.RenderDataType, Converter=StringEquals, Parameter=PointsBestSeries}",
+                        "Condition" : "{LayoutInfo.RenderDataType, Converter=StringEquals, Parameter=FinishesBestSeries}",
+                        "ConditionOr" : "{LayoutInfo.RenderDataType, Converter=StringEquals, Parameter=PointsBestSeries}",
                         "Property" : "RenderIf",
                         "Value" : true
                     }
@@ -251,7 +252,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "bg_footer"
+                "Component" : "bg_footer"
             }
         ]
     }

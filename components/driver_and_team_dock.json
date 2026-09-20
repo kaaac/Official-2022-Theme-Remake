@@ -1,4 +1,5 @@
 {
+    "ComponentName": "driver_and_team_dock",
     "BlockType": "dock",
     "PaddingLeft": 12,
     "PaddingRight": 4,
@@ -12,7 +13,6 @@
                     "BlockType": "image",
                     "Height": 19,
                     "MarginRight": 12,
-                    "PaddingBottom" : 4,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
                         "Path": "{Item.Driver.Nationality.LogotypePath}"

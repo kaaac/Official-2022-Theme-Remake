@@ -1,4 +1,5 @@
 {
+    "ComponentName": "LineupDriver",
     "BlockType": "dock",
     "Padding": "0,0,0,16",
     "Orientation": "Horizontal",
@@ -67,7 +68,7 @@
                                     "HorizontalAlignment": "Left",
                                     "VerticalAlignment": "Center",
                                     "FontName": "{FontNameBold}",
-                                    "Foreground": "{ForegroundWhithe}",
+                                    "Foreground": "{ForeGroundWhite}",
                                     "FontSize": "20"
                                 },
                                 {
@@ -299,7 +300,7 @@
                                     "HorizontalAlignment": "Left",
                                     "VerticalAlignment": "Center",
                                     "FontName": "{FontNameBold}",
-                                    "Foreground": "{ForegroundWhithe}",
+                                    "Foreground": "{ForeGroundWhite}",
                                     "FontSize": "20"
                                 },
                                 {

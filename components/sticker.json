@@ -1,4 +1,5 @@
 {
+    "ComponentName": "sticker",
     "Name" : "sticker",
     "BlockType" : "stack",
     "Background": "<bg>",

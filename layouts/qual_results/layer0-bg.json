@@ -5,7 +5,7 @@
         "Items": [
             {
                 "BlockType" : "component",
-                "ComponentName" : "bg"
+                "Component" : "bg"
             }
         ]
     }

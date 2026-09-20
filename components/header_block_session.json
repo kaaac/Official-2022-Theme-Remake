@@ -1,4 +1,5 @@
 {
+    "ComponentName": "header_block_session",
     "Name": "headerBlock",
     "BlockType": "dock",
     "Orientation": "Horizontal",
@@ -18,12 +19,12 @@
             "Items": [
                 {
                     "BlockType" : "component",
-                    "ComponentName" : "f1_logo_header",
+                    "Component" : "f1_logo_header",
                     "VerticalAlignment" : "Center"
                 },
                 {
                     "BlockType" : "component",
-                    "ComponentName" : "league_logo_header",
+                    "Component" : "league_logo_header",
                     "VerticalAlignment" : "Center"
                 },
                 {
@@ -73,7 +74,7 @@
                     "VerticalAlignment": "Center",
                     "MarginTop" : "{MarginTopHeaderText}",
                     "Style": "headerLeftTextOptions",
-                    "RenderIf" : "{Metadata.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}"
+                    "RenderIf" : "{LayoutInfo.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}"
                 }
             ]
         },
@@ -84,7 +85,7 @@
             "VerticalAlignment" : "Bottom",
             "MarginRight" : 50,
             "MarginBottom" : 3,
-            "RenderIf" : "{Metadata.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}",
+            "RenderIf" : "{LayoutInfo.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}",
             "Items": [
                 {
                     "BlockType": "text",                                            

@@ -7,7 +7,7 @@
         "Items": [
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block",
+                "Component" : "header_block",
                 "ComponentOptions" : {
                     "Vars" : {
                         "headerlefttext" : "{Season.LeagueInfo.LeagueName} · {Season.Name} · [Driver Standings]"
@@ -16,7 +16,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "separator"
+                "Component" : "separator"
             },
             {
                 "Name": "mainTable",
@@ -34,7 +34,7 @@
                             "Header": "",
                             "Template": {
                                 "BlockType" : "component",                                
-                                "ComponentName" : "position_cell",
+                                "Component" : "position_cell",
                                 "ComponentOptions" :{
                                     "Vars" :{
                                         "position" : "{Item.Position}"
@@ -47,7 +47,7 @@
                             "WidthStretch" : true,                            
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "driver_and_team_dock"   
+                                "Component" : "driver_and_team_dock"   
                             }
                         },
                         {
@@ -86,7 +86,7 @@
                                 "BlockType" : "component",
                                 "PaddingLeft" : 0,                               
                                 "PaddingRight" : 12,
-                                "ComponentName" : "jump_cell"    
+                                "Component" : "jump_cell"    
                             }
                         },
                         {
@@ -167,7 +167,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "bg_footer"
+                "Component" : "bg_footer"
             }
         ]
     }
