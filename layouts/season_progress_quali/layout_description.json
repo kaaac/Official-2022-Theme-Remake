@@ -1,6 +1,6 @@
 {
-    "LayoutName": "SeasonProgressQualificationPositions",
+    "LayoutName": "seasonProgressQualificationPositions",
     "RenderType": "DriverStandings",
-	"RenderCaption": "driver season progress (Qualification positions)",
-	"Index" : 3
+    "RenderCaption": "driver season progress (qualification positions)",
+    "RenderVersion": 4
 }

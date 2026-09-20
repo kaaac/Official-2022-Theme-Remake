@@ -1,6 +1,5 @@
 {
     "LayoutName": "raceResults",
     "RenderType": "RaceResults",
-    "RenderCaption": "Race Results",
-    "RenderVersion": 1
+    "RenderCaption": "Race Results"
 }
