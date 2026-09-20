@@ -248,7 +248,7 @@
                             "BlockType": "image",
                             "Height": 18,
                             "VerticalAlignment": "Top",
-                            "Source": "tyres_{Item.Tyres}.png",
+                            "Source": "tyres/tyres_{Item.Tyres}.png",
                             "RenderIf": true,
                             "Triggers" : [
                                 {
@@ -301,7 +301,7 @@
             "MarginLeft" : 12,
             "MarginRight" : 0,
             "PaddingTop": 8,
-            "Source": "<{data.Tyres, Converter=StringFormatReverse, Parameter=tyres_SUB.png}>",
+            "Source": "<{data.Tyres, Converter=StringFormatReverse, Parameter=tyres/tyres_SUB.png}>",
             "VerticalAlignment" : "Top",
             "HorizontalAlignment": "Right",
             "Height" : 15                                        

@@ -57,7 +57,7 @@
                                 "Component" : "team_cell",
                                 "ComponentOptions" :{
                                     "Vars" :{
-                                        "MarginRight" : "200",
+                                        "MarginRight": "{ColumnMarginRight}",
                                         "RenderIf" : "{RenderTeamBadgesOnSessionResults}"
                                     }
                                 }
@@ -69,7 +69,7 @@
                                 "BlockType": "text",
                                 "Padding": "6, 0",
                                 "Source": "{Item.FastestLapTime}",
-                                "MarginRight": 180,
+                                "MarginRight": "{ColumnMarginRight}",
                                 "HorizontalAlignment": "Left",
                                 "Style" : "driverCell",
                                 "RenderIf" : "{Session.IsLiveData}",
@@ -96,7 +96,7 @@
                                 "BlockType": "itemstack",
                                 "Spacing": 4,
                                 "HorizontalAlignment": "Left",
-                                "MarginRight": 150,
+                                "MarginRight": "{ColumnMarginRight}",
                                 "RenderIf" : "{RenderQualiStints}",
                                 "ItemStackOptions": {
                                     "ItemSource": "{Item.Stints}",
@@ -112,7 +112,7 @@
                                                 "BlockType": "image",
                                                 "Height": 17,
                                                 "VerticalAlignment": "Center",
-                                                "Source": "tyres_{Item.Tyres}.png",
+                                                "Source": "tyres/tyres_{Item.Tyres}.png",
                                                 "HorizontalAlignment":"Center"
                                             }                                           
                                         ]
@@ -127,6 +127,7 @@
                                 "Padding": "6, 0",
                                 "Source": "{Item.Time}",
                                 "HorizontalAlignment": "Left",
+                                "MarginRight": "{ColumnMarginRight}",
                                 "Style" : "driverCell",
                                 "TextOptions": {
                                     "HorizontalAlignment": "Center"
@@ -149,7 +150,7 @@
                                 "RenderIf" : "{Item.PenaltyPosIngame, Converter=NumberNotEquals, Parameter=0}",
                                 "Width" :85,
                                 "Style":"PenPos",
-                                "MarginLeft": 80,
+                                "MarginRight": "{ColumnMarginRight}",
                                 "HorizontalAlignment":"Center",
                                 "TextOptions" : {
                                     "HorizontalAlignment" : "Center"
@@ -162,7 +163,6 @@
                                 "BlockType": "text",
                                 "Padding": "6, 0",
                                 "Source": "{Item.LapsCount}",
-                                "MarginLeft": 180,
                                 "HorizontalAlignment": "Left",
                                 "Width":75,
                                 "Style" : "driverCell",

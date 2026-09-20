@@ -65,7 +65,7 @@
                                 "Component" : "team_cell",
                                 "ComponentOptions" :{
                                     "Vars" :{
-                                        "MarginRight" : "200",
+                                        "MarginRight": "{ColumnMarginRight}",
                                         "RenderIf" : "{RenderTeamBadgesOnSessionResults}"
                                     }
                                 }                              
@@ -77,7 +77,7 @@
                                 "BlockType": "text",
                                 "Padding": "6, 0",
                                 "Source": "{Item.FastestLapTime}",
-                                "MarginRight": 180,
+                                "MarginRight": "{ColumnMarginRight}",
                                 "HorizontalAlignment": "Left",
                                 "Style" : "driverCell",
                                 "RenderIf" : "{Item.FastestLapTime, Converter=EmptyObjectToFalse}",
@@ -99,7 +99,7 @@
                                 "Padding": "6, 0",
                                 "BlockType": "text",
                                 "Source": "{Item.IntervalRace}",
-                                "MarginRight": 180,
+                                "MarginRight": "{ColumnMarginRight}",
                                 "HorizontalAlignment": "Left",
                                 "Style" : "driverCell",
                                 "TextOptions": {
@@ -121,12 +121,12 @@
                             }
                         },
                         {
-                            "Header": "",
+                            "Header": "[STINTS]",
                             "Template": {
                                 "BlockType": "itemstack",
                                 "Spacing": 4,
                                 "HorizontalAlignment": "Left",
-                                "MarginRight": 150,
+                                "MarginRight": "{ColumnMarginRight}",
                                 "RenderIf" : "{RenderRaceStints}",
                                 "ItemStackOptions": {
                                     "ItemSource": "{Item.Stints}",
@@ -142,7 +142,7 @@
                                                 "BlockType": "image",
                                                 "Height": 17,
                                                 "VerticalAlignment": "Center",
-                                                "Source": "tyres_{Item.Tyres}.png",
+                                                "Source": "tyres/tyres_{Item.Tyres}.png",
                                                 "HorizontalAlignment":"Center"
                                             }                                           
                                         ]

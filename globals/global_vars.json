@@ -11,6 +11,7 @@
     "MgMe":"Magistral-Medium",
     "MarginRoot" : "0,0,0,0",
     "MarginTable" : "25,0,15,0",
+    "ColumnMarginRight" : 50,
     "SeparatorMargin" : "25,0,2,8",
     "HeaderLeftMargin" : "29,0,20,0",
     "MarginTopHeaderText" : "2",
@@ -33,6 +34,7 @@
     "StickerDriverFontSize": "26",
     "StickerFLTimeFontSize": "28",
     "HeaderLeftFontSize" :"34",
+    "HeaderLeftFontSizeSmall" :"27",
     "LocationNameFontSize" : "22",
     "CountryNameFontSize" : "20",
     "StatisticsMarginTopSeparator" : "10"

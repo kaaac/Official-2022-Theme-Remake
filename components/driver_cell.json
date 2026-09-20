@@ -17,7 +17,7 @@
         {
             "BlockType": "text",
             "MaxWidth": 300,
-            "MarginRight": 150,
+            "MarginRight": "{ColumnMarginRight}",
             "Style": "driverCell",
             "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
             "HorizontalAlignment": "Left",

@@ -57,7 +57,7 @@
                                 "Component" : "team_cell",
                                 "ComponentOptions" :{
                                     "Vars" :{
-                                        "MarginRight" : "200",
+                                        "MarginRight": "{ColumnMarginRight}",
                                         "RenderIf" : "{RenderTeamBadgesOnSessionResults}"
                                     }
                                 }
@@ -69,7 +69,7 @@
                                 "BlockType": "text",
                                 "Padding": "6, 0",
                                 "Source": "{Item.QualQ1Time}",
-                                "MarginRight": 180,
+                                "MarginRight": "{ColumnMarginRight}",
                                 "HorizontalAlignment": "Left",
                                 "Style" : "driverCell",
                                 "TextOptions": {
@@ -95,7 +95,7 @@
                                 "BlockType": "text",
                                 "Padding": "6, 0",
                                 "Source": "{Item.QualQ2Time}",
-                                "MarginRight": 180,
+                                "MarginRight": "{ColumnMarginRight}",
                                 "HorizontalAlignment": "Left",
                                 "Style" : "driverCell",
                                 "TextOptions": {
@@ -121,7 +121,7 @@
                                 "BlockType": "text",
                                 "Padding": "6, 0",
                                 "Source": "{Item.QualQ3Time}",
-                                "MarginRight": 180,
+                                "MarginRight": "{ColumnMarginRight}",
                                 "HorizontalAlignment": "Left",
                                 "Style" : "driverCell",
                                 "TextOptions": {
