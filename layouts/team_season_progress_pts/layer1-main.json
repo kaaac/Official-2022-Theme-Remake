@@ -7,10 +7,11 @@
         "Items": [
             {
                 "BlockType" : "component",
-                "Component" : "header_block",
+                "Component" : "header_block_2lines",
                 "ComponentOptions" : {
                     "Vars" : {
-                        "headerlefttext" : "{Season.LeagueInfo.LeagueShortName} · {Season.Name} · Team Season Progress / Points"
+                        "headerline1" : "{Season.LeagueInfo.LeagueShortName} {Season.Name}",
+                        "headerline2" : "Team Season Progress / Points"
                     }
                 }
             },
@@ -131,7 +132,7 @@
                                 "Padding": "12, 0",
                                 "BlockType": "text",
                                 "RenderIf" : "{Item.Event.WinnerString, Converter=EmptyObjectToFalse}",
-                                "Source": "{Item.PointsString}",
+                                "Source": "{Item.Points.StringValue}",
                                 "HorizontalAlignment": "Left",
                                 "Opacity":100,
                                 "Style" : "positionNumber",
@@ -140,7 +141,7 @@
                                 },
                                 "Triggers" : [
                                     {
-                                        "Condition": "{Item.PointsString, Converter=StringEquals, Parameter=0}",
+                                        "Condition": "{Item.Points.StringValue, Converter=StringEquals, Parameter=0}",
                                         "Setters": [
                                             {
                                                 "Property": "Source",

@@ -1,0 +1,62 @@
+{
+    "ComponentName": "header_block_2lines",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Foreground" : "{ForeGroundWhite}",
+    "MarginLeft" : 0,
+    "PaddingTop" : 20,
+    "PaddingBottom" : 8,
+    "UseBackgroundCrop": true,
+    "Width" : "*",
+    "Items": [
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Horizontal",
+            "Margin" : "{HeaderLeftMargin}",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",
+            "Items": [
+                {
+                    "BlockType" : "component",
+                    "Component" : "f1_logo_header",
+                    "VerticalAlignment" : "Center"
+                },
+                {
+                    "BlockType" : "component",
+                    "Component" : "league_logo_header",
+                    "VerticalAlignment" : "Center"
+                },
+                {
+                    "Name": "headerTextLines",
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    "VerticalAlignment": "Center",
+                    "MarginTop" : "{MarginTopHeaderText}",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "<headerline1>",
+                            "Style": "headerLeftTextOptions",
+                            "HorizontalAlignment": "Center",
+                            "TextOptions": {
+                                "HorizontalAlignment": "Center"
+                            }
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "<headerline2>",
+                            "Style": "headerLeftTextOptions",
+                            "FontSize": "{HeaderLeftFontSizeSmall}",
+                            "HorizontalAlignment": "Center",
+                            "TextOptions": {
+                                "HorizontalAlignment": "Center",
+                                "FontSize": "{HeaderLeftFontSizeSmall}"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
