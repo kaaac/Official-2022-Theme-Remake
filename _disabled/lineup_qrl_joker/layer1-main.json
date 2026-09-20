@@ -7,7 +7,7 @@
         "Items": [
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block_qrl_lineup",
+                "Component" : "header_block_qrl_lineup",
                 "ComponentOptions" : {
                     "Vars" : {
                         "headerlefttext" : "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString}  ·  {Season.Name, Converter=StringToUpperString}  [LINE-UP]"
@@ -16,7 +16,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "separator"
+                "Component" : "separator"
             },
             {
                 "BlockType": "Dock",
@@ -41,7 +41,7 @@
                                     "ItemSource": "{Lineups.Teams}",
                                     "Template": {
                                         "BlockType": "component",
-                                        "ComponentName": "LineupDriver"
+                                        "Component": "LineupDriver"
                                     }
                                 }
                             }
@@ -62,7 +62,7 @@
                                 "Source": "[Reserve drivers]",
                                 "VerticalAlignment": "Center",
                                 "FontName": "{FontNameBold}",
-                                "Foreground": "{ForegroundGrey}",
+                                //"Foreground": "{ForegroundGrey}",
                                 "FontSize": "25"
                             }
                         ]
@@ -83,7 +83,7 @@
                                     "Limit": "{ReserveDriverMax}",
                                     "Template": {
                                         "BlockType": "component",
-                                        "ComponentName": "LineupDriverReserve"
+                                        "Component": "LineupDriverReserve"
                                     }
                                 }
                             },
@@ -97,7 +97,7 @@
                                     "IndexStart": "{ReserveDriverMax}",
                                     "Template": {
                                         "BlockType": "component",
-                                        "ComponentName": "LineupDriverReserve"
+                                        "Component": "LineupDriverReserve"
                                     }
                                 }
                             }
@@ -107,7 +107,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "bg_footer"
+                "Component" : "bg_footer"
             }
         ]
     }
