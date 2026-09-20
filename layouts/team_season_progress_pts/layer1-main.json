@@ -7,7 +7,7 @@
         "Items": [
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block",
+                "Component" : "header_block",
                 "ComponentOptions" : {
                     "Vars" : {
                         "headerlefttext" : "{Season.LeagueInfo.LeagueShortName} · {Season.Name} · Team Season Progress / Points"
@@ -16,7 +16,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "separator"
+                "Component" : "separator"
             },
             {
                 "Name": "mainTable",
@@ -35,7 +35,7 @@
                             "Header": "",
                             "Template": {
                                 "BlockType": "component",
-                                "ComponentName": "position_cell",
+                                "Component": "position_cell",
                                 "ComponentOptions": {
                                     "Vars": {
                                         "position": "{Item.Position}"
@@ -48,7 +48,7 @@
                             "WidthStretch" : true,                            
                             "Template": {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_cell",
+                                "Component" : "team_cell",
                                 "ComponentOptions" :{
                                     "Vars" :{
                                         "MarginRight" : "",
@@ -93,16 +93,21 @@
                                 "BlockType" : "component",
                                 "PaddingLeft" : 0,                               
                                 "PaddingRight" : 12,
-                                "ComponentName" : "jump_cell"    
+                                "Component" : "jump_cell"    
                             }
                         },
                         {
                             "MarginLeft" : 6,
                             "MultiColumnHeadersSource": "{Standings.Events}",
                             "MultiColumnItemsSource": "{Item.Events}",
+                            // tylko rozegrane rundy - inaczej tabela zostaje szeroka z pustymi kolumnami
+                            // (RenderIf w Template ukrywa tresc, ale NIE usuwa kolumny)
+                            // alternatywa gdyby liczba byla przesunieta: {Standings.LastEvent.ChampionshipPosition}
+                            "MultiColumnLimit": "{Season.SeasonCurrentNumberEventExcludingNonChampionship}",
                             "MultiColumnHeaderTemplate": {
                                 "BlockType": "stack",
                                 "Orientation": "Vertical",
+                                "RenderIf" : "{Item.WinnerString, Converter=EmptyObjectToFalse}",
                                 "Spacing": 4,
                                 "HorizontalAlignment": "Center",
                                 "Items": [
@@ -125,6 +130,7 @@
                             "Template": {
                                 "Padding": "12, 0",
                                 "BlockType": "text",
+                                "RenderIf" : "{Item.Event.WinnerString, Converter=EmptyObjectToFalse}",
                                 "Source": "{Item.PointsString}",
                                 "HorizontalAlignment": "Left",
                                 "Opacity":100,
@@ -150,7 +156,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "bg_footer"
+                "Component" : "bg_footer"
             }
         ]
     }

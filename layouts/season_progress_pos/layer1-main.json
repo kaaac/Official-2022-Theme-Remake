@@ -7,7 +7,7 @@
         "Items": [
             {
                 "BlockType" : "component",
-                "ComponentName" : "header_block",
+                "Component" : "header_block",
                 "ComponentOptions" : {
                     "Vars" : {
                         "headerlefttext" : "{Season.LeagueInfo.LeagueShortName} · {Season.Name} · Progress / Positions"
@@ -16,7 +16,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "separator"
+                "Component" : "separator"
             },
             {
                 "Name": "mainTable",
@@ -27,15 +27,14 @@
                     "HeaderTemplate": {
                         "BlockType": "text",
                         "MarginBottom": 8,
-                        "FontSize": "{TableHeaderFontSize}",
-                        "Foreground" : "{ForegroundRed}"
+                        "Style" : "tableHeader"
                     },
                     "Columns": [
                         {
                             "Header": "",
                             "Template": {
                                 "BlockType": "component",
-                                "ComponentName": "position_cell",
+                                "Component": "position_cell",
                                 "ComponentOptions": {
                                     "Vars": {
                                         "position": "{Item.Position}"
@@ -48,7 +47,7 @@
                             "MarginRight" : 24,
                             "Template": {
                                 "BlockType": "component",
-                                "ComponentName": "driver_and_team_dock"
+                                "Component": "driver_and_team_dock"
                             }
                         },
                         {
@@ -87,13 +86,17 @@
                                 "BlockType" : "component",
                                 "PaddingLeft" : 0,                               
                                 "PaddingRight" : 12,
-                                "ComponentName" : "jump_cell"    
+                                "Component" : "jump_cell"    
                             }
                         },
                         {
                             "MarginLeft" : 6,
                             "MultiColumnHeadersSource": "{Standings.Events}",
                             "MultiColumnItemsSource": "{Item.Events}",
+                            // tylko rozegrane rundy - inaczej tabela zostaje szeroka z pustymi kolumnami
+                            // (RenderIf w Template ukrywa tresc, ale NIE usuwa kolumny)
+                            // alternatywa gdyby liczba byla przesunieta: {Standings.LastEvent.ChampionshipPosition}
+                            "MultiColumnLimit": "{Season.SeasonCurrentNumberEventExcludingNonChampionship}",
                             "MultiColumnHeaderTemplate": {
                                 "BlockType": "stack",
                                 "Orientation": "Vertical",
@@ -116,55 +119,51 @@
                                     }
                                 ]
                             },
+                            "Width": 55,
                             "Template": {
-                                "BlockType" : "dock",
+                                "Padding": "12, 0",
+                                "BlockType": "text",
                                 "RenderIf" : "{Item.Event.WinnerString, Converter=EmptyObjectToFalse}",
-                                "Items" : [
+                                "Source": "{Item.RaceMajorPositionString}",
+                                "HorizontalAlignment": "Center",
+                                "Style": "teamCell",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "Triggers": [
                                     {
-                                        "Padding": "12, 0",
-                                        "BlockType": "text",
-                                        "Source": "{Item.RaceMajorPositionString}",
-                                        "HorizontalAlignment": "Center",
-                                        "Style": "teamCell",
-                                        "TextOptions": {
-                                            "HorizontalAlignment": "Center"
-                                        },
-                                        "Triggers": [
+                                        "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
+                                        "Setters": [
                                             {
-                                                "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
-                                                "Setters": [
-                                                    {
-                                                        "Property": "Foreground",
-                                                        "Value": "{SeasonProgressPositionNotClassifiedForeground}"
-                                                    }
-                                                ]
-                                            },
+                                                "Property": "Foreground",
+                                                "Value": "{SeasonProgressPositionNotClassifiedForeground}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberLess, Parameter=11}",
+                                        "Setters": [
                                             {
-                                                "Condition": "{Item.RaceMajorPosition, Converter=NumberLess, Parameter=11}",
-                                                "Setters": [
-                                                    {
-                                                        "Property": "Foreground",
-                                                        "Value": "{SeasonProgressPositionTop10Foreground}"
-                                                    }
-                                                ]
-                                            },
+                                                "Property": "Foreground",
+                                                "Value": "{SeasonProgressPositionTop10Foreground}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=1}",
+                                        "Setters": [
                                             {
-                                                "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=1}",
-                                                "Setters": [
-                                                    {
-                                                        "Property": "Foreground",
-                                                        "Value": "{SeasonProgressPositionTop1Foregound}"
-                                                    }
-                                                ]
-                                            },
+                                                "Property": "Foreground",
+                                                "Value": "{SeasonProgressPositionTop1Foregound}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition" : "{Item.RaceMajorPositionString, Converter=EmptyObjectToTrue}",
+                                        "Setters" : [
                                             {
-                                                "Condition" : "{Item.RaceMajorPositionString, Converter=EmptyObjectToTrue}",
-                                                "Setters" : [
-                                                    {
-                                                        "Property" : "Source",
-                                                        "Value" : "{DNSReplacementForSeasonProgress}"
-                                                    }
-                                                ]
+                                                "Property" : "Source",
+                                                "Value" : "{DNSReplacementForSeasonProgress}"
                                             }
                                         ]
                                     }
@@ -176,7 +175,7 @@
             },
             {
                 "BlockType" : "component",
-                "ComponentName" : "bg_footer"
+                "Component" : "bg_footer"
             }
         ]
     }
