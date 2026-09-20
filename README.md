@@ -4,78 +4,77 @@
 
 # Official 2022 Theme Remake
 
-This is Remake of Official Theme F1 2022 event results layout for Racing League Tools
+Remake of the official F1 2022 result layouts for Racing League Tools.
+
+Requires **RLT 0.9.8 or newer** — the theme was rewritten for the Flex Renderer and will not load
+on older versions. If you are still on 0.9.5, grab the
+[v0.8.1](https://github.com/kaaac/Official-2022-Theme-Remake/releases/tag/v0.8.1) release instead.
 
 ## Installation
 
-Unpack the .zip file in the Racing League Tools location
+Unpack the .zip into the Racing League Tools folder:
 
 ```
-RacingLeagueTools/user/mods/
+RacingLeagueTools/user/themes/
 ```
 
-## Features
+Then pick the theme in RLT settings. On older versions this used to be `user/mods/` — that path
+is gone.
 
-### Available render layouts:
+## Layouts
 
-- DriverStandings (driverStandings)
+| Render type | Layouts |
+| --- | --- |
+| Race results | Race results |
+| Qualifying results | Qualifying |
+| Combined qualifying | Combined qualifying |
+| Driver standings | Standings, season progress by positions, by points, by qualifying positions |
+| Team standings | Standings, season progress by points |
+| Calendar | Calendar, plus a two-column variant |
+| Lineups | Custom lineup |
+| Driver statistics | Season and session |
 
-![driverStandigs](docs/images/driverStandings.png "Driver Standings")
-
-- Calendar (Calendar)
-
-![Calendar](docs/images/calendar.png "Calendar")
-
-- Calendar v2
-
-- QualResults (qualResults)
-
-![QualResults](docs/images/qualification.png "Qualification Results")
-
-- CombinedQual Results
-
-- RaceResults (raceResults)
+### Race results
 
 ![RaceResults](docs/images/race.png "Race Results")
 
-- DriverStandings (SeasonProgressPositions)
+### Qualifying
 
-![SeasonProgressPositions](docs/images/seasonProgressPos.png "Season Progress Positions")
+![QualResults](docs/images/qualification.png "Qualification Results")
 
-- DriverStandings (SeasonProgressPoints)
+### Driver standings
 
-![SeasonProgressPoints](docs/images/seasonProgressPts.png "Season Progress Points")
+![driverStandings](docs/images/driverStandings.png "Driver Standings")
 
-- DriverStandings (SeasonProgressQualificationPositions)
-
-![SeasonProgressQualificationPositions](docs/images/seasonProgressQualiPos.png "Season Progress Qualification Positions")
-
-- TeamStandings (teamStandings)
+### Team standings
 
 ![TeamStandings](docs/images/teamStandings.png "Team Standings")
 
-- TeamStandings (SeasonTeamProgressPoints)
+### Season progress
+
+![SeasonProgressPositions](docs/images/seasonProgressPos.png "Season Progress Positions")
+
+![SeasonProgressPoints](docs/images/seasonProgressPts.png "Season Progress Points")
+
+![SeasonProgressQualificationPositions](docs/images/seasonProgressQualiPos.png "Season Progress Qualification Positions")
 
 ![SeasonTeamProgressPoints](docs/images/seasonTeamProgressPts.png "Season Team Progress Points")
 
-- Lineups (Lineup)
+### Calendar
 
-![Lineups](docs/images/teamStandings.png "Line-Ups")
+![Calendar](docs/images/calendar.png "Calendar")
 
-- QRL Joker's Lineup
+### Lineups
 
-- Drivers Season Statistics
+![Lineups](docs/images/lineups.png "Line-Ups")
 
-- Drivers Session Statistics
+## Theme options
 
-- Race Battles Statictics
-
-
-Official renders of the session results do not always have information about the tires used during the session, so it is possible to disable their display.
-Just change particular options in Theme options window.
+Results coming from the game do not always carry tyre data, so the stint columns can be switched
+off. Same goes for team badges, driver flags, the commentator sticker and a few other bits. You
+will find them in the Theme options window, grouped by the render they affect.
 
 ![Options](docs/images/options.png "Theme Options")
-
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
