@@ -1,4 +1,5 @@
 {
+    "ComponentName": "header_block_session",
     "Name": "headerBlock",
     "BlockType": "dock",
     "Orientation": "Horizontal",
@@ -18,12 +19,12 @@
             "Items": [
                 {
                     "BlockType" : "component",
-                    "ComponentName" : "f1_logo_header",
+                    "Component" : "f1_logo_header",
                     "VerticalAlignment" : "Center"
                 },
                 {
                     "BlockType" : "component",
-                    "ComponentName" : "league_logo_header",
+                    "Component" : "league_logo_header",
                     "VerticalAlignment" : "Center"
                 },
                 {
@@ -32,7 +33,7 @@
                     "Source":"{Season.LeagueInfo.LeagueShortName}",
                     "MarginTop" : "{MarginTopHeaderText}",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern": "headerLeftTextOptions"
+                    "Style": "headerLeftTextOptions"
                 },
                 {
                     "BlockType": "text",
@@ -40,7 +41,7 @@
                     "Source": " {Session.SessionType, Converter=StringToUpperString}",
                     "MarginTop" : "{MarginTopHeaderText}",  
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern": "headerLeftTextOptions",
+                    "Style": "headerLeftTextOptions",
                     "RenderIf": false,
                     "Triggers" :[
                         {
@@ -56,7 +57,7 @@
                     "Source": " {Session.RaceType, Converter=StringToUpperString} RACE",
                     "MarginTop" : "{MarginTopHeaderText}",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern": "headerLeftTextOptions",
+                    "Style": "headerLeftTextOptions",
                     "RenderIf": true,
                     "Triggers" :[
                         {
@@ -72,8 +73,8 @@
                     "Source":" [CLASSIFICATION]",
                     "VerticalAlignment": "Center",
                     "MarginTop" : "{MarginTopHeaderText}",
-                    "TextOptionsExtern": "headerLeftTextOptions",
-                    "RenderIf" : "{Metadata.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}"
+                    "Style": "headerLeftTextOptions",
+                    "RenderIf" : "{LayoutInfo.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}"
                 }
             ]
         },
@@ -84,14 +85,14 @@
             "VerticalAlignment" : "Bottom",
             "MarginRight" : 50,
             "MarginBottom" : 3,
-            "RenderIf" : "{Metadata.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}",
+            "RenderIf" : "{LayoutInfo.RenderType, Converter=StringNotEquals, Parameter=DriverSessionStatistics}",
             "Items": [
                 {
                     "BlockType": "text",                                            
                     "RenderIf": false,
                     "Source": "[LAP]: {Session.TotalLaps}/{Session.TotalLaps}",
                     "VerticalAlignment": "Bottom",
-                    "TextOptionsExtern": "headerMiddle",
+                    "Style": "headerMiddle",
                     "Triggers" : 
                     [
                         {
@@ -124,7 +125,7 @@
                             "BlockType": "image",
                             "VerticalAlignment": "Top",
                             "Height": 60,
-                            "Source": "{Session.Track.Nation.LogoPath}"
+                            "Source": "{Session.Track.Nation.LogotypePath}"
                         },
                         {
                             "Name": "CountryRightStack",
@@ -139,14 +140,14 @@
                                     "BlockType": "text",
                                     "HorizontalAlignment" : "Right",
                                     "Source": "{Session.Track.LocationName, Converter=StringToUpperString}",
-                                    "TextOptionsExtern": "locationName"
+                                    "Style": "locationName"
                                 },
                                 {
                                     "Name": "CountryName",
                                     "BlockType": "text",
                                     "HorizontalAlignment" : "Right",
                                     "Source": "#[{Session.Track.CircuitName}GP]",
-                                    "TextOptionsExtern": "countryName"
+                                    "Style": "countryName"
                                 }
                                 
                             ]

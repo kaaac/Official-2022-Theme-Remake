@@ -1,5 +1,5 @@
 {
-    "Name": "bg-cal",
+    "ComponentName": "bg_cal",
     "BlockType": "shape", 
     "Width": 5000,
     "Height" : 5000,

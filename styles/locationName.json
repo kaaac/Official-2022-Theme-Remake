@@ -1,0 +1,6 @@
+{
+    "StyleName": "locationName",
+    "FontName": "{MgBo}",
+    "FontSize": "{LocationNameFontSize}",
+    "Foreground": "{ForeGroundWhite}"
+}

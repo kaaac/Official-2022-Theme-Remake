@@ -1,0 +1,6 @@
+{
+    "StyleName": "driverCell",
+    "FontName": "{MgMI}",
+    "FontSize": "{TableCellFontSize}",
+    "Foreground": "{ForeGroundWhite}"
+}

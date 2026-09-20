@@ -1,6 +1,6 @@
 {
-    "LayoutName": "SeasonTeamProgressPositions",
+    "LayoutName": "teamSeasonProgressPoints",
     "RenderType": "TeamStandings",
-	"RenderCaption": "Team season progress (positions)",
-	"Index" : 1	
+    "RenderCaption": "team season progress (points)",
+    "RenderVersion": 2
 }

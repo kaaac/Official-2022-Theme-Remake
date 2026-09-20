@@ -1,0 +1,6 @@
+{
+    "StyleName": "stickerHeader",
+    "FontName": "{MgMI}",
+    "FontSize": "{StickerHeaderFontSize}",
+    "Foreground": "{ForeGroundWhite}"
+}

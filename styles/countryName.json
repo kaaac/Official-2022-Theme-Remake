@@ -1,0 +1,6 @@
+{
+    "StyleName": "countryName",
+    "FontName": "{MgMI}",
+    "FontSize": "{CountryNameFontSize}",
+    "Foreground": "{ForegroundRed}"
+}

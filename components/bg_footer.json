@@ -1,7 +1,7 @@
 {
-    "Name": "bg-footer",
+    "ComponentName": "bg_footer",
     "BlockType": "stack", 
-    "BackgroundImage": "images/bg-footer.png",
+    "BackgroundImage": "bg-footer.png",
     "Height" : 23,
     "Width" : "*",
     "UseBackgroundCrop" : true,

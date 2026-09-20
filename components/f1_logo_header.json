@@ -1,8 +1,8 @@
 {
-    "Name": "f1_logo",
+    "ComponentName": "f1_logo_header",
     "BlockType": "image",
     "Height": 22,
     "MarginRight": 17,
-    "Source": "images/f1_logo.png",
+    "Source": "f1_logo.png",
     "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToTrue}"
 }

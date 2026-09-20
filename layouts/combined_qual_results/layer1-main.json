@@ -1,0 +1,184 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",    
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType" : "component",
+                "Component" : "header_block_session"
+            },
+            {
+                "BlockType" : "component",
+                "Component" : "separator"
+            },
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin" : "{MarginTable}",
+                "TableOptions": {
+                    "ItemsSource": "{Session.Drivers}",
+                    "RowSpacing": 0,
+                    "ColSpacing": 0,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 0,
+                        "Style" : "tableHeader",
+                        "HorizontalAlignment" : "Center",
+                        "Width" : "*"
+                    },
+                    "Columns": [
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType" : "component",                                
+                                "Component" : "position_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "position" : "{Item.PositionString}"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Header": "[DRIVER]",
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "Component" : "driver_cell"                                
+                            }
+                        },
+                        {
+                            "Header": "[TEAM]",
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "Component" : "team_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "MarginRight": "{ColumnMarginRight}",
+                                        "RenderIf" : "{RenderTeamBadgesOnSessionResults}"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Header": "[Q1]",
+                            "Template": {
+                                "BlockType": "text",
+                                "Padding": "6, 0",
+                                "Source": "{Item.QualQ1Time}",
+                                "MarginRight": "{ColumnMarginRight}",
+                                "HorizontalAlignment": "Left",
+                                "Style" : "driverCell",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "Triggers" :[
+                                    {
+                                        "Condition" : "{RenderQualiStints}",
+                                        "Property" : "MarginRight",
+                                        "Value" : 0
+                                    },
+                                    {
+                                        "Condition" : "{Item.QualQ1Time, Converter=EmptyObjectToTrue}",
+                                        "Property" : "Source",
+                                        "Value" : ""
+                                    }
+                                ] 
+                            }
+                        },
+                        {
+                            "Header": "[Q2]",
+                            "Template": {
+                                "BlockType": "text",
+                                "Padding": "6, 0",
+                                "Source": "{Item.QualQ2Time}",
+                                "MarginRight": "{ColumnMarginRight}",
+                                "HorizontalAlignment": "Left",
+                                "Style" : "driverCell",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "Triggers" :[
+                                    {
+                                        "Condition" : "{RenderQualiStints}",
+                                        "Property" : "MarginRight",
+                                        "Value" : 0
+                                    },
+                                    {
+                                        "Condition" : "{Item.QualQ2Time, Converter=EmptyObjectToTrue}",
+                                        "Property" : "Source",
+                                        "Value" : ""
+                                    }
+                                ] 
+                            }
+                        },
+                        {
+                            "Header": "[Q3]",
+                            "Template": {
+                                "BlockType": "text",
+                                "Padding": "6, 0",
+                                "Source": "{Item.QualQ3Time}",
+                                "MarginRight": "{ColumnMarginRight}",
+                                "HorizontalAlignment": "Left",
+                                "Style" : "driverCell",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "Triggers" :[
+                                    {
+                                        "Condition" : "{RenderQualiStints}",
+                                        "Property" : "MarginRight",
+                                        "Value" : 0
+                                    },
+                                    {
+                                        "Condition" : "{Item.QualQ3Time, Converter=EmptyObjectToTrue}",
+                                        "Property" : "Source",
+                                        "Value" : ""
+                                    }
+                                ] 
+                            }
+                        },
+                        {
+                            "Header" : "[PLACE PEN.]",
+                            "Template" : {
+                                "BlockType" : "text",
+                                "Source" : "+{Item.PenaltyPosIngame}",
+                                "RenderIf" : "{Item.PenaltyPosIngame, Converter=NumberNotEquals, Parameter=0}",
+                                "Width" :85,
+                                "Style":"PenPos",
+                                "MarginLeft": 80,
+                                "HorizontalAlignment":"Center",
+                                "TextOptions" : {
+                                    "HorizontalAlignment" : "Center"
+                                }
+                            }
+                        },
+                        {
+                            "Header": "[LAPS]",
+                            "Template": {
+                                "BlockType": "text",
+                                "Padding": "6, 0",
+                                "Source": "{Item.LapsCount}",
+                                "MarginLeft": 180,
+                                "HorizontalAlignment": "Left",
+                                "Width":75,
+                                "Style" : "driverCell",
+                                "RenderIf" : "{Session.IsLiveData}",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "BlockType" : "component",
+                "Component" : "bg_footer"
+            }          
+        ]
+    }
+}

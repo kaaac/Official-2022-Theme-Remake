@@ -1,0 +1,121 @@
+{
+  "Categories": [
+    { "Name": "Session Results", "Order": 1 },
+    { "Name": "Standings",       "Order": 2 },
+    { "Name": "Calendar",        "Order": 3 },
+    { "Name": "Lineups",         "Order": 4 },
+    { "Name": "Common",          "Order": 5 }
+  ],
+
+  "Properties": [
+    // --- Session Results: race_results, qual_results, combined_qual_results ---
+    {
+      "Name": "RenderRaceStints",
+      "PublicName": "Render Race Stints",
+      "Description": "Show the tyre stint chart in race results.",
+      "Category": "Session Results",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "RenderQualiStints",
+      "PublicName": "Render Quali Stints",
+      "Description": "Show the tyre stint chart in qualifying and combined qualifying results.",
+      "Category": "Session Results",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "RenderPointsOnRaceLayout",
+      "PublicName": "Render Points on Race Layout",
+      "Description": "Show the points column in race results.",
+      "Category": "Session Results",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "RenderTeamBadgesOnSessionResults",
+      "PublicName": "Render Team Badges on Session Results",
+      "Description": "Show team logos in race and qualifying results.",
+      "Category": "Session Results",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "Commentator",
+      "PublicName": "Commentator",
+      "Description": "Name shown on the commentator sticker in race results. Leave empty to hide the sticker.",
+      "Category": "Session Results",
+      "Type": "String",
+      "DefaultValue": ""
+    },
+
+    // --- Standings: driver_standings, season_progress_* ---
+    {
+      "Name": "ShowPenaltyPointsInStandings",
+      "PublicName": "Show Penalty Points in Standings",
+      "Description": "Show the penalty points column in driver standings.",
+      "Category": "Standings",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "DNSReplacementForSeasonProgress",
+      "PublicName": "DNS Replacement for Season Progress",
+      "Description": "Text shown instead of a position when a driver did not start a round (season progress by positions). Leave empty for a blank cell.",
+      "Category": "Standings",
+      "Type": "String",
+      "DefaultValue": ""
+    },
+
+    // --- Calendar ---
+    {
+      "Name": "ShowWinnerInCalendar",
+      "PublicName": "Show Winner in Calendar",
+      "Description": "Show the winner of each completed round in the calendar.",
+      "Category": "Calendar",
+      "Type": "Bool",
+      "DefaultValue": true
+    },
+    {
+      "Name": "SecondCalendarEventsInColumn",
+      "PublicName": "Events per Column (Calendar V2)",
+      "Description": "How many rounds go into the first column of the two-column calendar; the rest fill the second column. Affects the Calendar V2 layout only.",
+      "Category": "Calendar",
+      "Type": "Integer",
+      "DefaultValue": 6,
+      "MinimumValue": 1,
+      "MaximumValue": 20
+    },
+
+    // --- Lineups ---
+    {
+      "Name": "ReserveDriverMax",
+      "PublicName": "Reserve Driver Max",
+      "Description": "Currently unused - the only layout that read it (QRL Joker Lineup) is disabled and moved to _disabled/. Kept so the setting survives if that layout comes back.",
+      "Category": "Lineups",
+      "Type": "Integer",
+      "DefaultValue": 2,
+      "MinimumValue": 0,
+      "MaximumValue": 10
+    },
+
+    // --- Common: applies across several layouts ---
+    {
+      "Name": "RenderDriverFlags",
+      "PublicName": "Render Driver Flags",
+      "Description": "Show the driver's national flag next to their name, in results and lineups.",
+      "Category": "Common",
+      "Type": "Bool",
+      "DefaultValue": false
+    },
+    {
+      "Name": "RenderTeamBadgesOnOtherLayouts",
+      "PublicName": "Render Team Badges on Other Layouts",
+      "Description": "Show team logos outside session results - lineups, team standings and team season progress.",
+      "Category": "Common",
+      "Type": "Bool",
+      "DefaultValue": true
+    }
+  ]
+}

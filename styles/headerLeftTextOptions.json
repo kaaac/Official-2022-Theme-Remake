@@ -1,0 +1,7 @@
+{
+    "StyleName": "headerLeftTextOptions",
+    "FontName": "Formula1-Bold",
+    "FontSize": "{HeaderLeftFontSize}",
+    "Foreground": "{ForegroundRed}",
+    "MarginBottom": 5
+}

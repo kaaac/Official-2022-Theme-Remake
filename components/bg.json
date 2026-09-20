@@ -1,5 +1,5 @@
 {
-    "Name": "bg-official",
+    "ComponentName": "bg",
     "BlockType": "image", 
-    "Source": "images/bg-official.png"
+    "Source": "bg-official.png"
 }

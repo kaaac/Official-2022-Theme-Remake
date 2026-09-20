@@ -1,4 +1,5 @@
 {
+    "ComponentName": "driver_cell",
     "BlockType": "stack",
     "HorizontalAlignment": "Left",
     "VerticalAlignment": "Center",
@@ -7,25 +8,24 @@
             "BlockType": "image",
             "Height": 19,
             "MarginRight": 12,
-            "PaddingBottom" : 4,
             "VerticalAlignment": "Center",
             "ImageOptions": {
-                "Path": "{Item.Driver.Nationality.LogoPath}"
+                "Path": "{Item.Driver.Nationality.LogotypePath}"
             },
             "RenderIf": "{RenderDriverFlags}"
         },
         {
             "BlockType": "text",
             "MaxWidth": 300,
-            "MarginRight": 150,
-            "TextOptionsExtern": "driverCell",
+            "MarginRight": "{ColumnMarginRight}",
+            "Style": "driverCell",
             "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
             "HorizontalAlignment": "Left",
             "VerticalAlignment": "Center",
             "Triggers" : [
                 {
-                    "Condition" : "{Metadata.RenderType, Converter=StringEquals, Parameter=DriverSeasonStatistics}",
-                    "ConditionOr" : "{Metadata.RenderType, Converter=StringEquals, Parameter=DriverSessionStatistics}",
+                    "Condition" : "{LayoutInfo.RenderType, Converter=StringEquals, Parameter=DriverSeasonStatistics}",
+                    "ConditionOr" : "{LayoutInfo.RenderType, Converter=StringEquals, Parameter=DriverSessionStatistics}",
                     "Setters" : [
                         {
                             "Property" : "MarginRight",

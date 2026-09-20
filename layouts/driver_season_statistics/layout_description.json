@@ -1,4 +1,4 @@
 {
-    "LayoutName": "driverSessionStatistics",
-    "RenderType": "DriverSeasonStatistics"	
+    "LayoutName": "driverSeasonStatistics",
+    "RenderType": "DriverSeasonStatistics"
 }

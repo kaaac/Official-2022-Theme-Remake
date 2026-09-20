@@ -1,0 +1,6 @@
+{
+    "StyleName": "teamCell",
+    "FontName": "{MgBo}",
+    "FontSize": "{TableCellFontSize}",
+    "Foreground": "{ForeGroundWhite}"
+}

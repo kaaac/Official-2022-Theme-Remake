@@ -1,10 +1,11 @@
 {
+    "ComponentName": "LineupDriverReserve",
     "BlockType": "stack",
     "Height": "120",
     "Width": "600",
     "MarginRight": 50,
     "MarginBottom": 20,
-    "BackgroundImage": "images/team/reservebg.png",
+    "BackgroundImage": "team/reservebg.png",
     "Items": [
         {
             "BlockType": "stack",
@@ -23,7 +24,7 @@
                             "Height": 30,
                             "VerticalAlignment": "Center",
                             "ImageOptions": {
-                                "Path": "images/Clear.png",
+                                "Path": "Clear.png",
                                 "VerticalAlignment": "Center"
                             }
                         },
@@ -33,7 +34,7 @@
                             "Height": 30,
                             "VerticalAlignment": "Center",
                             "ImageOptions": {
-                                "Path": "{Item.Driver.Nationality.LogoPath}",
+                                "Path": "{Item.Driver.Nationality.LogotypePath}",
                                 "VerticalAlignment": "Center"
                             }
                         }
@@ -45,7 +46,7 @@
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
                     "FontName": "{FontNameBold}",
-                    "Foreground": "{ForegroundGrey}",
+                    //"Foreground": "#FF727070",
                     "FontSize": "35"
                 },
                 {
@@ -61,7 +62,7 @@
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Center",
                             "FontName": "{FontNameBold}",
-                            "Foreground": "{ForegroundWhithe}",
+                            "Foreground": "{ForeGroundWhite}",
                             "FontSize": "20"
                         }
                     ]
@@ -81,7 +82,7 @@
                     "MarginRight": 50,
                     "VerticalAlignment": "Center",
                     "FontName": "{FontNameBold}",
-                    "Foreground": "{ForegroundGrey}",
+                    //"Foreground": "{ForegroundGrey}",
                     "FontSize": 55,
                     "Opacity": 50
                 }

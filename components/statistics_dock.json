@@ -1,4 +1,5 @@
 {
+    "ComponentName": "statistics_dock",
     "BlockType": "dock",
     "Width": "13",
     "Height": "auto",
@@ -22,17 +23,17 @@
     ],
     "Triggers" : [
         {
-            "Condition" : "{Metadata.RenderDataType, Converter=StringEquals, Parameter=PureRacePaceRating}",
+            "Condition" : "{LayoutInfo.RenderDataType, Converter=StringEquals, Parameter=PureRacePaceRating}",
             "Property" : "Height",
             "Value" : "300"
         },
         {
-            "Condition" : "{Metadata.RenderDataType, Converter=StringEquals, Parameter=ConsistancyRating}",
+            "Condition" : "{LayoutInfo.RenderDataType, Converter=StringEquals, Parameter=ConsistancyRating}",
             "Property" : "Height",
             "Value" : "290"
         },
         {
-            "Condition" : "{Metadata.RenderDataType, Converter=StringEquals, Parameter=LongestStintsRating}",
+            "Condition" : "{LayoutInfo.RenderDataType, Converter=StringEquals, Parameter=LongestStintsRating}",
             "Property" : "Height",
             "Value" : "80"
         }

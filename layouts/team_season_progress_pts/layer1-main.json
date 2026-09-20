@@ -1,0 +1,164 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType" : "component",
+                "Component" : "header_block_2lines",
+                "ComponentOptions" : {
+                    "Vars" : {
+                        "headerline1" : "{Season.LeagueInfo.LeagueShortName} {Season.Name}",
+                        "headerline2" : "Team Season Progress / Points"
+                    }
+                }
+            },
+            {
+                "BlockType" : "component",
+                "Component" : "separator"
+            },
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "{MarginTable}",
+                "PaddingRight" : 25,
+                "TableOptions": {
+                    "ItemsSource": "{Standings.Teams}",
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 8,
+                        "Style" : "tableHeader"
+                    },
+                    "Columns": [
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "Component": "position_cell",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "position": "{Item.Position}"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "WidthStretch" : true,                            
+                            "Template": {
+                                "BlockType" : "component",
+                                "Component" : "team_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "MarginRight" : "",
+                                        "RenderIf" : "{RenderTeamBadgesOnOtherLayouts}"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "MarginLeft" : 20,
+                            "Template": {
+                                
+                                "BlockType": "dock",
+                                "PaddingLeft" : 24,
+                                "PaddingRight" : 24,
+                                "Items": [                                    
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Points}",
+                                        "HorizontalAlignment": "Left",
+                                        "VerticalAlignment": "Center",
+                                        "Style": "positionNumber"
+                                    }
+                                ],
+                                "Triggers" :
+                                [
+                                    {
+                                        "Condition" : "{Standings.IsPositionJumpForDriversExists}",
+                                        "Property" : "PaddingRight",
+                                        "Value" : 4
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "PaddingLeft" : 0,
+                            "MarginLeft" : -8,
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "PaddingLeft" : 0,                               
+                                "PaddingRight" : 12,
+                                "Component" : "jump_cell"    
+                            }
+                        },
+                        {
+                            "MarginLeft" : 6,
+                            "MultiColumnHeadersSource": "{Standings.Events}",
+                            "MultiColumnItemsSource": "{Item.Events}",
+                            // tylko rozegrane rundy - inaczej tabela zostaje szeroka z pustymi kolumnami
+                            // (RenderIf w Template ukrywa tresc, ale NIE usuwa kolumny)
+                            // alternatywa gdyby liczba byla przesunieta: {Standings.LastEvent.ChampionshipPosition}
+                            "MultiColumnLimit": "{Season.SeasonCurrentNumberEventExcludingNonChampionship}",
+                            "MultiColumnHeaderTemplate": {
+                                "BlockType": "stack",
+                                "Orientation": "Vertical",
+                                "RenderIf" : "{Item.WinnerString, Converter=EmptyObjectToFalse}",
+                                "Spacing": 4,
+                                "HorizontalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "{Item.Track.Nation.LogotypePath}",
+                                        "HorizontalAlignment": "Center",
+                                        "Height": 32
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "MarginBottom": 8,
+                                        "HorizontalAlignment": "Center",
+                                        "Source": "{Item.Track.Nation.Code}",
+                                        "Style" : "tableHeader"
+                                    }
+                                ]
+                            },
+                            "Width": 55,
+                            "Template": {
+                                "Padding": "12, 0",
+                                "BlockType": "text",
+                                "RenderIf" : "{Item.Event.WinnerString, Converter=EmptyObjectToFalse}",
+                                "Source": "{Item.Points.StringValue}",
+                                "HorizontalAlignment": "Left",
+                                "Opacity":100,
+                                "Style" : "positionNumber",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "Triggers" : [
+                                    {
+                                        "Condition": "{Item.Points.StringValue, Converter=StringEquals, Parameter=0}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": ""
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "BlockType" : "component",
+                "Component" : "bg_footer"
+            }
+        ]
+    }
+}
